@@ -1,0 +1,54 @@
+Configuration	waberinator_rev2
+STM8CubeMX 	1.5.0
+Date	12/30/2023
+MCU	STM8L152R8Tx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC1	IN8	ADC1_IN8	PD6
+ADC1	IN9	ADC1_IN9	PD5
+ADC1	IN10	ADC1_IN10	PD4
+ADC1	IN11	ADC1_IN11	PB7
+RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PA2
+RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PA3
+RCC	Crystal/Ceramic Resonator	RCC_OSC32_IN	PC5
+RCC	Crystal/Ceramic Resonator	RCC_OSC32_OUT	PC6
+SYS	SWIM Input and Output	SYS_SWIM	PA0
+TIM2	Output CH1	TIM2_CH1	PB0
+TIM2	Output CH2	TIM2_CH2	PB2
+TIM3	Output CH1	TIM3_CH1	PB1
+TIM3	Output CH2	TIM3_CH2	PD0
+TIM5	Output CH1	TIM5_CH1	PA7
+TIM5	Output CH2	TIM5_CH2	PE0
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+1	PA0	SYS_SWIM	
+3	PA2	RCC_OSC_IN	
+4	PA3	RCC_OSC_OUT	
+8	PA7	TIM5_CH1	tim5_ch1_ledstring5
+19	PE0	TIM5_CH2	tim5_ch2_ledstring6
+22	PE3*	USART2_RX	
+23	PE4*	USART2_TX	
+25	PD0	TIM3_CH2	tim3_ch2_ledstring4
+31	PB0	TIM2_CH1	tim2_ch1_ledstring1
+32	PB1	TIM3_CH1	tim3_ch1_ledstring3
+33	PB2	TIM2_CH2	tim2_ch2_ledstring2
+36	PB5	GPIO_Output	LD2 [Green Led]
+38	PB7	ADC1_IN11	adc_vbat
+39	PF0	GPIO_Input	button1
+40	PF1	GPIO_Input	button2
+41	PF4	GPIO_Output	indicator_led1
+42	PF5	GPIO_Output	indicator_led2
+43	PF6	GPIO_Output	indicator_led3
+44	PF7	GPIO_Output	indicator_led4
+45	PD4	ADC1_IN10	adc_brightness
+46	PD5	ADC1_IN9	adc_frequency
+47	PD6	ADC1_IN8	adc_depth
+49	PG4	GPIO_Input	B1 [Blue PushButton]
+51	PG6	GPIO_Output	lm73606_en
+52	PG7	GPIO_Input	lm73606_pg
+60	PC5	RCC_OSC32_IN	
+61	PC6	RCC_OSC32_OUT	
