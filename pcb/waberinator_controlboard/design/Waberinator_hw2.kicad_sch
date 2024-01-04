@@ -236,6 +236,50 @@
         )
       )
     )
+    (symbol "Connector:Conn_01x01_Pin" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (at 0 2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "Conn_01x01_Pin" (at 0 -2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_locked" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "connector" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Generic connector, single row, 01x01, script generated" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "Conn_01x01_Pin_1_1"
+        (polyline
+          (pts
+            (xy 1.27 0)
+            (xy 0.8636 0)
+          )
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start 0.8636 0.127) (end 0 -0.127)
+          (stroke (width 0.1524) (type default))
+          (fill (type outline))
+        )
+        (pin passive line (at 5.08 0 180) (length 3.81)
+          (name "Pin_1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
     (symbol "Connector:Conn_01x04_Pin" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (at 0 5.08 0)
         (effects (font (size 1.27 1.27)))
@@ -816,139 +860,6 @@
         (pin passive line (at 3.81 0 180) (length 2.54)
           (name "A2" (effects (font (size 1.27 1.27))))
           (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "Device:EMI_Filter_LL_1423" (pin_names hide) (in_bom yes) (on_board yes)
-      (property "Reference" "FL" (at 0 4.445 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "Device_EMI_Filter_LL_1423" (at 0 -4.445 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (at 0 -6.35 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (at 0 1.016 90)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "Bourns*SRF0905*" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "EMI_Filter_LL_1423_0_1"
-        (circle (center -3.048 -1.27) (radius 0.254)
-          (stroke (width 0) (type default))
-          (fill (type outline))
-        )
-        (circle (center -3.048 1.524) (radius 0.254)
-          (stroke (width 0) (type default))
-          (fill (type outline))
-        )
-        (arc (start -2.54 2.032) (mid -2.032 1.5262) (end -1.524 2.032)
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (arc (start -1.524 -2.032) (mid -2.032 -1.5262) (end -2.54 -2.032)
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (arc (start -1.524 2.032) (mid -1.016 1.5262) (end -0.508 2.032)
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (arc (start -0.508 -2.032) (mid -1.016 -1.5262) (end -1.524 -2.032)
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (arc (start -0.508 2.032) (mid 0 1.5262) (end 0.508 2.032)
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -2.54 -2.032)
-            (xy -2.54 -2.54)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -2.54 0.508)
-            (xy 2.54 0.508)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -2.54 2.032)
-            (xy -2.54 2.54)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 2.54 -2.032)
-            (xy 2.54 -2.54)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 2.54 -0.508)
-            (xy -2.54 -0.508)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 2.54 2.54)
-            (xy 2.54 2.032)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (arc (start 0.508 -2.032) (mid 0 -1.5262) (end -0.508 -2.032)
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (arc (start 0.508 2.032) (mid 1.016 1.5262) (end 1.524 2.032)
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (arc (start 1.524 -2.032) (mid 1.016 -1.5262) (end 0.508 -2.032)
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (arc (start 1.524 2.032) (mid 2.032 1.5262) (end 2.54 2.032)
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (arc (start 2.54 -2.032) (mid 2.032 -1.5262) (end 1.524 -2.032)
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-      )
-      (symbol "EMI_Filter_LL_1423_1_1"
-        (pin passive line (at -5.08 -2.54 0) (length 2.54)
-          (name "1" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at -5.08 2.54 0) (length 2.54)
-          (name "2" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 5.08 2.54 180) (length 2.54)
-          (name "3" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 5.08 -2.54 180) (length 2.54)
-          (name "4" (effects (font (size 1.27 1.27))))
-          (number "4" (effects (font (size 1.27 1.27))))
         )
       )
     )
@@ -2304,11 +2215,11 @@
         )
       )
     )
-    (symbol "Switch:SW_SPST" (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "SW" (at 0 3.175 0)
+    (symbol "Switch:SW_SPDT" (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "SW" (at 0 4.318 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "SW_SPST" (at 0 -2.54 0)
+      (property "Value" "SW_SPDT" (at 0 -5.08 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -2317,38 +2228,48 @@
       (property "Datasheet" "~" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_keywords" "switch lever" (at 0 0 0)
+      (property "ki_keywords" "switch single-pole double-throw spdt ON-ON" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Single Pole Single Throw (SPST) switch" (at 0 0 0)
+      (property "ki_description" "Switch, single pole double throw" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "SW_SPST_0_0"
+      (symbol "SW_SPDT_0_0"
         (circle (center -2.032 0) (radius 0.508)
           (stroke (width 0) (type default))
           (fill (type none))
         )
-        (polyline
-          (pts
-            (xy -1.524 0.254)
-            (xy 1.524 1.778)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (circle (center 2.032 0) (radius 0.508)
+        (circle (center 2.032 -2.54) (radius 0.508)
           (stroke (width 0) (type default))
           (fill (type none))
         )
       )
-      (symbol "SW_SPST_1_1"
-        (pin passive line (at -5.08 0 0) (length 2.54)
+      (symbol "SW_SPDT_0_1"
+        (polyline
+          (pts
+            (xy -1.524 0.254)
+            (xy 1.651 2.286)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (circle (center 2.032 2.54) (radius 0.508)
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "SW_SPDT_1_1"
+        (pin passive line (at 5.08 2.54 180) (length 2.54)
           (name "A" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at 5.08 0 180) (length 2.54)
+        (pin passive line (at -5.08 0 0) (length 2.54)
           (name "B" (effects (font (size 1.27 1.27))))
           (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 5.08 -2.54 180) (length 2.54)
+          (name "C" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
         )
       )
     )
@@ -2723,6 +2644,9 @@
   (junction (at 140.335 24.13) (diameter 0) (color 0 0 0 0)
     (uuid 68e279d4-6942-48ac-b4ac-91357ae90116)
   )
+  (junction (at 337.185 34.29) (diameter 0) (color 0 0 0 0)
+    (uuid 698ec8b9-e5a0-4b23-80a1-687f7994123f)
+  )
   (junction (at 144.145 24.13) (diameter 0) (color 0 0 0 0)
     (uuid 6bfe6a83-7430-4db7-a613-e5d60fc6bf10)
   )
@@ -2862,6 +2786,8 @@
     (uuid facb66d0-5a44-424a-b7c3-beb69351c97a)
   )
 
+  (no_connect (at 24.765 17.78) (uuid 1c9aa2f0-1c37-446d-a537-2eafed6d1ff3))
+  (no_connect (at 24.765 19.685) (uuid 355fdc60-5f9f-4649-89fd-0b16462d95df))
   (no_connect (at 370.205 232.41) (uuid cbd017d8-db94-412b-a991-8b8091d4b063))
   (no_connect (at 248.92 59.69) (uuid d549a28b-caaf-441f-8813-8c85bb83d96a))
 
@@ -2908,6 +2834,10 @@
   (wire (pts (xy 184.785 24.13) (xy 184.785 25.4))
     (stroke (width 0) (type default))
     (uuid 06d5c990-a5cc-455d-9894-59aadfff4d01)
+  )
+  (wire (pts (xy 53.975 165.1) (xy 64.77 165.1))
+    (stroke (width 0) (type default))
+    (uuid 07000b40-d857-409a-abcf-1e1c8a9b67c1)
   )
   (wire (pts (xy 67.945 140.335) (xy 55.88 140.335))
     (stroke (width 0) (type default))
@@ -2969,7 +2899,7 @@
     (stroke (width 0) (type default))
     (uuid 1bc94553-0dc5-429f-98fd-6dde76a071e0)
   )
-  (wire (pts (xy 144.145 24.13) (xy 173.355 24.13))
+  (wire (pts (xy 144.145 24.13) (xy 158.75 24.13))
     (stroke (width 0) (type default))
     (uuid 1d4b1e85-4b1c-454c-8934-8157f53e7ffe)
   )
@@ -3065,6 +2995,10 @@
     (stroke (width 0) (type default))
     (uuid 33d3594d-adf6-46cf-b127-bf8111c12201)
   )
+  (wire (pts (xy 337.185 34.29) (xy 344.17 34.29))
+    (stroke (width 0) (type default))
+    (uuid 340a1864-c404-44fa-bbb6-edefeaffdcc6)
+  )
   (wire (pts (xy 95.25 213.36) (xy 108.585 213.36))
     (stroke (width 0) (type default))
     (uuid 357c4abd-c158-4241-b991-fdf05e8cb899)
@@ -3085,7 +3019,7 @@
     (stroke (width 0) (type default))
     (uuid 38523ec0-3ea5-4cf9-87e3-83eccad1699b)
   )
-  (wire (pts (xy 53.34 24.13) (xy 55.88 24.13))
+  (wire (pts (xy 50.8 24.13) (xy 55.88 24.13))
     (stroke (width 0) (type default))
     (uuid 3ae0ffea-f21f-4f26-a6ab-2cb9ed85b25f)
   )
@@ -3093,7 +3027,7 @@
     (stroke (width 0) (type default))
     (uuid 3c7ac970-72b1-4397-97a6-f6548a5f49dd)
   )
-  (wire (pts (xy 43.18 29.21) (xy 40.64 29.21))
+  (wire (pts (xy 46.355 29.21) (xy 40.64 29.21))
     (stroke (width 0) (type default))
     (uuid 3dfc41de-04ab-44fb-874a-a5ce70750f9b)
   )
@@ -3157,7 +3091,7 @@
     (stroke (width 0) (type default))
     (uuid 4cf91c2e-cbc2-41f6-941b-bdad9614ddc2)
   )
-  (wire (pts (xy 236.855 228.6) (xy 239.395 228.6))
+  (wire (pts (xy 236.855 226.06) (xy 239.395 226.06))
     (stroke (width 0) (type default))
     (uuid 4d336d90-ef17-4a3a-8e97-1d46eeb7438f)
   )
@@ -3169,7 +3103,11 @@
     (stroke (width 0) (type default))
     (uuid 4df069d8-3187-47f4-8d33-f554d9328475)
   )
-  (wire (pts (xy 213.36 198.755) (xy 213.36 197.485))
+  (wire (pts (xy 229.87 239.395) (xy 239.395 239.395))
+    (stroke (width 0) (type default))
+    (uuid 4fc39ef2-bf18-4afe-bc43-169152f2db93)
+  )
+  (wire (pts (xy 196.85 198.755) (xy 196.85 197.485))
     (stroke (width 0) (type default))
     (uuid 50614337-7a42-4b91-a93b-a1cd443c4d60)
   )
@@ -3238,7 +3176,7 @@
     (stroke (width 0) (type default))
     (uuid 59ee9f94-3275-4465-a95c-b02b3bfcf857)
   )
-  (wire (pts (xy 53.34 29.21) (xy 55.88 29.21))
+  (wire (pts (xy 53.975 29.21) (xy 55.88 29.21))
     (stroke (width 0) (type default))
     (uuid 5af29f9a-f281-4525-ae74-d2ed955f5f55)
   )
@@ -3395,7 +3333,7 @@
     (stroke (width 0) (type default))
     (uuid 7adbae4d-f2d9-4538-a9ef-008a94f22050)
   )
-  (wire (pts (xy 213.36 175.895) (xy 236.855 175.895))
+  (wire (pts (xy 196.85 175.895) (xy 220.345 175.895))
     (stroke (width 0) (type default))
     (uuid 7b0a93ed-3e7a-4386-ae7b-e5d79a0c0a7f)
   )
@@ -3418,6 +3356,10 @@
   (wire (pts (xy 304.8 91.44) (xy 321.945 91.44))
     (stroke (width 0) (type default))
     (uuid 7ed88a72-3fe2-4679-9784-c88b4b421063)
+  )
+  (wire (pts (xy 235.585 197.485) (xy 244.475 197.485))
+    (stroke (width 0) (type default))
+    (uuid 7f3555f4-184c-44ef-95cf-b3a49a70cd39)
   )
   (wire (pts (xy 95.25 205.74) (xy 117.475 205.74))
     (stroke (width 0) (type default))
@@ -3483,7 +3425,7 @@
     (stroke (width 0) (type default))
     (uuid 8db7f9f6-c95f-4abb-9962-899bd85f5d4c)
   )
-  (wire (pts (xy 236.855 228.6) (xy 236.855 239.395))
+  (wire (pts (xy 236.855 226.06) (xy 236.855 236.855))
     (stroke (width 0) (type default))
     (uuid 8e37a76f-bc0d-4a15-b2b3-ea8117e1e6da)
   )
@@ -3499,7 +3441,7 @@
     (stroke (width 0) (type default))
     (uuid 8ff8be12-7275-464c-9247-6728c41529d5)
   )
-  (wire (pts (xy 213.36 197.485) (xy 244.475 197.485))
+  (wire (pts (xy 196.85 197.485) (xy 227.965 197.485))
     (stroke (width 0) (type default))
     (uuid 9007bf3f-cd1e-406c-b092-24343888330e)
   )
@@ -3550,6 +3492,10 @@
   (wire (pts (xy 301.625 186.69) (xy 321.945 186.69))
     (stroke (width 0) (type default))
     (uuid 9a264ab4-a3ec-48cd-9493-1f438c83c09a)
+  )
+  (wire (pts (xy 220.98 154.305) (xy 229.87 154.305))
+    (stroke (width 0) (type default))
+    (uuid 9a6edcca-2448-4180-9609-f6ba234fa4b5)
   )
   (wire (pts (xy 88.9 50.165) (xy 88.9 48.895))
     (stroke (width 0) (type default))
@@ -3603,7 +3549,7 @@
     (stroke (width 0) (type default))
     (uuid abce95e6-ff52-4bcc-93bb-c70984611be3)
   )
-  (wire (pts (xy 199.39 241.935) (xy 239.395 241.935))
+  (wire (pts (xy 199.39 239.395) (xy 222.25 239.395))
     (stroke (width 0) (type default))
     (uuid ac5eed46-a051-4ecf-bf77-ea098654b4e7)
   )
@@ -3715,7 +3661,7 @@
     (stroke (width 0) (type default))
     (uuid ca464e97-b683-44c9-b530-b476ffc8305f)
   )
-  (wire (pts (xy 213.36 177.165) (xy 213.36 175.895))
+  (wire (pts (xy 196.85 177.165) (xy 196.85 175.895))
     (stroke (width 0) (type default))
     (uuid ca8b5456-aab0-47a3-a613-f57d7a180e76)
   )
@@ -3747,9 +3693,17 @@
     (stroke (width 0) (type default))
     (uuid d04a0df6-9a20-43d9-b985-bc236ad6b45d)
   )
+  (wire (pts (xy 351.79 34.29) (xy 355.6 34.29))
+    (stroke (width 0) (type default))
+    (uuid d1341ddc-c562-428c-9400-0fedf1052f18)
+  )
   (wire (pts (xy 218.44 118.11) (xy 218.44 116.84))
     (stroke (width 0) (type default))
     (uuid d1bb97c5-adf7-42c0-b5c8-6f9bd6ab1916)
+  )
+  (wire (pts (xy 227.965 175.895) (xy 236.855 175.895))
+    (stroke (width 0) (type default))
+    (uuid d1ecf52e-a7ec-4c48-be7d-0b0e786c044e)
   )
   (wire (pts (xy 208.28 41.91) (xy 184.785 41.91))
     (stroke (width 0) (type default))
@@ -3779,7 +3733,7 @@
     (stroke (width 0) (type default))
     (uuid d468759b-d1b4-44bf-a6cb-61e26a6b0d76)
   )
-  (wire (pts (xy 213.36 154.305) (xy 229.87 154.305))
+  (wire (pts (xy 196.85 154.305) (xy 213.36 154.305))
     (stroke (width 0) (type default))
     (uuid d4fd4bfe-9046-4a0f-a4f5-6c86f5ff7a65)
   )
@@ -3791,11 +3745,11 @@
     (stroke (width 0) (type default))
     (uuid d81315ca-c9be-4808-a24f-843cb08ed788)
   )
-  (wire (pts (xy 213.36 155.575) (xy 213.36 154.305))
+  (wire (pts (xy 196.85 155.575) (xy 196.85 154.305))
     (stroke (width 0) (type default))
     (uuid d9e37a81-e4db-4d7c-adb7-66b9301f9db2)
   )
-  (wire (pts (xy 236.855 239.395) (xy 199.39 239.395))
+  (wire (pts (xy 236.855 236.855) (xy 229.87 236.855))
     (stroke (width 0) (type default))
     (uuid d9ffe18f-939e-4bd9-bb5c-ade6741d5209)
   )
@@ -3822,6 +3776,10 @@
   (wire (pts (xy 95.25 203.2) (xy 117.475 203.2))
     (stroke (width 0) (type default))
     (uuid df1939d1-4b14-404e-9bb6-27f0e820bbdd)
+  )
+  (wire (pts (xy 222.25 236.855) (xy 199.39 236.855))
+    (stroke (width 0) (type default))
+    (uuid dfc3e986-f6a0-4ad3-9618-65004ed030dd)
   )
   (wire (pts (xy 22.86 27.94) (xy 27.94 27.94))
     (stroke (width 0) (type default))
@@ -3878,6 +3836,10 @@
   (wire (pts (xy 248.92 34.29) (xy 257.81 34.29))
     (stroke (width 0) (type default))
     (uuid eddbd9e3-eb39-40e8-9082-264537ac6e53)
+  )
+  (wire (pts (xy 166.37 24.13) (xy 173.355 24.13))
+    (stroke (width 0) (type default))
+    (uuid ef10d438-a51b-496c-9510-bc83a14f2bd5)
   )
   (wire (pts (xy 196.215 249.555) (xy 222.25 249.555))
     (stroke (width 0) (type default))
@@ -3983,10 +3945,6 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 1bffdc7c-7569-44cd-a803-d3c63b4f7093)
   )
-  (text "Teilenummern für vorkonfektionierte Kab" (at 406.8711 98.974 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 731938d6-9e5d-4474-b3db-6e4992daaa0b)
-  )
   (text "16V map to 3,2V" (at 88.265 36.83 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a4c0d76f-7c7a-4614-aec2-0953720cb7ae)
@@ -4068,6 +4026,10 @@
     (effects (font (size 1.524 1.524)) (justify left bottom))
     (uuid 20e0ea12-08e6-44c3-815d-30d344885533)
   )
+  (label "lm76606_out" (at 313.055 34.29 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 232205f5-3315-4abe-9916-ad79b3cceab0)
+  )
   (label "i2c1_scl" (at 98.425 223.52 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 2b48f8bb-8fd4-469f-90fa-9872300c8bd4)
@@ -4108,6 +4070,10 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 4244e2da-f6b8-4e8d-8f2f-805d85867927)
   )
+  (label "boot0" (at 57.785 165.1 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 5291e7ae-0da2-4fbd-ab7b-a98e5788d790)
+  )
   (label "adc_depth" (at 97.79 165.1 0) (fields_autoplaced)
     (effects (font (size 1.524 1.524)) (justify left bottom))
     (uuid 5b98181d-7af0-4bc1-90a7-a0f61084c140)
@@ -4124,7 +4090,7 @@
     (effects (font (size 1.524 1.524)) (justify left bottom))
     (uuid 5d9e980a-493f-42f0-b740-2ff1650d6f75)
   )
-  (label "adc_frequency" (at 213.36 175.895 0) (fields_autoplaced)
+  (label "adc_frequency" (at 196.85 175.895 0) (fields_autoplaced)
     (effects (font (size 1.524 1.524)) (justify left bottom))
     (uuid 6adfd53f-9fe0-4cb5-afc3-5b529be69583)
   )
@@ -4204,15 +4170,15 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 9fc3cff3-84c7-42e7-97f4-cbc5148c457d)
   )
-  (label "adc_brightness" (at 213.36 154.305 0) (fields_autoplaced)
+  (label "adc_brightness" (at 196.85 154.305 0) (fields_autoplaced)
     (effects (font (size 1.524 1.524)) (justify left bottom))
     (uuid a1e680b4-5aac-445c-a5b5-c8928374630f)
   )
-  (label "button1" (at 201.93 239.395 0) (fields_autoplaced)
+  (label "button1" (at 201.93 236.855 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a7f67362-27b7-4c43-af7f-93c7982aa793)
   )
-  (label "adc_depth" (at 213.36 197.485 0) (fields_autoplaced)
+  (label "adc_depth" (at 196.85 197.485 0) (fields_autoplaced)
     (effects (font (size 1.524 1.524)) (justify left bottom))
     (uuid a85cdfa9-1b6f-4deb-b09a-9e974962cc8f)
   )
@@ -4232,7 +4198,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid adca85d7-4b3a-44d0-9663-a33cce0ab3e2)
   )
-  (label "VLed" (at 332.74 34.29 0) (fields_autoplaced)
+  (label "VLed" (at 355.6 34.29 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid ae9b4cc1-4fb1-47e4-b3a5-38548739d68b)
   )
@@ -4256,7 +4222,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid c60fba28-d0b1-4f01-80ca-8f746106ae55)
   )
-  (label "button2" (at 201.93 241.935 0) (fields_autoplaced)
+  (label "button2" (at 201.93 239.395 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid c820acaa-a13b-49f0-851c-25bbf433cbdc)
   )
@@ -4344,54 +4310,24 @@
   (symbol (lib_id "Waberinator_rev1-rescue:POT") (at 240.665 175.895 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-00005b579e9d)
-    (property "Reference" "RV1" (at 245.11 175.895 90)
+    (property "Reference" "RV2" (at 245.11 175.895 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Frequency" (at 243.205 175.895 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 240.665 175.895 0)
+    (property "Footprint" "g7_hmi:poti_3310C-025-103L" (at 240.665 175.895 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/3310.pdf" (at 240.665 175.895 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "987-1714-ND" (at 240.665 175.895 90)
+    (property "Digikey" "118-3310C-025-103L-ND" (at 240.665 175.895 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid cd000650-5e37-4cd5-aa6d-0f045c204349))
     (pin "2" (uuid 0d65daa8-0f24-44ac-8714-3587b54c7531))
     (pin "3" (uuid 969ce1ac-8336-46c6-a2b9-786d3d2939c9))
-    (instances
-      (project "Waberinator_hw2"
-        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "RV1") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Waberinator_rev1-rescue:POT") (at 248.285 197.485 0) (mirror y) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 00000000-0000-0000-0000-00005b579fe2)
-    (property "Reference" "RV2" (at 252.73 197.485 90)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "Depth" (at 250.825 197.485 90)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 248.285 197.485 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/3310.pdf" (at 248.285 197.485 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Digikey" "987-1714-ND" (at 248.285 197.485 90)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid bdf3e1bd-ea6a-41fc-9a05-53c4a7701cc0))
-    (pin "2" (uuid 661d4e54-3f2a-4d29-937e-42dcb6cfb3f2))
-    (pin "3" (uuid a64f7b55-46e8-4bd1-ae5c-4f88955d30af))
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
@@ -4401,23 +4337,79 @@
     )
   )
 
-  (symbol (lib_id "Waberinator_rev1-rescue:C") (at 213.36 202.565 0) (unit 1)
+  (symbol (lib_id "Waberinator_rev1-rescue:POT") (at 248.285 197.485 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
-    (uuid 00000000-0000-0000-0000-00005b57a7ce)
-    (property "Reference" "C15" (at 213.995 200.025 0)
-      (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 00000000-0000-0000-0000-00005b579fe2)
+    (property "Reference" "RV3" (at 252.73 197.485 90)
+      (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10n" (at 213.995 205.105 0)
-      (effects (font (size 1.27 1.27)) (justify left))
+    (property "Value" "Depth" (at 250.825 197.485 90)
+      (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 214.3252 206.375 0)
+    (property "Footprint" "g7_hmi:poti_3310C-025-103L" (at 248.285 197.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 213.36 202.565 0)
+    (property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/3310.pdf" (at 248.285 197.485 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Digikey" "118-3310C-025-103L-ND" (at 248.285 197.485 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid bdf3e1bd-ea6a-41fc-9a05-53c4a7701cc0))
+    (pin "2" (uuid 661d4e54-3f2a-4d29-937e-42dcb6cfb3f2))
+    (pin "3" (uuid a64f7b55-46e8-4bd1-ae5c-4f88955d30af))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "RV3") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Waberinator_rev1-rescue:C") (at 196.85 202.565 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 00000000-0000-0000-0000-00005b57a7ce)
+    (property "Reference" "C16" (at 197.485 200.025 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "10n" (at 197.485 205.105 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 197.8152 206.375 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 196.85 202.565 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid e0af8f55-ffd5-4050-b8e7-52f78c5e449a))
     (pin "2" (uuid 8a940d58-ed14-4563-b907-3b545cbd7e7f))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "C16") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Waberinator_rev1-rescue:C") (at 196.85 180.975 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 00000000-0000-0000-0000-00005b57a850)
+    (property "Reference" "C15" (at 197.485 178.435 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "10n" (at 197.485 183.515 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 197.8152 184.785 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 196.85 180.975 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid d86c9a8d-a748-42dc-8255-d2dcb69e76ac))
+    (pin "2" (uuid 470ac7b8-6485-4865-83b8-b78510f2ac19))
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
@@ -4427,36 +4419,10 @@
     )
   )
 
-  (symbol (lib_id "Waberinator_rev1-rescue:C") (at 213.36 180.975 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 00000000-0000-0000-0000-00005b57a850)
-    (property "Reference" "C14" (at 213.995 178.435 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "10n" (at 213.995 183.515 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 214.3252 184.785 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 213.36 180.975 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid d86c9a8d-a748-42dc-8255-d2dcb69e76ac))
-    (pin "2" (uuid 470ac7b8-6485-4865-83b8-b78510f2ac19))
-    (instances
-      (project "Waberinator_hw2"
-        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C14") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "g7_power_symbols:RET") (at 309.88 130.175 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 06d0e0ae-af0b-4053-8cf1-ee8e47906b34)
-    (property "Reference" "#PWR057" (at 309.88 136.525 0)
+    (property "Reference" "#PWR050" (at 309.88 136.525 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 309.88 133.985 0)
@@ -4472,7 +4438,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR057") (unit 1)
+          (reference "#PWR050") (unit 1)
         )
       )
     )
@@ -4481,7 +4447,7 @@
   (symbol (lib_id "Device:C") (at 280.035 49.53 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0760fd74-d5ef-42cb-b5c2-c138d3ff0d2d)
-    (property "Reference" "C3" (at 283.845 48.26 0)
+    (property "Reference" "C22" (at 283.845 48.26 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "6.8pF" (at 283.845 50.8 0)
@@ -4498,7 +4464,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C3") (unit 1)
+          (reference "C22") (unit 1)
         )
       )
     )
@@ -4507,7 +4473,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 373.38 144.78 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 08b6af03-266b-46a9-8fcb-13656d0ed85c)
-    (property "Reference" "#PWR05" (at 373.38 151.13 0)
+    (property "Reference" "#PWR061" (at 373.38 151.13 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 373.38 148.59 0)
@@ -4523,7 +4489,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR05") (unit 1)
+          (reference "#PWR061") (unit 1)
         )
       )
     )
@@ -4532,7 +4498,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 393.7 132.08 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0a3a519c-d7fe-42f5-8ce5-5016a1355ea4)
-    (property "Reference" "J4" (at 396.24 132.08 0)
+    (property "Reference" "J13" (at 396.24 132.08 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Strang 3" (at 396.24 134.62 0)
@@ -4555,7 +4521,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "J4") (unit 1)
+          (reference "J13") (unit 1)
         )
       )
     )
@@ -4564,7 +4530,7 @@
   (symbol (lib_id "Device:C_Small") (at 40.64 26.67 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0bae0119-8165-420b-85b2-3ced412a8d68)
-    (property "Reference" "C5" (at 38.3286 25.5016 0)
+    (property "Reference" "C3" (at 38.3286 25.5016 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "~" (at 38.3286 27.813 0)
@@ -4584,7 +4550,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C5") (unit 1)
+          (reference "C3") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -4598,7 +4564,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 173.355 34.925 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0dbb5d36-6816-49c3-b071-0f8631cc8f9c)
-    (property "Reference" "#PWR053" (at 173.355 41.275 0)
+    (property "Reference" "#PWR019" (at 173.355 41.275 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 173.355 39.37 0)
@@ -4614,7 +4580,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR053") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
       )
     )
@@ -4623,7 +4589,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 55.88 147.955 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0eb22516-8cd2-493a-81f4-306e18b8e03f)
-    (property "Reference" "#PWR043" (at 55.88 154.305 0)
+    (property "Reference" "#PWR08" (at 55.88 154.305 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 55.88 153.035 0)
@@ -4639,7 +4605,35 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR043") (unit 1)
+          (reference "#PWR08") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector:Conn_01x01_Pin") (at 19.685 17.78 0) (unit 1)
+    (in_bom yes) (on_board no) (dnp no)
+    (uuid 1409c7b5-c5ef-4e61-a2f4-95b9505d6c4b)
+    (property "Reference" "J2" (at 27.305 17.78 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "preconf. cable" (at 20.32 15.875 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 19.685 17.78 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/common/5381/JST.Suffix.Prefix.chart.06.01.23.docx" (at 19.685 17.78 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Digikey" "455-3241-ND" (at 19.685 17.78 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid b69e4a75-1532-4a53-a1b3-0918ac8fed15))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "J2") (unit 1)
         )
       )
     )
@@ -4648,7 +4642,7 @@
   (symbol (lib_id "Device:C") (at 88.9 144.145 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 143f06d9-74ef-4cb7-9ee0-6ff83eb2c532)
-    (property "Reference" "C11" (at 92.075 143.51 0)
+    (property "Reference" "C9" (at 92.075 143.51 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 92.075 146.05 0)
@@ -4665,7 +4659,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C11") (unit 1)
+          (reference "C9") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -4713,7 +4707,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 393.7 179.07 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 159f1152-59f7-4423-91f3-b6fc71d5f60a)
-    (property "Reference" "J6" (at 396.24 179.07 0)
+    (property "Reference" "J15" (at 396.24 179.07 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Strang 5" (at 396.24 181.61 0)
@@ -4736,7 +4730,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "J6") (unit 1)
+          (reference "J15") (unit 1)
         )
       )
     )
@@ -4745,7 +4739,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 67.945 147.955 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 16efdcc5-764a-42de-88b7-3ec7a778385b)
-    (property "Reference" "#PWR049" (at 67.945 154.305 0)
+    (property "Reference" "#PWR09" (at 67.945 154.305 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 67.945 153.035 0)
@@ -4761,7 +4755,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR049") (unit 1)
+          (reference "#PWR09") (unit 1)
         )
       )
     )
@@ -4770,7 +4764,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 373.38 191.77 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 198b665b-f3f4-4f39-ad16-754c5821f7e3)
-    (property "Reference" "#PWR020" (at 373.38 198.12 0)
+    (property "Reference" "#PWR063" (at 373.38 198.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 373.38 195.58 0)
@@ -4786,33 +4780,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR020") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Switch:SW_SPST") (at 244.475 241.935 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 1a3e7ebd-6bd4-467d-96f9-32506ff270f2)
-    (property "Reference" "SW2" (at 244.475 234.95 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "SW_SPST" (at 244.475 237.49 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 244.475 241.935 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 244.475 241.935 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "2" (uuid 5542d985-7fb0-4cc0-8ca2-c93dd401ff40))
-    (pin "1" (uuid 0d2a44a9-386b-4fa7-8b7b-74c9dd8dfe3f))
-    (instances
-      (project "Waberinator_hw2"
-        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "SW2") (unit 1)
+          (reference "#PWR063") (unit 1)
         )
       )
     )
@@ -4821,7 +4789,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 332.105 199.39 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1b970ca7-7b4c-4e6c-a000-fed3684dee58)
-    (property "Reference" "#PWR019" (at 332.105 205.74 0)
+    (property "Reference" "#PWR057" (at 332.105 205.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 332.105 204.47 0)
@@ -4837,7 +4805,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR057") (unit 1)
         )
       )
     )
@@ -4846,7 +4814,7 @@
   (symbol (lib_id "Driver_FET:MCP14A0304xMNY") (at 332.105 142.24 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1bc3c719-1f84-4473-b3a7-c3c04e9de299)
-    (property "Reference" "U4" (at 324.485 133.35 0)
+    (property "Reference" "U6" (at 324.485 133.35 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "MCP14A0304xMNY" (at 332.74 151.13 0)
@@ -4858,7 +4826,7 @@
     (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/MCP14A0303_4_5-Data-Sheet-20006046A.pdf" (at 332.105 149.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "MCP14A0304T-E/SNTR-ND" (at 332.105 142.24 0)
+    (property "Digikey" "MCP14A0304T-E/SNCT-ND" (at 332.105 142.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "7" (uuid 4be6fe4c-0e68-4222-88f2-edd12c78ceeb))
@@ -4873,7 +4841,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "U4") (unit 1)
+          (reference "U6") (unit 1)
         )
       )
     )
@@ -4882,7 +4850,7 @@
   (symbol (lib_id "Waberinator_rev1-rescue:C") (at 88.9 45.085 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1c375301-c3c8-4f5b-803e-aa74c388b28b)
-    (property "Reference" "C10" (at 89.535 42.545 0)
+    (property "Reference" "C8" (at 89.535 42.545 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 89.535 47.625 0)
@@ -4899,7 +4867,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C10") (unit 1)
+          (reference "C8") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -4913,7 +4881,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 300.99 41.91 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1d79d46e-92f7-41ec-99aa-90379f0485e5)
-    (property "Reference" "#PWR054" (at 300.99 48.26 0)
+    (property "Reference" "#PWR048" (at 300.99 48.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 300.99 46.355 0)
@@ -4929,7 +4897,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR054") (unit 1)
+          (reference "#PWR048") (unit 1)
         )
       )
     )
@@ -4944,7 +4912,7 @@
     (property "Value" "SISHA04DN-T1-GE3" (at 376.047 161.798 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 375.92 158.115 0)
+    (property "Footprint" "Package_TO_SOT_SMD:LFPAK33" (at 375.92 158.115 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.vishay.com/docs/76879/sisha04dn.pdf" (at 370.84 160.655 0)
@@ -4968,7 +4936,7 @@
   (symbol (lib_id "Device:C_Polarized") (at 337.185 38.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1f9f32ba-910b-4b78-8e15-4e0469aa631e)
-    (property "Reference" "C25" (at 340.995 35.941 0)
+    (property "Reference" "C32" (at 340.995 35.941 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "56µF" (at 340.995 38.481 0)
@@ -4980,7 +4948,7 @@
     (property "Datasheet" "https://industrial.panasonic.com/ww/products/pt/os-con/models/20SVPF56MX" (at 337.185 38.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "P16502TR-ND" (at 337.185 38.1 0)
+    (property "Digikey" "P16502CT-ND" (at 337.185 38.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "2" (uuid 1c0e9c48-4324-4743-920b-c7d4f69f6251))
@@ -4988,7 +4956,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C25") (unit 1)
+          (reference "C32") (unit 1)
         )
       )
     )
@@ -4997,7 +4965,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 260.985 95.885 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 235323dd-4ac3-4151-b9ec-4d75c3b90d58)
-    (property "Reference" "#PWR011" (at 254.635 95.885 0)
+    (property "Reference" "#PWR042" (at 254.635 95.885 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 257.81 95.885 90)
@@ -5013,7 +4981,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR042") (unit 1)
         )
       )
     )
@@ -5053,7 +5021,7 @@
   (symbol (lib_id "Device:R") (at 292.1 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 26dc503e-6902-4b81-a584-8117d66b6f43)
-    (property "Reference" "R4" (at 294.64 58.42 0)
+    (property "Reference" "R23" (at 294.64 58.42 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "14.3k" (at 294.64 60.96 0)
@@ -5070,7 +5038,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R4") (unit 1)
+          (reference "R23") (unit 1)
         )
       )
     )
@@ -5079,7 +5047,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 19.685 147.955 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2b76324a-b443-4802-981f-cc9cd42d96e0)
-    (property "Reference" "#PWR040" (at 19.685 154.305 0)
+    (property "Reference" "#PWR02" (at 19.685 154.305 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 19.685 153.035 0)
@@ -5095,7 +5063,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR040") (unit 1)
+          (reference "#PWR02") (unit 1)
         )
       )
     )
@@ -5104,7 +5072,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 373.38 120.015 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2d73b4ee-2d14-470d-aff6-fed9b2c5f903)
-    (property "Reference" "#PWR01" (at 373.38 126.365 0)
+    (property "Reference" "#PWR060" (at 373.38 126.365 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 373.38 123.825 0)
@@ -5120,7 +5088,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR01") (unit 1)
+          (reference "#PWR060") (unit 1)
         )
       )
     )
@@ -5129,7 +5097,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 271.78 259.715 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 316c6707-5a89-4cde-aba5-fc3934a242c2)
-    (property "Reference" "#PWR032" (at 271.78 266.065 0)
+    (property "Reference" "#PWR045" (at 271.78 266.065 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 271.78 263.525 0)
@@ -5145,7 +5113,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR032") (unit 1)
+          (reference "#PWR045") (unit 1)
         )
       )
     )
@@ -5154,7 +5122,7 @@
   (symbol (lib_id "power:+3.3VA") (at 240.665 172.085 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 31e8bc03-f300-4502-92bf-11cf4b479dc6)
-    (property "Reference" "#PWR047" (at 240.665 175.895 0)
+    (property "Reference" "#PWR032" (at 240.665 175.895 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3VA" (at 240.665 167.64 0)
@@ -5170,7 +5138,33 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR047") (unit 1)
+          (reference "#PWR032") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 224.155 175.895 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 32764a13-ed07-4db0-93c4-6ff23053a1ba)
+    (property "Reference" "R13" (at 224.155 175.895 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "100" (at 224.155 173.355 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 224.155 177.673 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 224.155 175.895 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 666b380d-be6e-4540-9b1c-843ef35eab9c))
+    (pin "1" (uuid 569c34f5-40c3-458b-9bcc-00601ee9dc3d))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "R13") (unit 1)
         )
       )
     )
@@ -5179,7 +5173,7 @@
   (symbol (lib_id "power:+3V3") (at 46.355 160.02 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3331ba2b-9e36-44ce-afa0-ef0eb2c6f6df)
-    (property "Reference" "#PWR050" (at 50.165 160.02 0)
+    (property "Reference" "#PWR05" (at 50.165 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 42.545 160.02 90)
@@ -5195,7 +5189,33 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR050") (unit 1)
+          (reference "#PWR05") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 226.06 236.855 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 33b3a80d-d842-43d6-9919-597f7ee80e62)
+    (property "Reference" "R14" (at 226.06 236.855 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "100" (at 226.06 234.315 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 226.06 238.633 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 226.06 236.855 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid c3ebc4e5-ac2e-4ac6-82cc-07a1406d756e))
+    (pin "1" (uuid 54bc25f6-e21f-4540-adf0-feaa3f5733cc))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "R14") (unit 1)
         )
       )
     )
@@ -5204,7 +5224,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 373.38 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3402731b-2b2f-4873-b0ed-134c1f83f36d)
-    (property "Reference" "#PWR07" (at 373.38 105.41 0)
+    (property "Reference" "#PWR059" (at 373.38 105.41 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 373.38 102.87 0)
@@ -5220,7 +5240,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR07") (unit 1)
+          (reference "#PWR059") (unit 1)
         )
       )
     )
@@ -5229,7 +5249,7 @@
   (symbol (lib_id "Waberinator_rev1-rescue:R") (at 83.82 34.925 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 34ee3a51-689e-4631-add0-99cfbf501212)
-    (property "Reference" "R6" (at 81.788 34.925 90)
+    (property "Reference" "R5" (at 81.788 34.925 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100k" (at 83.82 34.925 90)
@@ -5246,7 +5266,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R6") (unit 1)
+          (reference "R5") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -5260,7 +5280,7 @@
   (symbol (lib_id "Device:R") (at 264.795 44.45 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 36a24090-06c8-45ba-8615-e2887549eba2)
-    (property "Reference" "R1" (at 264.795 38.735 90)
+    (property "Reference" "R21" (at 264.795 38.735 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100k" (at 264.795 41.275 90)
@@ -5277,7 +5297,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R1") (unit 1)
+          (reference "R21") (unit 1)
         )
       )
     )
@@ -5286,7 +5306,7 @@
   (symbol (lib_id "Device:C") (at 227.33 114.3 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 38300fa4-baac-4606-ab78-ab4d2afabf0f)
-    (property "Reference" "C19" (at 231.14 113.665 0)
+    (property "Reference" "C18" (at 231.14 113.665 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 231.14 116.205 0)
@@ -5303,7 +5323,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C19") (unit 1)
+          (reference "C18") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -5317,7 +5337,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 43.815 147.955 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3bb30405-be51-41ff-85b4-3985e4e7f925)
-    (property "Reference" "#PWR042" (at 43.815 154.305 0)
+    (property "Reference" "#PWR04" (at 43.815 154.305 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 43.815 153.035 0)
@@ -5333,7 +5353,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR042") (unit 1)
+          (reference "#PWR04") (unit 1)
         )
       )
     )
@@ -5342,7 +5362,7 @@
   (symbol (lib_id "Device:C") (at 321.945 173.355 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3c3462e7-2a35-4c08-8d75-107f244a5c59)
-    (property "Reference" "C31" (at 325.12 172.72 0)
+    (property "Reference" "C30" (at 325.12 172.72 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 325.12 175.26 0)
@@ -5359,7 +5379,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C31") (unit 1)
+          (reference "C30") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -5399,13 +5419,13 @@
   (symbol (lib_id "Device:FerriteBead") (at 81.28 140.335 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3d9981fe-4646-42a9-8eb1-c13dc18e9dae)
-    (property "Reference" "FB1" (at 81.2292 133.35 90)
+    (property "Reference" "FB3" (at 81.2292 133.35 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "FerriteBead" (at 81.2292 135.89 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 81.28 142.113 90)
+    (property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" (at 81.28 142.113 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 81.28 140.335 0)
@@ -5416,7 +5436,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "FB1") (unit 1)
+          (reference "FB3") (unit 1)
         )
       )
     )
@@ -5425,7 +5445,7 @@
   (symbol (lib_id "Device:C") (at 43.815 144.145 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3e611097-9624-40ba-8cb8-eeb8a9d048d3)
-    (property "Reference" "C6" (at 46.99 143.51 0)
+    (property "Reference" "C4" (at 46.99 143.51 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 46.99 146.05 0)
@@ -5442,7 +5462,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C6") (unit 1)
+          (reference "C4") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -5456,7 +5476,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 260.985 259.715 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 424201a6-098d-465a-b95c-a2de602ffb3d)
-    (property "Reference" "#PWR030" (at 260.985 266.065 0)
+    (property "Reference" "#PWR043" (at 260.985 266.065 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 260.985 263.525 0)
@@ -5472,7 +5492,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR030") (unit 1)
+          (reference "#PWR043") (unit 1)
         )
       )
     )
@@ -5481,7 +5501,7 @@
   (symbol (lib_id "Device:C") (at 19.685 144.145 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 445aa48f-8c28-4125-b915-ac0f6f6fd367)
-    (property "Reference" "C2" (at 22.86 142.875 0)
+    (property "Reference" "C1" (at 22.86 142.875 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1µF" (at 22.86 145.415 0)
@@ -5498,7 +5518,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C2") (unit 1)
+          (reference "C1") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -5512,7 +5532,7 @@
   (symbol (lib_id "Waberinator_rev1-rescue:R") (at 83.82 45.085 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 44c6689c-765d-41e2-9ba9-10c159f6f302)
-    (property "Reference" "R7" (at 81.788 45.085 90)
+    (property "Reference" "R6" (at 81.788 45.085 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "24,9k" (at 83.82 45.085 90)
@@ -5529,7 +5549,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R7") (unit 1)
+          (reference "R6") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -5540,26 +5560,26 @@
     )
   )
 
-  (symbol (lib_id "g7_power_symbols:RET") (at 213.36 163.195 0) (unit 1)
+  (symbol (lib_id "g7_power_symbols:RET") (at 196.85 163.195 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 44ec44ac-ef8d-41e9-ab28-7254d992da04)
-    (property "Reference" "#PWR026" (at 213.36 169.545 0)
+    (property "Reference" "#PWR021" (at 196.85 169.545 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "RET" (at 213.36 167.64 0)
+    (property "Value" "RET" (at 196.85 167.64 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 213.36 163.195 0)
+    (property "Footprint" "" (at 196.85 163.195 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 213.36 163.195 0)
+    (property "Datasheet" "" (at 196.85 163.195 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 7260e68b-b2e6-4f6f-8665-6e7814a00a12))
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR021") (unit 1)
         )
       )
     )
@@ -5568,7 +5588,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 373.38 212.725 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4a0132eb-9c90-467f-9434-635b319b3c01)
-    (property "Reference" "#PWR021" (at 373.38 219.075 0)
+    (property "Reference" "#PWR064" (at 373.38 219.075 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 373.38 216.535 0)
@@ -5584,7 +5604,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR064") (unit 1)
         )
       )
     )
@@ -5593,7 +5613,7 @@
   (symbol (lib_id "Device:C") (at 184.785 29.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4b5896ca-bdea-4bbb-898b-d8b1be558b7d)
-    (property "Reference" "C20" (at 187.96 27.94 0)
+    (property "Reference" "C11" (at 187.96 27.94 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10µF" (at 187.96 30.48 0)
@@ -5610,7 +5630,33 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C20") (unit 1)
+          (reference "C11") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:C") (at 355.6 38.1 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 4bd9e4af-64c8-416a-9ee2-461528d92176)
+    (property "Reference" "C33" (at 358.775 36.83 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "10µF" (at 358.775 39.37 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" (at 356.5652 41.91 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 355.6 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 83aba7ba-fc3e-456e-8b8e-84c183766dbb))
+    (pin "2" (uuid b597cfce-c4bd-4243-aed6-fc47d3a90f33))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "C33") (unit 1)
         )
       )
     )
@@ -5619,7 +5665,7 @@
   (symbol (lib_id "Device:R") (at 196.85 54.61 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4c9b6e16-ba4a-48b1-b2ec-a85b3b4a8832)
-    (property "Reference" "R5" (at 199.39 53.34 0)
+    (property "Reference" "R11" (at 199.39 53.34 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "117k" (at 199.39 55.88 0)
@@ -5636,7 +5682,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R5") (unit 1)
+          (reference "R11") (unit 1)
         )
       )
     )
@@ -5645,7 +5691,7 @@
   (symbol (lib_id "Device:C") (at 309.88 80.645 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4f35f83d-c382-4ff4-9610-80eac62854c5)
-    (property "Reference" "C26" (at 313.055 79.375 0)
+    (property "Reference" "C24" (at 313.055 79.375 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1µF" (at 313.055 81.915 0)
@@ -5662,7 +5708,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C26") (unit 1)
+          (reference "C24") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -5701,7 +5747,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 393.7 200.025 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 505ccac8-4a29-4e17-bbc1-b6f9999d80d0)
-    (property "Reference" "J7" (at 396.24 200.025 0)
+    (property "Reference" "J16" (at 396.24 200.025 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Strang 6" (at 396.24 202.565 0)
@@ -5724,7 +5770,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "J7") (unit 1)
+          (reference "J16") (unit 1)
         )
       )
     )
@@ -5733,7 +5779,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 309.88 84.455 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 50cc9602-737e-4f9c-a2b1-7d2ff8b86d11)
-    (property "Reference" "#PWR056" (at 309.88 90.805 0)
+    (property "Reference" "#PWR049" (at 309.88 90.805 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 309.88 88.265 0)
@@ -5749,7 +5795,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR056") (unit 1)
+          (reference "#PWR049") (unit 1)
         )
       )
     )
@@ -5758,7 +5804,7 @@
   (symbol (lib_id "Device:C") (at 313.055 38.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 543226c9-ce2c-41ca-a97c-86f962db7f11)
-    (property "Reference" "C23" (at 316.23 36.83 0)
+    (property "Reference" "C27" (at 316.23 36.83 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10µF" (at 316.23 39.37 0)
@@ -5775,7 +5821,32 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C23") (unit 1)
+          (reference "C27") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3.3VA") (at 249.555 236.855 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 5703a04e-25ab-4414-8317-24171d3b79bf)
+    (property "Reference" "#PWR040" (at 245.745 236.855 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3VA" (at 252.73 236.855 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "" (at 249.555 236.855 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 249.555 236.855 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 6f8edda9-f8d0-4215-b01e-b484148db937))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "#PWR040") (unit 1)
         )
       )
     )
@@ -5784,7 +5855,7 @@
   (symbol (lib_id "Device:C_Small") (at 55.88 26.67 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 57e5f3ba-6872-4768-8283-a22ddfe1b6ab)
-    (property "Reference" "C7" (at 57.785 26.035 0)
+    (property "Reference" "C5" (at 57.785 26.035 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "~" (at 58.2168 27.813 0)
@@ -5804,7 +5875,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C7") (unit 1)
+          (reference "C5") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -5818,7 +5889,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 83.82 51.435 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5cd78823-72f8-4ce4-abe5-d286fe749de6)
-    (property "Reference" "#PWR015" (at 83.82 57.785 0)
+    (property "Reference" "#PWR012" (at 83.82 57.785 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 83.82 56.515 0)
@@ -5834,7 +5905,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR012") (unit 1)
         )
       )
     )
@@ -5843,7 +5914,7 @@
   (symbol (lib_id "Device:R") (at 122.555 31.75 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5d1537c7-141d-4855-b906-82c8a1af9698)
-    (property "Reference" "R9" (at 121.92 29.845 0)
+    (property "Reference" "R8" (at 121.92 29.845 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100k" (at 124.46 29.845 0)
@@ -5860,7 +5931,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R9") (unit 1)
+          (reference "R8") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -5874,7 +5945,7 @@
   (symbol (lib_id "MCU_ST_STM32F0:STM32F030R8Tx") (at 80.01 203.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5d5d5f95-0933-416c-a4b4-e33b1fd03ff7)
-    (property "Reference" "U7" (at 84.7441 248.92 0)
+    (property "Reference" "U1" (at 84.7441 248.92 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "STM32F030R8Tx" (at 84.7441 251.46 0)
@@ -5953,7 +6024,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "U7") (unit 1)
+          (reference "U1") (unit 1)
         )
       )
     )
@@ -5962,7 +6033,7 @@
   (symbol (lib_id "Device:R") (at 347.345 191.77 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 60bed94d-6207-45c7-a992-121acf6f2903)
-    (property "Reference" "R15" (at 347.345 189.23 90)
+    (property "Reference" "R29" (at 347.345 189.23 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1" (at 347.345 191.77 90)
@@ -5979,7 +6050,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R15") (unit 1)
+          (reference "R29") (unit 1)
         )
       )
     )
@@ -5988,7 +6059,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 248.92 84.455 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 60df8d61-d493-4bae-a982-18c8f7bc042c)
-    (property "Reference" "#PWR04" (at 248.92 90.805 0)
+    (property "Reference" "#PWR036" (at 248.92 90.805 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 248.92 89.535 0)
@@ -6004,7 +6075,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR04") (unit 1)
+          (reference "#PWR036") (unit 1)
         )
       )
     )
@@ -6013,7 +6084,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 218.44 118.11 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 61953377-07c8-488c-b8fc-f00f64d3bece)
-    (property "Reference" "#PWR031" (at 218.44 124.46 0)
+    (property "Reference" "#PWR025" (at 218.44 124.46 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 218.44 123.19 0)
@@ -6029,7 +6100,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR031") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
     )
@@ -6044,7 +6115,7 @@
     (property "Value" "SISHA04DN-T1-GE3" (at 376.047 140.843 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 375.92 137.16 0)
+    (property "Footprint" "Package_TO_SOT_SMD:LFPAK33" (at 375.92 137.16 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.vishay.com/docs/76879/sisha04dn.pdf" (at 370.84 139.7 0)
@@ -6065,10 +6136,36 @@
     )
   )
 
+  (symbol (lib_id "Device:R") (at 231.775 197.485 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 61d6e625-0e34-41a5-93f4-b52cec679527)
+    (property "Reference" "R20" (at 231.775 197.485 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "100" (at 231.775 194.945 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 231.775 199.263 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 231.775 197.485 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid cea75e64-4ab4-42ee-8449-d9b08823e8b0))
+    (pin "1" (uuid b4ec0821-4c75-42ee-ab5b-c24f962893ea))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "R20") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "power:+3V3") (at 152.4 153.67 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 625b5a09-a8b2-414c-8094-3edc85d3d898)
-    (property "Reference" "#PWR051" (at 152.4 157.48 0)
+    (property "Reference" "#PWR017" (at 152.4 157.48 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 152.4 148.59 0)
@@ -6084,7 +6181,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR051") (unit 1)
+          (reference "#PWR017") (unit 1)
         )
       )
     )
@@ -6119,7 +6216,7 @@
   (symbol (lib_id "Device:C") (at 309.88 173.355 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 65a942e5-4b71-4484-b4c6-895cd4335ea7)
-    (property "Reference" "C30" (at 313.055 172.085 0)
+    (property "Reference" "C26" (at 313.055 172.085 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1µF" (at 313.055 174.625 0)
@@ -6136,7 +6233,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C30") (unit 1)
+          (reference "C26") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -6147,10 +6244,40 @@
     )
   )
 
+  (symbol (lib_id "Switch:SW_SPDT") (at 244.475 226.06 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 6748f6bb-7c43-4bad-86cd-077a9cce4b8f)
+    (property "Reference" "SW1" (at 244.475 217.805 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "SW_SPDT" (at 244.475 220.345 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "g7_hmi:switch_800usp8p1a1m6re" (at 244.475 226.06 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://spec_sheets.e-switch.com/specs/T850001.pdf" (at 244.475 226.06 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Digikey" "EG5342-ND" (at 244.475 226.06 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "3" (uuid 2f02c2a1-a152-4a0c-95a5-5af8110329cb))
+    (pin "1" (uuid f4c280c8-b0ff-4d15-8d1a-a6b244377fd2))
+    (pin "2" (uuid 2a020584-7baf-4810-bb9b-8a4780e9096f))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "SW1") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 393.7 86.36 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6803985e-e493-4774-8e48-38759ca1b0e7)
-    (property "Reference" "J3" (at 396.24 86.36 0)
+    (property "Reference" "J11" (at 396.24 86.36 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Strang 1" (at 396.24 88.9 0)
@@ -6173,7 +6300,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "J3") (unit 1)
+          (reference "J11") (unit 1)
         )
       )
     )
@@ -6182,7 +6309,7 @@
   (symbol (lib_id "Waberinator_rev1-rescue:C") (at 264.795 95.885 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6a59663c-aa6a-4d28-bde4-a34f2c2907f4)
-    (property "Reference" "C9" (at 266.7 94.615 90)
+    (property "Reference" "C21" (at 266.7 94.615 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 266.7 97.155 90)
@@ -6199,7 +6326,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C9") (unit 1)
+          (reference "C21") (unit 1)
         )
       )
     )
@@ -6208,19 +6335,19 @@
   (symbol (lib_id "Waberinator_rev1-rescue:POT") (at 233.68 154.305 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6a984a6f-a044-48d5-8756-f5ec3abec62a)
-    (property "Reference" "RV3" (at 238.125 154.305 90)
+    (property "Reference" "RV1" (at 238.125 154.305 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Brightness" (at 236.22 154.305 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 233.68 154.305 0)
+    (property "Footprint" "g7_hmi:poti_3310C-025-103L" (at 233.68 154.305 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/3310.pdf" (at 233.68 154.305 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "987-1714-ND" (at 233.68 154.305 90)
+    (property "Digikey" "118-3310C-025-103L-ND" (at 233.68 154.305 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 12fdc451-f345-4049-bd41-b01fe3b4321b))
@@ -6229,7 +6356,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "RV3") (unit 1)
+          (reference "RV1") (unit 1)
         )
       )
     )
@@ -6238,7 +6365,7 @@
   (symbol (lib_id "Device:C_Polarized") (at 173.355 29.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6bdb46c5-a8e0-4e06-b653-0b007f0230a4)
-    (property "Reference" "C21" (at 177.165 27.051 0)
+    (property "Reference" "C10" (at 177.165 27.051 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "56µF" (at 177.165 29.591 0)
@@ -6250,7 +6377,7 @@
     (property "Datasheet" "https://industrial.panasonic.com/ww/products/pt/os-con/models/20SVPF56MX" (at 173.355 29.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "P16502TR-ND" (at 173.355 29.21 0)
+    (property "Digikey" "P16502CT-ND" (at 173.355 29.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "2" (uuid 86cb69cf-747b-4759-a200-889c97cf65df))
@@ -6258,7 +6385,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C21") (unit 1)
+          (reference "C10") (unit 1)
         )
       )
     )
@@ -6267,7 +6394,7 @@
   (symbol (lib_id "Device:R") (at 347.345 139.7 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6d5a2699-16e6-44e7-a1b9-c512f2c5617a)
-    (property "Reference" "R12" (at 347.345 137.16 90)
+    (property "Reference" "R26" (at 347.345 137.16 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1" (at 347.345 139.7 90)
@@ -6284,7 +6411,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R12") (unit 1)
+          (reference "R26") (unit 1)
         )
       )
     )
@@ -6293,7 +6420,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 309.88 177.165 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6d839dfd-a6c3-4839-8547-e2698385d27c)
-    (property "Reference" "#PWR059" (at 309.88 183.515 0)
+    (property "Reference" "#PWR051" (at 309.88 183.515 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 309.88 180.975 0)
@@ -6309,25 +6436,25 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR059") (unit 1)
+          (reference "#PWR051") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "Waberinator_rev1-rescue:C") (at 213.36 159.385 0) (unit 1)
+  (symbol (lib_id "Waberinator_rev1-rescue:C") (at 196.85 159.385 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6da21822-9e3e-4d73-a8be-7158df302b86)
-    (property "Reference" "C16" (at 213.995 156.845 0)
+    (property "Reference" "C14" (at 197.485 156.845 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "10n" (at 213.995 161.925 0)
+    (property "Value" "10n" (at 197.485 161.925 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 214.3252 163.195 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 197.8152 163.195 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 213.36 159.385 0)
+    (property "Datasheet" "" (at 196.85 159.385 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 7a463a1f-da3c-4ff7-b02d-c5354a855644))
@@ -6335,7 +6462,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C16") (unit 1)
+          (reference "C14") (unit 1)
         )
       )
     )
@@ -6344,7 +6471,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 236.855 259.715 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6f93f037-8385-4a1a-8c7e-e51386a30912)
-    (property "Reference" "#PWR028" (at 236.855 266.065 0)
+    (property "Reference" "#PWR029" (at 236.855 266.065 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 236.855 263.525 0)
@@ -6360,7 +6487,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR028") (unit 1)
+          (reference "#PWR029") (unit 1)
         )
       )
     )
@@ -6369,7 +6496,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 88.9 147.955 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7139b882-c26d-4133-af15-e0401df9df7b)
-    (property "Reference" "#PWR044" (at 88.9 154.305 0)
+    (property "Reference" "#PWR014" (at 88.9 154.305 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 88.9 153.035 0)
@@ -6385,7 +6512,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR044") (unit 1)
+          (reference "#PWR014") (unit 1)
         )
       )
     )
@@ -6394,7 +6521,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 248.92 259.715 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 72365adb-2d62-4cc1-bfc1-3f4f9775877b)
-    (property "Reference" "#PWR029" (at 248.92 266.065 0)
+    (property "Reference" "#PWR037" (at 248.92 266.065 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 248.92 263.525 0)
@@ -6410,7 +6537,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR029") (unit 1)
+          (reference "#PWR037") (unit 1)
         )
       )
     )
@@ -6419,7 +6546,7 @@
   (symbol (lib_id "Driver_FET:MCP14A0304xMNY") (at 332.105 189.23 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 72f59fd6-cac9-4feb-a7ff-5de84d81b763)
-    (property "Reference" "U6" (at 324.485 180.34 0)
+    (property "Reference" "U7" (at 324.485 180.34 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "MCP14A0304xMNY" (at 332.74 198.12 0)
@@ -6431,7 +6558,7 @@
     (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/MCP14A0303_4_5-Data-Sheet-20006046A.pdf" (at 332.105 196.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "MCP14A0304T-E/SNTR-ND" (at 332.105 189.23 0)
+    (property "Digikey" "MCP14A0304T-E/SNCT-ND" (at 332.105 189.23 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "7" (uuid e2c62006-2566-4dfe-8bf8-746ca50165bd))
@@ -6446,7 +6573,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "U6") (unit 1)
+          (reference "U7") (unit 1)
         )
       )
     )
@@ -6455,7 +6582,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 74.295 31.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 73e5edad-2e8d-4d7e-9170-ebdf841be396)
-    (property "Reference" "#PWR017" (at 74.295 38.1 0)
+    (property "Reference" "#PWR010" (at 74.295 38.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 74.295 36.83 0)
@@ -6471,7 +6598,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR010") (unit 1)
         )
       )
     )
@@ -6480,7 +6607,7 @@
   (symbol (lib_id "Device:C") (at 55.88 144.145 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 75fe4008-d8fd-45b4-a659-8edcbfab8b82)
-    (property "Reference" "C8" (at 59.055 143.51 0)
+    (property "Reference" "C6" (at 59.055 143.51 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 59.055 146.05 0)
@@ -6497,7 +6624,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C8") (unit 1)
+          (reference "C6") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -6511,7 +6638,7 @@
   (symbol (lib_id "power:+3.3VA") (at 233.68 150.495 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 76fce512-88f7-4cd8-8231-2e894246e4c7)
-    (property "Reference" "#PWR046" (at 233.68 154.305 0)
+    (property "Reference" "#PWR027" (at 233.68 154.305 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3VA" (at 233.68 146.05 0)
@@ -6527,7 +6654,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR046") (unit 1)
+          (reference "#PWR027") (unit 1)
         )
       )
     )
@@ -6536,7 +6663,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 248.285 206.375 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 77cba18d-c7bd-46c8-8ec6-a9b842f6d1d1)
-    (property "Reference" "#PWR023" (at 248.285 212.725 0)
+    (property "Reference" "#PWR035" (at 248.285 212.725 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 248.285 210.82 0)
@@ -6552,7 +6679,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR035") (unit 1)
         )
       )
     )
@@ -6561,7 +6688,7 @@
   (symbol (lib_id "Device:R") (at 347.345 99.06 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 780c8101-49aa-4dcf-95f6-4782dbabcccc)
-    (property "Reference" "R2" (at 347.345 96.52 90)
+    (property "Reference" "R25" (at 347.345 96.52 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1" (at 347.345 99.06 90)
@@ -6578,7 +6705,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R2") (unit 1)
+          (reference "R25") (unit 1)
         )
       )
     )
@@ -6587,7 +6714,7 @@
   (symbol (lib_id "power:+3V3") (at 240.03 107.95 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 791e281a-83a3-4493-8507-d44a80514408)
-    (property "Reference" "#PWR08" (at 240.03 111.76 0)
+    (property "Reference" "#PWR030" (at 240.03 111.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 240.03 102.87 0)
@@ -6603,7 +6730,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR08") (unit 1)
+          (reference "#PWR030") (unit 1)
         )
       )
     )
@@ -6612,7 +6739,7 @@
   (symbol (lib_id "Device:R") (at 370.205 246.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7aa5467e-c673-4abb-9292-fa682947376f)
-    (property "Reference" "R20" (at 372.11 245.11 0)
+    (property "Reference" "R30" (at 372.11 245.11 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1" (at 372.11 247.65 0)
@@ -6632,7 +6759,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R20") (unit 1)
+          (reference "R30") (unit 1)
         )
       )
     )
@@ -6641,7 +6768,7 @@
   (symbol (lib_id "2023-12-28_21-15-04:LM73606QRNPRQ1") (at 228.6 49.53 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7c4e03cd-60a9-4210-b727-6521175dbf22)
-    (property "Reference" "U2" (at 228.6 14.605 0)
+    (property "Reference" "U3" (at 228.6 14.605 0)
       (effects (font (size 1.524 1.524)))
     )
     (property "Value" "LM73606QRNPRQ1" (at 228.6 17.145 0)
@@ -6653,7 +6780,7 @@
     (property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Flm73605-q1" (at 228.6 49.53 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
-    (property "Digikey" "296-49519-2-ND" (at 228.6 49.53 0)
+    (property "Digikey" "296-49519-1-ND" (at 228.6 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "5" (uuid e8e27fed-3fda-4652-b749-0f6a19f15ff0))
@@ -6690,7 +6817,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "U2") (unit 1)
+          (reference "U3") (unit 1)
         )
       )
     )
@@ -6699,7 +6826,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 321.945 177.165 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7c52f87b-a258-4ea5-a95e-020575a43d47)
-    (property "Reference" "#PWR060" (at 321.945 183.515 0)
+    (property "Reference" "#PWR054" (at 321.945 183.515 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 321.945 180.975 0)
@@ -6715,7 +6842,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR060") (unit 1)
+          (reference "#PWR054") (unit 1)
         )
       )
     )
@@ -6730,7 +6857,7 @@
     (property "Value" "SISHA04DN-T1-GE3" (at 376.047 208.788 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 375.92 205.105 0)
+    (property "Footprint" "Package_TO_SOT_SMD:LFPAK33" (at 375.92 205.105 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.vishay.com/docs/76879/sisha04dn.pdf" (at 370.84 207.645 0)
@@ -6788,7 +6915,7 @@
     (property "Reference" "R16" (at 226.06 244.475 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R" (at 226.06 240.665 90)
+    (property "Value" "R" (at 226.06 241.935 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 226.06 246.253 90)
@@ -6837,7 +6964,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 249.555 228.6 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8696cdf4-a142-4bc9-84cb-ede55da45c23)
-    (property "Reference" "#PWR038" (at 255.905 228.6 0)
+    (property "Reference" "#PWR039" (at 255.905 228.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 253.365 228.6 0)
@@ -6853,7 +6980,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR038") (unit 1)
+          (reference "#PWR039") (unit 1)
         )
       )
     )
@@ -6874,7 +7001,7 @@
     (property "Datasheet" "https://www.bridgelux.com/sites/default/files/2023-10/ds503_smd_2835_0.2w_3v_65ma_cri90_bxfn-xxg-21l-3c4_data_sheet_rev_a_20210610.pdf" (at 370.205 236.22 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "976-BXFN-27G-21L-3C4-00-0-3TR-ND" (at 370.205 236.22 90)
+    (property "Digikey" "976-BXFN-27G-21L-3C4-00-0-3CT-ND" (at 370.205 236.22 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 099ff302-db62-4371-a6f4-38d737e88fc4))
@@ -6891,7 +7018,7 @@
   (symbol (lib_id "Device:R") (at 135.255 35.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 87e82847-1474-4ae9-a82d-bc399ef5e27e)
-    (property "Reference" "R10" (at 137.16 34.925 0)
+    (property "Reference" "R9" (at 137.16 34.925 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100" (at 137.16 37.465 0)
@@ -6908,7 +7035,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R10") (unit 1)
+          (reference "R9") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -6922,7 +7049,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 81.28 251.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 884a629d-b7b8-49bf-84a5-f891ed487871)
-    (property "Reference" "#PWR037" (at 81.28 257.81 0)
+    (property "Reference" "#PWR011" (at 81.28 257.81 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 81.28 256.54 0)
@@ -6938,7 +7065,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR037") (unit 1)
+          (reference "#PWR011") (unit 1)
         )
       )
     )
@@ -6947,7 +7074,7 @@
   (symbol (lib_id "Device:R") (at 50.165 160.02 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 88d50dec-e868-4b72-a725-ff85a54052b1)
-    (property "Reference" "R21" (at 50.165 154.305 90)
+    (property "Reference" "R3" (at 50.165 154.305 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100k" (at 50.165 156.845 90)
@@ -6964,7 +7091,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R21") (unit 1)
+          (reference "R3") (unit 1)
         )
       )
     )
@@ -6973,7 +7100,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 233.68 163.195 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8bb986b3-c860-465e-9fde-9ece28c976f7)
-    (property "Reference" "#PWR027" (at 233.68 169.545 0)
+    (property "Reference" "#PWR028" (at 233.68 169.545 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 233.68 167.64 0)
@@ -6989,7 +7116,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR028") (unit 1)
         )
       )
     )
@@ -6998,7 +7125,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 227.33 118.11 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8d47703d-564c-4d6b-bc93-abbe53415709)
-    (property "Reference" "#PWR034" (at 227.33 124.46 0)
+    (property "Reference" "#PWR026" (at 227.33 124.46 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 227.33 123.19 0)
@@ -7014,7 +7141,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR034") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -7023,7 +7150,7 @@
   (symbol (lib_id "Sensor_Temperature:LM75B") (at 276.225 108.585 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8f062f7b-7082-464e-a0a4-f28df19d04a7)
-    (property "Reference" "U1" (at 278.4191 93.345 0)
+    (property "Reference" "U4" (at 278.4191 93.345 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "LM75B" (at 278.4191 95.885 0)
@@ -7035,7 +7162,7 @@
     (property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm75b.pdf" (at 276.225 108.585 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "568-4688-2-ND" (at 276.225 108.585 0)
+    (property "Digikey" "568-4688-1-ND" (at 276.225 108.585 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f273b823-3d16-4209-9e67-eb493b669c49))
@@ -7049,7 +7176,32 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "U1") (unit 1)
+          (reference "U4") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3.3VA") (at 249.555 223.52 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 8f59ae42-d052-4a41-8842-697b531507e9)
+    (property "Reference" "#PWR038" (at 245.745 223.52 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3VA" (at 252.73 223.52 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "" (at 249.555 223.52 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 249.555 223.52 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 3934c903-355b-4b6b-9cc5-9520d32564cc))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "#PWR038") (unit 1)
         )
       )
     )
@@ -7058,13 +7210,13 @@
   (symbol (lib_id "Device:Q_NMOS_GDS") (at 370.84 93.98 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 90aea484-4d10-4d31-82bb-524668e43ae0)
-    (property "Reference" "Q3" (at 376.047 92.8116 0)
+    (property "Reference" "Q2" (at 376.047 92.8116 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SISHA04DN-T1-GE3" (at 376.047 95.123 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 375.92 91.44 0)
+    (property "Footprint" "Package_TO_SOT_SMD:LFPAK33" (at 375.92 91.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.vishay.com/docs/76879/sisha04dn.pdf" (at 370.84 93.98 0)
@@ -7079,7 +7231,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "Q3") (unit 1)
+          (reference "Q2") (unit 1)
         )
       )
     )
@@ -7088,7 +7240,7 @@
   (symbol (lib_name "AMS1117-3.3_1") (lib_id "Regulator_Linear:AMS1117-3.3") (at 218.44 109.22 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9220ae2a-b480-44cf-98f8-d6ecb083f754)
-    (property "Reference" "U3" (at 218.44 104.14 0)
+    (property "Reference" "U2" (at 218.44 104.14 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "AMS1117-3.3" (at 218.44 106.045 0)
@@ -7106,7 +7258,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "U3") (unit 1)
+          (reference "U2") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -7120,7 +7272,7 @@
   (symbol (lib_id "Device:C") (at 309.88 126.365 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 92941f9f-6bae-4821-b3d9-34fb30ba6fbb)
-    (property "Reference" "C28" (at 313.055 125.095 0)
+    (property "Reference" "C25" (at 313.055 125.095 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1µF" (at 313.055 127.635 0)
@@ -7137,12 +7289,96 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C28") (unit 1)
+          (reference "C25") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
         (path "/e86c76e9-1b7b-4477-86ba-921b1581c6da"
           (reference "C17") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Switch:SW_SPDT") (at 244.475 239.395 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 95276845-7407-46ef-b835-dc46afffe4a1)
+    (property "Reference" "SW2" (at 244.475 231.14 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "SW_SPDT" (at 244.475 233.68 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "g7_hmi:switch_800usp8p1a1m6re" (at 244.475 239.395 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://spec_sheets.e-switch.com/specs/T850001.pdf" (at 244.475 239.395 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Digikey" "EG5342-ND" (at 244.475 239.395 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "3" (uuid 5fc59708-e96a-4c18-a30f-6a67c6f21d18))
+    (pin "1" (uuid 90d1c607-6419-4b38-8b73-28b473225e56))
+    (pin "2" (uuid c4fc30ce-6ac0-4d46-98a0-0ab2abcc9b41))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "SW2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector:Conn_01x01_Pin") (at 392.43 176.53 0) (unit 1)
+    (in_bom yes) (on_board no) (dnp no) (fields_autoplaced)
+    (uuid 974b97f2-f8c8-4d02-a09e-90caeb5f4886)
+    (property "Reference" "J9" (at 393.065 172.085 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "preconf. cable" (at 393.065 174.625 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 392.43 176.53 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/common/5381/JST.Suffix.Prefix.chart.06.01.23.docx" (at 392.43 176.53 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Digikey" "455-3241-ND" (at 392.43 176.53 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 0b3eaaea-75df-46cc-8e4f-0d157215b2c8))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "J9") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:FerriteBead") (at 46.99 24.13 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 9758b172-9cd6-4fa8-879f-d56b5a295b3e)
+    (property "Reference" "FB1" (at 46.9392 17.145 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "FerriteBead" (at 46.9392 19.685 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" (at 46.99 25.908 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 46.99 24.13 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 4ddea7a5-d8fa-4a88-b59e-632d2f736847))
+    (pin "2" (uuid 64bda373-be98-4fff-aca4-8c15ee7d3b91))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "FB1") (unit 1)
         )
       )
     )
@@ -7200,10 +7436,38 @@
     )
   )
 
+  (symbol (lib_id "Connector:Conn_01x01_Pin") (at 392.43 104.14 0) (unit 1)
+    (in_bom yes) (on_board no) (dnp no) (fields_autoplaced)
+    (uuid 9b2c150c-9cb7-44fa-9bb3-a1a7b081a0f9)
+    (property "Reference" "J6" (at 393.065 99.695 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "preconf. cable" (at 393.065 102.235 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 392.43 104.14 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/common/5381/JST.Suffix.Prefix.chart.06.01.23.docx" (at 392.43 104.14 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Digikey" "455-3241-ND" (at 392.43 104.14 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 672eee00-777f-4f70-b37e-e344e5bede33))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "J6") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:R") (at 292.1 49.53 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9c655fe3-cb9f-45c8-b7fe-7b968b82bef1)
-    (property "Reference" "R3" (at 294.64 48.26 0)
+    (property "Reference" "R22" (at 294.64 48.26 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100k" (at 294.64 50.8 0)
@@ -7220,7 +7484,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R3") (unit 1)
+          (reference "R22") (unit 1)
         )
       )
     )
@@ -7229,7 +7493,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 96.52 51.435 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9f39a887-5319-47fe-b9b9-9ba5d5c0b6de)
-    (property "Reference" "#PWR013" (at 96.52 57.785 0)
+    (property "Reference" "#PWR015" (at 96.52 57.785 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 96.52 56.515 0)
@@ -7245,7 +7509,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR013") (unit 1)
+          (reference "#PWR015") (unit 1)
         )
       )
     )
@@ -7280,7 +7544,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 321.945 130.175 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a3959fd1-ab05-43be-a343-828d37238d78)
-    (property "Reference" "#PWR058" (at 321.945 136.525 0)
+    (property "Reference" "#PWR053" (at 321.945 136.525 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 321.945 133.985 0)
@@ -7296,7 +7560,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR058") (unit 1)
+          (reference "#PWR053") (unit 1)
         )
       )
     )
@@ -7305,7 +7569,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 240.03 118.11 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a3f7fe64-ee70-4855-b9bd-2060b5e033a5)
-    (property "Reference" "#PWR035" (at 240.03 124.46 0)
+    (property "Reference" "#PWR031" (at 240.03 124.46 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 240.03 123.19 0)
@@ -7321,46 +7585,33 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR035") (unit 1)
+          (reference "#PWR031") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "Device:EMI_Filter_LL_1423") (at 48.26 26.67 0) (mirror x) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid a846171e-e226-4645-8dd4-b46c6292485e)
-    (property "Reference" "FL1" (at 48.26 30.48 0)
+  (symbol (lib_id "Device:FerriteBead") (at 162.56 24.13 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid ae454817-96ed-45ae-bcaf-63ff6af8da06)
+    (property "Reference" "FB4" (at 162.5092 17.145 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "~" (at 45.72 33.02 0)
+    (property "Value" "FerriteBead" (at 162.5092 19.685 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "g7_emi:CMC_Laird_CM2021Y330R-10" (at 48.26 20.32 0)
+    (property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" (at 162.56 25.908 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "https://www.mouser.de/datasheet/2/987/CM2021Y330R-10-1635108.pdf" (at 48.26 27.686 90)
+    (property "Datasheet" "~" (at 162.56 24.13 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "SPN" "" (at 48.26 26.67 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "digikey" "240-2502-1-ND" (at 48.26 26.67 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 269c9676-d9af-4ad5-9766-258a41abc22b))
-    (pin "2" (uuid 044e28e5-c2ff-48e4-a541-275bde379629))
-    (pin "3" (uuid b2c2fe9b-4d47-4814-b386-58564aeb2b66))
-    (pin "4" (uuid 724409ee-63fc-4004-9e3d-f934f5db6ab2))
+    (pin "1" (uuid 06a72b2e-2713-4f95-b865-76cfc304ae4e))
+    (pin "2" (uuid 6e228f74-f224-40e9-97bb-346e504e6928))
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "FL1") (unit 1)
-        )
-      )
-      (project "BaSe_PWR_V4_0"
-        (path "/e86c76e9-1b7b-4477-86ba-921b1581c6da"
-          (reference "FL1") (unit 1)
+          (reference "FB4") (unit 1)
         )
       )
     )
@@ -7369,7 +7620,7 @@
   (symbol (lib_id "Device:C") (at 31.75 144.145 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ae50e245-55e0-4dc7-86da-cf83499a02e8)
-    (property "Reference" "C4" (at 34.925 143.51 0)
+    (property "Reference" "C2" (at 34.925 143.51 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 34.925 146.05 0)
@@ -7386,7 +7637,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C4") (unit 1)
+          (reference "C2") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -7400,7 +7651,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 393.7 153.035 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid aeda7f39-0ab2-40ed-9163-d353627e6af3)
-    (property "Reference" "J5" (at 396.24 153.035 0)
+    (property "Reference" "J14" (at 396.24 153.035 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Strang 4" (at 396.24 155.575 0)
@@ -7423,7 +7674,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "J5") (unit 1)
+          (reference "J14") (unit 1)
         )
       )
     )
@@ -7432,7 +7683,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 332.105 152.4 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid afb14241-657d-4f7c-9807-c9c3c4fdc9d6)
-    (property "Reference" "#PWR02" (at 332.105 158.75 0)
+    (property "Reference" "#PWR056" (at 332.105 158.75 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 332.105 157.48 0)
@@ -7448,7 +7699,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR02") (unit 1)
+          (reference "#PWR056") (unit 1)
         )
       )
     )
@@ -7457,7 +7708,7 @@
   (symbol (lib_id "power:+3.3VA") (at 248.285 193.675 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b10e7ae9-249d-414c-81cb-b53d56d70e1a)
-    (property "Reference" "#PWR048" (at 248.285 197.485 0)
+    (property "Reference" "#PWR034" (at 248.285 197.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3VA" (at 248.285 189.23 0)
@@ -7473,7 +7724,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR048") (unit 1)
+          (reference "#PWR034") (unit 1)
         )
       )
     )
@@ -7482,7 +7733,7 @@
   (symbol (lib_id "power:+3.3VA") (at 88.9 139.065 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b1279e6a-3b38-49ec-8540-81db586560ae)
-    (property "Reference" "#PWR045" (at 88.9 142.875 0)
+    (property "Reference" "#PWR013" (at 88.9 142.875 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3VA" (at 88.9 134.62 0)
@@ -7498,7 +7749,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR013") (unit 1)
         )
       )
     )
@@ -7507,7 +7758,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 321.945 84.455 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b19d57f8-e902-4e32-875f-2cedc0975fc1)
-    (property "Reference" "#PWR055" (at 321.945 90.805 0)
+    (property "Reference" "#PWR052" (at 321.945 90.805 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 321.945 88.265 0)
@@ -7523,7 +7774,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR055") (unit 1)
+          (reference "#PWR052") (unit 1)
         )
       )
     )
@@ -7532,7 +7783,7 @@
   (symbol (lib_id "Device:R") (at 31.75 48.26 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b50d065c-e98e-4594-a1bd-561d67103b4c)
-    (property "Reference" "R22" (at 31.75 48.26 90)
+    (property "Reference" "R1" (at 31.75 48.26 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100" (at 31.75 46.355 90)
@@ -7549,7 +7800,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R22") (unit 1)
+          (reference "R1") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -7563,13 +7814,13 @@
   (symbol (lib_id "Device:C") (at 184.785 54.61 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b70fc46b-fdd0-4a08-9a86-93de6117d344)
-    (property "Reference" "C5" (at 187.96 53.34 0)
+    (property "Reference" "C12" (at 187.96 53.34 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "2.2µF" (at 187.96 55.88 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 185.7502 58.42 0)
+    (property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" (at 185.7502 58.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 184.785 54.61 0)
@@ -7580,7 +7831,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C5") (unit 1)
+          (reference "C12") (unit 1)
         )
       )
     )
@@ -7589,7 +7840,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 276.225 121.285 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b7a5e7e2-6435-435e-8af1-8c9e897423e3)
-    (property "Reference" "#PWR014" (at 276.225 127.635 0)
+    (property "Reference" "#PWR047" (at 276.225 127.635 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 276.225 126.365 0)
@@ -7605,7 +7856,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR014") (unit 1)
+          (reference "#PWR047") (unit 1)
         )
       )
     )
@@ -7614,7 +7865,7 @@
   (symbol (lib_id "Device:C") (at 67.945 144.145 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b845801b-a34e-4631-84cd-d1b20c52ffee)
-    (property "Reference" "C12" (at 71.12 143.51 0)
+    (property "Reference" "C7" (at 71.12 143.51 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 71.12 146.05 0)
@@ -7631,7 +7882,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C12") (unit 1)
+          (reference "C7") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -7645,7 +7896,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 249.555 241.935 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b8a9e1a0-ba05-40a2-9bbc-5f10c032152b)
-    (property "Reference" "#PWR039" (at 255.905 241.935 0)
+    (property "Reference" "#PWR041" (at 255.905 241.935 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 253.365 241.935 0)
@@ -7661,7 +7912,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR039") (unit 1)
+          (reference "#PWR041") (unit 1)
         )
       )
     )
@@ -7676,7 +7927,7 @@
     (property "Value" "SISHA04DN-T1-GE3" (at 376.047 187.833 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 375.92 184.15 0)
+    (property "Footprint" "Package_TO_SOT_SMD:LFPAK33" (at 375.92 184.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.vishay.com/docs/76879/sisha04dn.pdf" (at 370.84 186.69 0)
@@ -7726,7 +7977,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 332.105 106.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bb453c54-10d0-4f74-8a8f-134b13fbec47)
-    (property "Reference" "#PWR09" (at 332.105 113.03 0)
+    (property "Reference" "#PWR055" (at 332.105 113.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 332.105 111.76 0)
@@ -7742,7 +7993,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR09") (unit 1)
+          (reference "#PWR055") (unit 1)
         )
       )
     )
@@ -7751,7 +8002,7 @@
   (symbol (lib_id "Connector:Conn_01x04_Pin") (at 17.78 27.94 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bbc989da-cd5c-4cec-a8a6-7fc932241589)
-    (property "Reference" "J9" (at 18.415 20.955 0)
+    (property "Reference" "J1" (at 18.415 20.955 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x04_Pin" (at 18.415 23.495 0)
@@ -7770,7 +8021,87 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "J9") (unit 1)
+          (reference "J1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 50.165 165.1 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid c0b40c27-71e7-4692-9dff-6bf410af66c7)
+    (property "Reference" "R4" (at 50.165 165.1 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "100k" (at 50.165 167.64 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 50.165 166.878 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 50.165 165.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 3a09c2bd-d381-447a-96ff-016a399e2ae2))
+    (pin "2" (uuid cf29f8aa-c741-4104-a501-497b85a5d47c))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "R4") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector:Conn_01x01_Pin") (at 392.43 197.485 0) (unit 1)
+    (in_bom yes) (on_board no) (dnp no) (fields_autoplaced)
+    (uuid c1fae726-6c4b-486c-8511-a5ca160dd4a9)
+    (property "Reference" "J10" (at 393.065 193.04 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "preconf. cable" (at 393.065 195.58 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 392.43 197.485 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/common/5381/JST.Suffix.Prefix.chart.06.01.23.docx" (at 392.43 197.485 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Digikey" "455-3241-ND" (at 392.43 197.485 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 2264697a-6169-4e12-828c-6dae131b189a))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "J10") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 217.17 154.305 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid c2867816-70af-47e9-adf2-d3300c0d3ece)
+    (property "Reference" "R12" (at 217.17 154.305 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "100" (at 217.17 151.765 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 217.17 156.083 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 217.17 154.305 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 1a810e16-fe64-470c-ba91-b318cae8c276))
+    (pin "1" (uuid 1ea1e7ed-3130-438c-ac74-cf352b99fbe3))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "R12") (unit 1)
         )
       )
     )
@@ -7816,7 +8147,7 @@
   (symbol (lib_id "Device:C") (at 252.73 24.13 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c504b686-2998-4a0d-849d-520777637c4c)
-    (property "Reference" "C1" (at 252.73 16.51 90)
+    (property "Reference" "C20" (at 252.73 16.51 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "470nF" (at 252.73 19.05 90)
@@ -7833,7 +8164,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C1") (unit 1)
+          (reference "C20") (unit 1)
         )
       )
     )
@@ -7842,7 +8173,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 393.7 107.315 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c517027a-8a56-4467-80cb-91bde30bd63c)
-    (property "Reference" "J2" (at 396.24 107.315 0)
+    (property "Reference" "J12" (at 396.24 107.315 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Strang 2" (at 396.24 109.855 0)
@@ -7865,7 +8196,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "J2") (unit 1)
+          (reference "J12") (unit 1)
         )
       )
     )
@@ -7874,7 +8205,7 @@
   (symbol (lib_id "Device:R") (at 347.345 93.98 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c5feb430-5048-4284-94a5-f163f2aaec1c)
-    (property "Reference" "R11" (at 347.345 91.44 90)
+    (property "Reference" "R24" (at 347.345 91.44 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1" (at 347.345 93.98 90)
@@ -7891,7 +8222,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R11") (unit 1)
+          (reference "R24") (unit 1)
         )
       )
     )
@@ -7900,7 +8231,7 @@
   (symbol (lib_id "Device:R") (at 104.775 40.005 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c671e9ad-2c89-462c-a161-c48f5b6870ac)
-    (property "Reference" "R8" (at 104.775 34.925 90)
+    (property "Reference" "R7" (at 104.775 34.925 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100" (at 104.775 37.465 90)
@@ -7917,7 +8248,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R8") (unit 1)
+          (reference "R7") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -7928,26 +8259,26 @@
     )
   )
 
-  (symbol (lib_id "g7_power_symbols:RET") (at 213.36 184.785 0) (unit 1)
+  (symbol (lib_id "g7_power_symbols:RET") (at 196.85 184.785 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c6b32aed-067c-4821-9bc3-c9741fdd5e97)
-    (property "Reference" "#PWR024" (at 213.36 191.135 0)
+    (property "Reference" "#PWR022" (at 196.85 191.135 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "RET" (at 213.36 189.23 0)
+    (property "Value" "RET" (at 196.85 189.23 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 213.36 184.785 0)
+    (property "Footprint" "" (at 196.85 184.785 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 213.36 184.785 0)
+    (property "Datasheet" "" (at 196.85 184.785 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 3e347c9b-f6db-407e-8b45-1a754037507a))
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR024") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
     )
@@ -7987,13 +8318,13 @@
   (symbol (lib_id "Device:Q_NMOS_GDS") (at 370.84 114.935 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c88a122c-f5d6-4541-9f1d-a2f998fc7a91)
-    (property "Reference" "Q2" (at 376.047 113.7666 0)
+    (property "Reference" "Q3" (at 376.047 113.7666 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SISHA04DN-T1-GE3" (at 376.047 116.078 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 375.92 112.395 0)
+    (property "Footprint" "Package_TO_SOT_SMD:LFPAK33" (at 375.92 112.395 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.vishay.com/docs/76879/sisha04dn.pdf" (at 370.84 114.935 0)
@@ -8008,7 +8339,112 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "Q2") (unit 1)
+          (reference "Q3") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:FerriteBead") (at 347.98 34.29 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid caa0fc0a-c861-42e8-8dd5-c03672d5a232)
+    (property "Reference" "FB5" (at 347.9292 27.305 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "FerriteBead" (at 347.9292 29.845 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" (at 347.98 36.068 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 347.98 34.29 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 97d0c59a-9f0a-4d51-ac9e-d6ba93e6975b))
+    (pin "2" (uuid 799f764f-57e5-4652-b000-19657de52900))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "FB5") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:FerriteBead") (at 50.165 29.21 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid cb28cb66-cb68-4091-a658-026c0522e4fe)
+    (property "Reference" "FB2" (at 49.53 33.655 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "FerriteBead" (at 47.625 35.56 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" (at 50.165 30.988 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 50.165 29.21 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid b70ff6a6-a2ae-4fe3-a1eb-cf5c1b1d304f))
+    (pin "2" (uuid e90ae7bf-23a7-403f-9263-e39c06e8e07f))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "FB2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "g7_power_symbols:RET") (at 46.355 165.1 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid cd400ee6-f808-4c05-80db-a1d99474f01f)
+    (property "Reference" "#PWR06" (at 40.005 165.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "RET" (at 43.18 165.1 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "" (at 46.355 165.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 46.355 165.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid a20c4fd6-46d6-4da1-87f5-a4017d9bf31f))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "#PWR06") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector:Conn_01x01_Pin") (at 19.685 19.685 0) (unit 1)
+    (in_bom yes) (on_board no) (dnp no)
+    (uuid cf350e4b-bd91-4efc-b6c5-54ae1f732d03)
+    (property "Reference" "J3" (at 27.305 19.685 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "preconf. cable" (at 20.32 17.78 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "" (at 19.685 19.685 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/common/5381/JST.Suffix.Prefix.chart.06.01.23.docx" (at 19.685 19.685 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Digikey" "455-3241-ND" (at 19.685 19.685 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid a7897a9e-20ea-49c3-b1e9-514cebb7bbc9))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "J3") (unit 1)
         )
       )
     )
@@ -8017,7 +8453,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 203.2 118.11 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d18f3eb8-1aa6-41f5-9214-7bbb9e1d14f3)
-    (property "Reference" "#PWR033" (at 203.2 124.46 0)
+    (property "Reference" "#PWR024" (at 203.2 124.46 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 203.2 123.19 0)
@@ -8033,7 +8469,35 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR033") (unit 1)
+          (reference "#PWR024") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector:Conn_01x01_Pin") (at 392.43 150.495 0) (unit 1)
+    (in_bom yes) (on_board no) (dnp no) (fields_autoplaced)
+    (uuid d1a384b5-4ef2-4780-9b7e-0080f305c503)
+    (property "Reference" "J8" (at 393.065 146.05 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "preconf. cable" (at 393.065 148.59 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 392.43 150.495 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/common/5381/JST.Suffix.Prefix.chart.06.01.23.docx" (at 392.43 150.495 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Digikey" "455-3241-ND" (at 392.43 150.495 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 193f53a0-7c3e-47e4-8473-8cb8da85fba4))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "J8") (unit 1)
         )
       )
     )
@@ -8042,7 +8506,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 154.305 159.385 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d3108606-405d-468d-b476-c6d68666eaba)
-    (property "Reference" "#PWR052" (at 147.955 159.385 0)
+    (property "Reference" "#PWR018" (at 147.955 159.385 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 151.13 159.385 90)
@@ -8058,7 +8522,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR052") (unit 1)
+          (reference "#PWR018") (unit 1)
         )
       )
     )
@@ -8098,7 +8562,7 @@
   (symbol (lib_id "Device:C") (at 321.945 80.645 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d4fbb5a7-32c0-4681-bc6a-55304cf62c4e)
-    (property "Reference" "C27" (at 325.12 80.01 0)
+    (property "Reference" "C28" (at 325.12 80.01 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 325.12 82.55 0)
@@ -8115,7 +8579,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C27") (unit 1)
+          (reference "C28") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -8129,7 +8593,7 @@
   (symbol (lib_id "Device:C") (at 300.99 38.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d67c44db-f579-49c9-940b-2e4a26da7f3e)
-    (property "Reference" "C24" (at 304.165 36.83 0)
+    (property "Reference" "C23" (at 304.165 36.83 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "470nF" (at 304.165 39.37 0)
@@ -8146,7 +8610,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C24") (unit 1)
+          (reference "C23") (unit 1)
         )
       )
     )
@@ -8155,7 +8619,7 @@
   (symbol (lib_id "Device:R") (at 347.345 186.69 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d7f98e27-b796-43d7-97b8-6688727195e0)
-    (property "Reference" "R14" (at 347.345 184.15 90)
+    (property "Reference" "R28" (at 347.345 184.15 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1" (at 347.345 186.69 90)
@@ -8172,7 +8636,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R14") (unit 1)
+          (reference "R28") (unit 1)
         )
       )
     )
@@ -8181,7 +8645,7 @@
   (symbol (lib_id "Connector:Conn_01x08_Pin") (at 159.385 161.925 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid daa260f9-c1fd-435e-ab65-2865b0d032c1)
-    (property "Reference" "J8" (at 161.29 161.925 0)
+    (property "Reference" "J4" (at 161.29 161.925 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "Conn_01x08_Pin" (at 161.29 164.465 0)
@@ -8204,7 +8668,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "J8") (unit 1)
+          (reference "J4") (unit 1)
         )
       )
     )
@@ -8213,7 +8677,7 @@
   (symbol (lib_id "power:+3V3") (at 276.225 95.885 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid daaea194-bdae-4a51-9edc-b471e1f9a646)
-    (property "Reference" "#PWR012" (at 276.225 99.695 0)
+    (property "Reference" "#PWR046" (at 276.225 99.695 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 276.225 90.805 0)
@@ -8229,36 +8693,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR012") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Switch:SW_SPST") (at 244.475 228.6 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid dd79da8c-5cad-46ce-961d-830b601e5678)
-    (property "Reference" "SW1" (at 244.475 221.615 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "SW_SPST" (at 244.475 224.155 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 244.475 228.6 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "https://spec_sheets.e-switch.com/specs/T850001.pdf" (at 244.475 228.6 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Digikey" "EG5342-ND" (at 244.475 228.6 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "2" (uuid 7d9c1e6d-18d5-4c95-876b-9ce9e110c804))
-    (pin "1" (uuid 28b325f6-4424-411f-82c2-035b5e205685))
-    (instances
-      (project "Waberinator_hw2"
-        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "SW1") (unit 1)
+          (reference "#PWR046") (unit 1)
         )
       )
     )
@@ -8310,7 +8745,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 55.88 31.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e0db408e-8241-4975-b479-5c47fb929d07)
-    (property "Reference" "#PWR018" (at 55.88 38.1 0)
+    (property "Reference" "#PWR07" (at 55.88 38.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 55.88 36.83 0)
@@ -8326,32 +8761,32 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR018") (unit 1)
+          (reference "#PWR07") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "g7_power_symbols:RET") (at 213.36 206.375 0) (unit 1)
+  (symbol (lib_id "g7_power_symbols:RET") (at 196.85 206.375 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ea6d6323-d789-43bd-abb5-23ca3d39ceea)
-    (property "Reference" "#PWR022" (at 213.36 212.725 0)
+    (property "Reference" "#PWR023" (at 196.85 212.725 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "RET" (at 213.36 210.82 0)
+    (property "Value" "RET" (at 196.85 210.82 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 213.36 206.375 0)
+    (property "Footprint" "" (at 196.85 206.375 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 213.36 206.375 0)
+    (property "Datasheet" "" (at 196.85 206.375 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid d559deb0-a86d-42fd-ad3a-685893570447))
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
     )
@@ -8360,7 +8795,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 240.665 184.785 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid eab618f8-b446-4e71-8100-f09428d84fe5)
-    (property "Reference" "#PWR025" (at 240.665 191.135 0)
+    (property "Reference" "#PWR033" (at 240.665 191.135 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 240.665 189.23 0)
@@ -8376,7 +8811,35 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR033") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector:Conn_01x01_Pin") (at 392.43 129.54 0) (unit 1)
+    (in_bom yes) (on_board no) (dnp no) (fields_autoplaced)
+    (uuid eca2312c-7129-4f90-ae9e-e312c79b1b6e)
+    (property "Reference" "J7" (at 393.065 125.095 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "preconf. cable" (at 393.065 127.635 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 392.43 129.54 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/common/5381/JST.Suffix.Prefix.chart.06.01.23.docx" (at 392.43 129.54 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Digikey" "455-3241-ND" (at 392.43 129.54 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid e8100895-b661-4008-b6d8-03fcbcfa7371))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "J7") (unit 1)
         )
       )
     )
@@ -8385,7 +8848,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 31.75 147.955 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ed01ea2e-1520-4b85-9473-89d0bbd4f032)
-    (property "Reference" "#PWR041" (at 31.75 154.305 0)
+    (property "Reference" "#PWR03" (at 31.75 154.305 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 31.75 153.035 0)
@@ -8401,7 +8864,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR041") (unit 1)
+          (reference "#PWR03") (unit 1)
         )
       )
     )
@@ -8422,7 +8885,7 @@
     (property "Datasheet" "https://www.bourns.com/data/global/pdfs/SRU1048.pdf" (at 266.7 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "SRU1048-4R7YTR-ND" (at 266.7 34.29 0)
+    (property "Digikey" " SRU1048-4R7YCT-ND" (at 266.7 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "2" (uuid f92012f5-0696-4f2c-9ff9-f374f5644aae))
@@ -8439,7 +8902,7 @@
   (symbol (lib_id "power:+3V3") (at 269.875 43.815 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ee2ba94d-58a3-4371-aad7-433bda105e42)
-    (property "Reference" "#PWR036" (at 269.875 47.625 0)
+    (property "Reference" "#PWR044" (at 269.875 47.625 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 269.875 38.735 0)
@@ -8455,7 +8918,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR036") (unit 1)
+          (reference "#PWR044") (unit 1)
         )
       )
     )
@@ -8464,7 +8927,7 @@
   (symbol (lib_id "Device:C") (at 195.58 29.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ef50bf81-ab6e-4e90-8ead-6c094d4dce9c)
-    (property "Reference" "C18" (at 198.755 27.94 0)
+    (property "Reference" "C13" (at 198.755 27.94 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "47nF" (at 198.755 30.48 0)
@@ -8481,7 +8944,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C18") (unit 1)
+          (reference "C13") (unit 1)
         )
       )
     )
@@ -8521,10 +8984,35 @@
     )
   )
 
+  (symbol (lib_id "g7_power_symbols:RET") (at 355.6 41.91 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid f1aed379-bdaf-4fbc-abcf-65f2d8b7de43)
+    (property "Reference" "#PWR058" (at 355.6 48.26 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "RET" (at 355.6 46.355 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 355.6 41.91 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 355.6 41.91 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 4623c0a9-400b-4f90-af3e-50cf18872800))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "#PWR058") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Driver_FET:MCP14A0304xMNY") (at 332.105 96.52 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f20eb2b8-4cb4-4cb3-9962-0e0a03fdc209)
-    (property "Reference" "U3" (at 324.485 87.63 0)
+    (property "Reference" "U5" (at 324.485 87.63 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "MCP14A0304xMNY" (at 332.74 105.41 0)
@@ -8536,7 +9024,7 @@
     (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/MCP14A0303_4_5-Data-Sheet-20006046A.pdf" (at 332.105 104.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "MCP14A0304T-E/SNTR-ND" (at 332.105 96.52 0)
+    (property "Digikey" "MCP14A0304T-E/SNCT-ND" (at 332.105 96.52 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "7" (uuid 54d1a79a-d1de-4be3-9018-c7004892c6c3))
@@ -8551,7 +9039,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "U3") (unit 1)
+          (reference "U5") (unit 1)
         )
       )
     )
@@ -8560,7 +9048,7 @@
   (symbol (lib_id "Device:R") (at 347.345 144.78 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f3eff2ef-ce5c-4e4f-84d1-a22f5daa4a47)
-    (property "Reference" "R13" (at 347.345 142.24 90)
+    (property "Reference" "R27" (at 347.345 142.24 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1" (at 347.345 144.78 90)
@@ -8577,7 +9065,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R13") (unit 1)
+          (reference "R27") (unit 1)
         )
       )
     )
@@ -8586,7 +9074,7 @@
   (symbol (lib_id "Device:R") (at 31.75 50.8 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f5376b2b-e3e3-435a-b214-24d552564754)
-    (property "Reference" "R23" (at 31.75 50.8 90)
+    (property "Reference" "R2" (at 31.75 50.8 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100" (at 31.75 48.895 90)
@@ -8603,7 +9091,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "R23") (unit 1)
+          (reference "R2") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
@@ -8614,10 +9102,38 @@
     )
   )
 
+  (symbol (lib_id "Connector:Conn_01x01_Pin") (at 391.795 83.185 0) (unit 1)
+    (in_bom yes) (on_board no) (dnp no) (fields_autoplaced)
+    (uuid f61f3632-5e93-40f4-8b43-034c419be7a5)
+    (property "Reference" "J5" (at 392.43 78.74 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "preconf. cable" (at 392.43 81.28 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 391.795 83.185 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/common/5381/JST.Suffix.Prefix.chart.06.01.23.docx" (at 391.795 83.185 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Digikey" "455-3241-ND" (at 391.795 83.185 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 7126eea5-0e1a-4e47-9e51-7142928aaf4f))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "J5") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:C_Polarized") (at 325.12 38.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f6d9c619-e836-476c-9197-8eef79409d31)
-    (property "Reference" "C22" (at 328.93 35.941 0)
+    (property "Reference" "C31" (at 328.93 35.941 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "56µF" (at 328.93 38.481 0)
@@ -8629,7 +9145,7 @@
     (property "Datasheet" "https://industrial.panasonic.com/ww/products/pt/os-con/models/20SVPF56MX" (at 325.12 38.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "P16502TR-ND" (at 325.12 38.1 0)
+    (property "Digikey" "P16502CT-ND" (at 325.12 38.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "2" (uuid 10dc22f1-ef0c-4bf6-87d7-4a70e086e2cf))
@@ -8637,7 +9153,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C22") (unit 1)
+          (reference "C31") (unit 1)
         )
       )
     )
@@ -8646,7 +9162,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 186.69 40.005 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f6dbe6b0-4add-4f22-b888-4fe9692d652a)
-    (property "Reference" "#PWR03" (at 180.34 40.005 0)
+    (property "Reference" "#PWR020" (at 180.34 40.005 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 183.515 40.005 90)
@@ -8662,7 +9178,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR03") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
       )
     )
@@ -8671,7 +9187,7 @@
   (symbol (lib_id "power:+3V3") (at 19.685 137.795 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f79b44df-7fe0-4df3-9437-62afbb454c29)
-    (property "Reference" "#PWR010" (at 19.685 141.605 0)
+    (property "Reference" "#PWR01" (at 19.685 141.605 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 19.685 132.715 0)
@@ -8687,7 +9203,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR010") (unit 1)
+          (reference "#PWR01") (unit 1)
         )
       )
     )
@@ -8722,7 +9238,7 @@
   (symbol (lib_id "g7_power_symbols:RET") (at 373.38 165.735 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid fc3b30dd-8cd3-40f5-9c37-20cf93070ba9)
-    (property "Reference" "#PWR06" (at 373.38 172.085 0)
+    (property "Reference" "#PWR062" (at 373.38 172.085 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RET" (at 373.38 169.545 0)
@@ -8738,7 +9254,33 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "#PWR06") (unit 1)
+          (reference "#PWR062") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 226.06 239.395 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid feb55752-ebc2-4046-b99b-1d94693b5107)
+    (property "Reference" "R15" (at 226.06 239.395 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "100" (at 226.06 236.855 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 226.06 241.173 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 226.06 239.395 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 83d3bfcc-822b-40d2-b314-5aeb2130bf3e))
+    (pin "1" (uuid bbc37da8-9ebc-4609-b2b3-d947a4238f91))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+          (reference "R15") (unit 1)
         )
       )
     )
@@ -8747,7 +9289,7 @@
   (symbol (lib_id "Device:C") (at 240.03 114.3 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ff3ec8a8-ef06-4e92-9652-e0a8625f9003)
-    (property "Reference" "C13" (at 243.84 113.665 0)
+    (property "Reference" "C19" (at 243.84 113.665 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "22µF" (at 243.84 116.205 0)
@@ -8764,7 +9306,7 @@
     (instances
       (project "Waberinator_hw2"
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-          (reference "C13") (unit 1)
+          (reference "C19") (unit 1)
         )
       )
       (project "BaSe_PWR_V4_0"
