@@ -428,7 +428,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Waberinator_hw2.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -466,7 +466,7 @@
       "model_mode": 0,
       "workbook_filename": ""
     },
-    "page_layout_descr_file": "/home/max/Stones/Nextcloud/C_Referenzen/C01_Stammdaten/C01b_CAD-Daten/_kicad/g7_drawing_frame.kicad_wks",
+    "page_layout_descr_file": "/home/max/Stones/HomeNextcloud/C_Referenzen/C01_Stammdaten/C01b_CAD-Daten/_kicad/g7_drawing_frame.kicad_wks",
     "plot_directory": "",
     "spice_adjust_passive_values": false,
     "spice_current_sheet_as_root": false,
@@ -481,6 +481,18 @@
     [
       "2abe1fd5-5254-4661-ace0-8064915e9450",
       ""
+    ],
+    [
+      "6469c7de-d8aa-46cc-834a-51af17622324",
+      "Two Strings"
+    ],
+    [
+      "f54d2f9c-99db-4a49-9335-05587a5edeff",
+      "Two Strings1"
+    ],
+    [
+      "f1caec4a-7324-4287-89c1-78eb5467cd17",
+      "Two Strings2"
     ]
   ],
   "text_variables": {
