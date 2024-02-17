@@ -1005,6 +1005,37 @@
     )
   )
 
+  (symbol (lib_id "Connector:Conn_01x01_Pin") (at 215.9 92.075 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 5b0bd8b1-894d-4268-a163-8eb217e87032)
+    (property "Reference" "J21" (at 216.535 86.995 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "Conn_01x01_Pin" (at 216.535 89.535 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "g7_connectors:Chassis_Connector" (at 215.9 92.075 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 215.9 92.075 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 81511cd6-d138-4bd4-ba54-162cbeeda8fa))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450/6469c7de-d8aa-46cc-834a-51af17622324"
+          (reference "J21") (unit 1)
+        )
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450/f54d2f9c-99db-4a49-9335-05587a5edeff"
+          (reference "J22") (unit 1)
+        )
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450/f1caec4a-7324-4287-89c1-78eb5467cd17"
+          (reference "J23") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "g7_power_symbols:RET") (at 92.71 69.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6fe786d6-1d12-410f-9524-2c56b57bc630)
@@ -1031,6 +1062,37 @@
         )
         (path "/2abe1fd5-5254-4661-ace0-8064915e9450/f1caec4a-7324-4287-89c1-78eb5467cd17"
           (reference "#PWR060") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector:Conn_01x01_Pin") (at 215.9 74.295 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 811929af-265f-4483-b19d-efcec244becc)
+    (property "Reference" "J18" (at 216.535 69.215 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "Conn_01x01_Pin" (at 216.535 71.755 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "g7_connectors:Chassis_Connector" (at 215.9 74.295 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 215.9 74.295 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid ecfbf904-9f36-433b-a250-9e85f62b5a18))
+    (instances
+      (project "Waberinator_hw2"
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450/6469c7de-d8aa-46cc-834a-51af17622324"
+          (reference "J18") (unit 1)
+        )
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450/f54d2f9c-99db-4a49-9335-05587a5edeff"
+          (reference "J19") (unit 1)
+        )
+        (path "/2abe1fd5-5254-4661-ace0-8064915e9450/f1caec4a-7324-4287-89c1-78eb5467cd17"
+          (reference "J20") (unit 1)
         )
       )
     )
