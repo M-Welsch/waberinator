@@ -380,7 +380,7 @@
       "pin_to_pin": "warning",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
-      "simulation_model_issue": "error",
+      "simulation_model_issue": "ignore",
       "unannotated": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
@@ -466,7 +466,7 @@
       "model_mode": 0,
       "workbook_filename": ""
     },
-    "page_layout_descr_file": "/home/max/Stones/HomeNextcloud/C_Referenzen/C01_Stammdaten/C01b_CAD-Daten/_kicad/g7_drawing_frame.kicad_wks",
+    "page_layout_descr_file": "/home/max/Nextcloud/C_Referenzen/C01_Stammdaten/C01b_CAD-Daten/_kicad/g7_drawing_frame.kicad_wks",
     "plot_directory": "",
     "spice_adjust_passive_values": false,
     "spice_current_sheet_as_root": false,
