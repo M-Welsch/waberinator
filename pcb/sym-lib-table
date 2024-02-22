@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Waberinator_rev1-rescue")(type "Legacy")(uri "/home/max/Workspaces/assignment/waberinator/pcb/waberinator_controlboard/design/Waberinator_rev1-rescue.lib")(options "")(descr ""))
+)
