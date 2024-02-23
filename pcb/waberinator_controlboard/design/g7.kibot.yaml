@@ -26,6 +26,25 @@ outputs:
   options:
     format: HTML
     count_smd_tht: true
+    columns:
+      - row
+      - References
+      - Footprint
+      - Quantity per PCB
+      - Value
+      - Description
+      - Digikey
+    group_fields:
+      - Footprint
+      - Value
+      - Part
+    component_aliases:
+      - ['c', 'c_small', 'cap capacitor', 'C_P']
+      - ['r', 'r_small', 'res resistor', 'R']
+      - ['sw', 'switch']
+      - ['l', 'l_small', 'inductor L']
+      - ['zener', 'zenersmall', 'Z']
+      - ['d', 'diode', 'd_small', 'D']
 - name: generic_bom_csv
   comment: Generic Bill of Materials in CSV format
   type: bom

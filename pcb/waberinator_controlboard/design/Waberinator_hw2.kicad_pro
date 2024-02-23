@@ -517,7 +517,7 @@
     "FIELD_COMPONENT": "Control Unit",
     "FIELD_DESIGN_BY": "Maximilian Welsch",
     "FIELD_GIT_BRANCH": "main",
-    "FIELD_GIT_COMMIT_HASH": "5cba7c7",
+    "FIELD_GIT_COMMIT_HASH": "5f4252a",
     "FIELD_GIT_ORIGIN": "git@private.github.com:M-Welsch/waberinator.git",
     "FIELD_PRODUCT": "Waberinator"
   }

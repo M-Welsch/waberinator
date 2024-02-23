@@ -1135,7 +1135,7 @@
     (property "Datasheet" "~" (at 175.895 79.375 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "SISHA04DN-T1-GE3TR-ND" (at 170.815 79.375 0)
+    (property "Digikey" "SISHA04DN-T1-GE3CT-ND" (at 170.815 79.375 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 4f996ab7-a69e-4be4-96ed-3e20370f3a13))
