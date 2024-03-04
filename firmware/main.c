@@ -19,6 +19,7 @@
 #include "rt_test_root.h"
 #include "oslib_test_root.h"
 #include "chprintf.h"
+#include "serial_interface.h"
 
 
 /*
@@ -57,7 +58,7 @@ int main(void) {
   /*
    * Activates the serial driver 2 using the driver default configuration.
    */
-  sdStart(&SD2, NULL);
+  sdStart(&SD1, NULL);
 
   /*
    * Creates the blinker thread.
@@ -68,10 +69,13 @@ int main(void) {
    * Normal main() thread activity, in this demo it does nothing except
    * sleeping in a loop and check the button state.
    */
+    communicationThreads_init();
+
   while (true) {
     if (!palReadPad(GPIOC, GPIOC_BUTTON)) {
         ;
     }
     chThdSleepMilliseconds(500);
+      putIntoOutputMailbox("Hello World\n");
   }
 }

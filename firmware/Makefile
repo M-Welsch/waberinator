@@ -112,6 +112,7 @@ include $(CHIBIOS)/tools/mk/autobuild.mk
 include $(CHIBIOS)/os/test/test.mk
 include $(CHIBIOS)/test/rt/rt_test.mk
 include $(CHIBIOS)/test/oslib/oslib_test.mk
+include $(CHIBIOS)/os/various/shell/shell.mk
 include $(CHIBIOS)/os/hal/lib/streams/streams.mk
 
 # Define linker script file here
@@ -121,6 +122,7 @@ LDSCRIPT= $(STARTUPLD)/STM32F070xB.ld
 # setting.
 CSRC = $(ALLCSRC) \
        $(TESTSRC) \
+       serial_interface/serial_interface.c \
        main.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
@@ -133,8 +135,11 @@ ASMSRC = $(ALLASMSRC)
 # List ASM with preprocessor source files here.
 ASMXSRC = $(ALLXASMSRC)
 
+WABERINATOR_INCDIR = ./serial_interface \
+	./core_defines
+
 # Inclusion directories.
-INCDIR = $(CONFDIR) $(ALLINC) $(TESTINC)
+INCDIR = $(CONFDIR) $(ALLINC) $(TESTINC) $(WABERINATOR_INCDIR)
 
 # Define C warning options here.
 CWARN = -Wall -Wextra -Wundef -Wstrict-prototypes
