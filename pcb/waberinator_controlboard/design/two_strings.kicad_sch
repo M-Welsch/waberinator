@@ -1098,7 +1098,7 @@
     (property "Datasheet" "~" (at 209.55 71.755 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey Part Number" "455-B4B-XH-A-ND" (at 209.55 71.755 0)
+    (property "Digikey Part Number" "455-1164-ND" (at 209.55 71.755 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid c340128b-f0ce-4739-ac65-9253e95994a4))
