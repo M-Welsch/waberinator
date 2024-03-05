@@ -30,7 +30,7 @@ static THD_WORKING_AREA(communicationOutputThread, 128);
 static THD_FUNCTION(communicationOutput, arg) {
     UNUSED_PARAM(arg);
     chRegSetThreadName("Serial Communication Output Thread");
-    BaseSequentialStream *stream = (BaseSequentialStream *) &SD1;
+    BaseSequentialStream *stream = (BaseSequentialStream *) &SD2;
     while (true) {
         _communicationOutputMainloop(stream);
     }
@@ -48,12 +48,11 @@ static const ShellCommand commands[] = {
 };
 
 static ShellConfig shell_cfg1 = {
-        (BaseSequentialStream *)&SD1,
+        (BaseSequentialStream *)&SD2,
         commands
 };
 
 #define SHELL_WA_SIZE   THD_WORKING_AREA_SIZE(2048)
-
 static void _communicationInputMainloop(void) {
     thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell", NORMALPRIO+1, shellThread, (void *)&shell_cfg1);
     chThdWait(shelltp);
@@ -69,8 +68,9 @@ static THD_FUNCTION(communicationInput, arg) {
 }
 
 void communicationThreads_init(void) {
-    shellInit();
-    _initializeMailbox();
-    chThdCreateStatic(communicationOutputThread, sizeof(communicationOutputThread), NORMALPRIO, communicationOutput, NULL);
-    chThdCreateStatic(communicationInputThread, sizeof(communicationInputThread), NORMALPRIO + 1, communicationInput, NULL);
+
+
+    //_initializeMailbox();
+    //chThdCreateStatic(communicationOutputThread, sizeof(communicationOutputThread), NORMALPRIO, communicationOutput, NULL);
+    //chThdCreateStatic(communicationInputThread, sizeof(communicationInputThread), NORMALPRIO + 1, communicationInput, NULL);
 }

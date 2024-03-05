@@ -247,8 +247,8 @@
  */
 #define VAL_GPIOA_MODER             (PIN_MODE_ANALOG(ADC_BRIGHTNESS) |         \
                                      PIN_MODE_ANALOG(ADC_FREQUENCY) |         \
-                                     PIN_MODE_ANALOG(ADC_DEPTH) |     \
-                                     PIN_MODE_ANALOG(ADC_VBAT) |     \
+                                     PIN_MODE_ALTERNATE(ADC_DEPTH) |     \
+                                     PIN_MODE_ALTERNATE(ADC_VBAT) |     \
                                      PIN_MODE_INPUT(GPIOA_ARD_A2) |         \
                                      PIN_MODE_OUTPUT(GPIOA_LED_GREEN) |     \
                                      PIN_MODE_ALTERNATE(TIM3_CH1_LEDSTRING1) |        \
@@ -327,8 +327,8 @@
                                      PIN_ODR_HIGH(GPIOA_PIN15))
 #define VAL_GPIOA_AFRL              (PIN_AFIO_AF(ADC_BRIGHTNESS, 0U) |        \
                                      PIN_AFIO_AF(ADC_FREQUENCY, 0U) |        \
-                                     PIN_AFIO_AF(ADC_DEPTH, 0U) |        \
-                                     PIN_AFIO_AF(ADC_VBAT, 0U) |        \
+                                     PIN_AFIO_AF(ADC_DEPTH, 1U) |        \
+                                     PIN_AFIO_AF(ADC_VBAT, 1U) |        \
                                      PIN_AFIO_AF(GPIOA_ARD_A2, 0U) |        \
                                      PIN_AFIO_AF(GPIOA_LED_GREEN, 0U) |     \
                                      PIN_AFIO_AF(TIM3_CH1_LEDSTRING1, 1U) |       \

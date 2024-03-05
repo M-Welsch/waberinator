@@ -16,11 +16,8 @@
 
 #include "ch.h"
 #include "hal.h"
-#include "rt_test_root.h"
-#include "oslib_test_root.h"
 #include "chprintf.h"
-#include "serial_interface.h"
-
+#include "shell.h"
 
 /*
  * Green LED blinker thread, times are in milliseconds.
@@ -37,6 +34,26 @@ static THD_FUNCTION(Thread1, arg) {
     chThdSleepMilliseconds(200);
   }
 }
+
+
+void probe(BaseSequentialStream *chp, int argc, char *argv[]) {
+    chprintf(chp, "Echo\n");
+}
+
+
+static const ShellCommand commands[] = {
+        {"probe", probe},
+        {NULL, NULL}
+};
+
+
+#define SHELL_WA_SIZE       THD_WORKING_AREA_SIZE(2048)
+
+static const ShellConfig shell_cfg1 = {
+        (BaseSequentialStream *)&SD2,
+        commands
+};
+
 
 /*
  * Application entry point.
@@ -58,7 +75,6 @@ int main(void) {
   /*
    * Activates the serial driver 2 using the driver default configuration.
    */
-  sdStart(&SD1, NULL);
 
   /*
    * Creates the blinker thread.
@@ -69,13 +85,17 @@ int main(void) {
    * Normal main() thread activity, in this demo it does nothing except
    * sleeping in a loop and check the button state.
    */
-    communicationThreads_init();
+//  communicationThreads_init();
+    shellInit();
+    sdStart(&SD2, NULL);
 
-  while (true) {
-    if (!palReadPad(GPIOC, GPIOC_BUTTON)) {
-        ;
+    while (true) {
+//        thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE,
+//                                                "shell", NORMALPRIO + 1,
+//                                                shellThread, (void *)&shell_cfg1);
+//        chThdWait(shelltp);               /* Waiting termination.             */
+        chThdSleepMilliseconds(500);
+        //putIntoOutputMailbox("Hello World\n");
+        chprintf((BaseSequentialStream*) &SD2, "Bla\n");
     }
-    chThdSleepMilliseconds(500);
-      putIntoOutputMailbox("Hello World\n");
-  }
 }

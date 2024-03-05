@@ -5,7 +5,7 @@
 
 # Compiler options here.
 ifeq ($(USE_OPT),)
-  USE_OPT = -O2 -ggdb -fomit-frame-pointer -falign-functions=16
+  USE_OPT = -O0 -ggdb -fomit-frame-pointer -falign-functions=16
 endif
 
 # C specific options here (added to USE_OPT).
@@ -122,8 +122,8 @@ LDSCRIPT= $(STARTUPLD)/STM32F070xB.ld
 # setting.
 CSRC = $(ALLCSRC) \
        $(TESTSRC) \
-       serial_interface/serial_interface.c \
        main.c
+       #serial_interface/serial_interface.c \
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
