@@ -14,5 +14,5 @@ rescue-backup/
 *.o
 *.sym
 release/
-.dep/
-build/
+firmware/.dep
+firmware/build/

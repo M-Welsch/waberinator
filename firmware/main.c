@@ -47,7 +47,7 @@ static const ShellCommand commands[] = {
 };
 
 
-#define SHELL_WA_SIZE       THD_WORKING_AREA_SIZE(2048)
+#define SHELL_WA_SIZE       THD_WORKING_AREA_SIZE(1024)
 
 static const ShellConfig shell_cfg1 = {
         (BaseSequentialStream *)&SD2,
@@ -90,12 +90,10 @@ int main(void) {
     sdStart(&SD2, NULL);
 
     while (true) {
-//        thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE,
-//                                                "shell", NORMALPRIO + 1,
-//                                                shellThread, (void *)&shell_cfg1);
-//        chThdWait(shelltp);               /* Waiting termination.             */
+        thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell", NORMALPRIO + 1, shellThread, (void *)&shell_cfg1);
+        chThdWait(shelltp);               /* Waiting termination.             */
         chThdSleepMilliseconds(500);
         //putIntoOutputMailbox("Hello World\n");
-        chprintf((BaseSequentialStream*) &SD2, "Bla\n");
+        chprintf((BaseSequentialStream*) &SD2, "Bla\n\r");
     }
 }
