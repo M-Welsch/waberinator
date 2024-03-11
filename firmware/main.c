@@ -18,6 +18,7 @@
 #include "hal.h"
 #include "chprintf.h"
 #include "serial_interface.h"
+#include "waber_thread.h"
 
 /*
  * Green LED blinker thread, times are in milliseconds.
@@ -60,15 +61,15 @@ int main(void) {
    */
   chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
 
-  /*
-   * Normal main() thread activity, in this demo it does nothing except
-   * sleeping in a loop and check the button state.
-   */
-   communicationThreads_init();
-
+    /*
+     * Normal main() thread activity, in this demo it does nothing except
+     * sleeping in a loop and check the button state.
+     */
+    waberthread_init();
+    communicationThreads_init();
     while (true) {
         chThdSleepMilliseconds(500);
         //putIntoOutputMailbox("Hello World\n");
-        chprintf((BaseSequentialStream*) &SD2, "Bla\n\r");
+        //chprintf((BaseSequentialStream*) &SD2, "Bla\n\r");
     }
 }

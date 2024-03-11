@@ -3,6 +3,9 @@
 
 #include "stdint.h"
 
+#define WABER_TICK_MS 20
+#define WABER_TICKS_PER_S (1000/WABER_TICK_MS)
+
 typedef struct {
     float phase;
     float depth;

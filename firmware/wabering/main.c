@@ -6,8 +6,8 @@
 int main(void) {
     wabercfg_t cfg;
     cfg.phase = 0;
-    cfg.depth = 0.5;
-    cfg.frequency = 2;
+    cfg.depth = 0.7;
+    cfg.frequency = 1;
     cfg.brightness = 1;
     cfg.smoothness = 2;
 

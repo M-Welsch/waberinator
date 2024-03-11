@@ -8,7 +8,7 @@ float _compressor(float input, float smoothness) {
 }
 
 float _sine(float tick, float frequency, float phase) {
-    float in_sine = phase + 2 * M_PI * frequency * tick / 60;
+    float in_sine = phase + 2 * M_PI * frequency * tick / WABER_TICKS_PER_S;
     return 0.5 * sinf(in_sine) + 0.5;
 }
 
@@ -34,5 +34,5 @@ uint16_t waber(uint32_t tick, wabercfg_t* cfg) {
     float tick_f = (float) tick;
     float waber = _waber(tick_f, cfg);
 
-    return (uint16_t) (waber * INT16_MAX);
+    return (uint16_t) (waber * UINT16_MAX);
 }
