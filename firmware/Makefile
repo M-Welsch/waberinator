@@ -123,6 +123,7 @@ LDSCRIPT= $(STARTUPLD)/STM32F030x8.ld
 CSRC = $(ALLCSRC) \
        $(TESTSRC) \
        serial_interface/serial_interface.c \
+       wabering/wabering.c \
        main.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
@@ -136,6 +137,7 @@ ASMSRC = $(ALLASMSRC)
 ASMXSRC = $(ALLXASMSRC)
 
 WABERINATOR_INCDIR = ./serial_interface \
+	./wabering \
 	./core_defines
 
 # Inclusion directories.

@@ -17,7 +17,7 @@
 #include "ch.h"
 #include "hal.h"
 #include "chprintf.h"
-#include "shell.h"
+#include "serial_interface.h"
 
 /*
  * Green LED blinker thread, times are in milliseconds.
@@ -36,25 +36,6 @@ static THD_FUNCTION(Thread1, arg) {
 }
 
 
-void probe(BaseSequentialStream *chp, int argc, char *argv[]) {
-    chprintf(chp, "Echo\n");
-}
-
-
-static const ShellCommand commands[] = {
-        {"probe", probe},
-        {NULL, NULL}
-};
-
-
-#define SHELL_WA_SIZE       THD_WORKING_AREA_SIZE(1024)
-
-static const ShellConfig shell_cfg1 = {
-        (BaseSequentialStream *)&SD2,
-        commands
-};
-
-
 /*
  * Application entry point.
  */
@@ -70,8 +51,6 @@ int main(void) {
   halInit();
   chSysInit();
 
-
-
   /*
    * Activates the serial driver 2 using the driver default configuration.
    */
@@ -85,13 +64,9 @@ int main(void) {
    * Normal main() thread activity, in this demo it does nothing except
    * sleeping in a loop and check the button state.
    */
-//  communicationThreads_init();
-    shellInit();
-    sdStart(&SD2, NULL);
+   communicationThreads_init();
 
     while (true) {
-        thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell", NORMALPRIO + 1, shellThread, (void *)&shell_cfg1);
-        chThdWait(shelltp);               /* Waiting termination.             */
         chThdSleepMilliseconds(500);
         //putIntoOutputMailbox("Hello World\n");
         chprintf((BaseSequentialStream*) &SD2, "Bla\n\r");

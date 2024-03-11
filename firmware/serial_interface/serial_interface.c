@@ -35,15 +35,15 @@ static THD_FUNCTION(communicationOutput, arg) {
         _communicationOutputMainloop(stream);
     }
 }
-
-static void cmd_get(BaseSequentialStream *chp, int argc, char *argv[]) {
+void probe(BaseSequentialStream *chp, int argc, char *argv[]) {
     UNUSED_PARAM(chp);
     UNUSED_PARAM(argc);
     UNUSED_PARAM(argv);
+    chprintf(chp, "Echo\n");
 }
 
 static const ShellCommand commands[] = {
-        {"get", cmd_get},
+        {"probe", probe},
         {NULL, NULL}
 };
 
@@ -52,7 +52,7 @@ static ShellConfig shell_cfg1 = {
         commands
 };
 
-#define SHELL_WA_SIZE   THD_WORKING_AREA_SIZE(2048)
+#define SHELL_WA_SIZE   THD_WORKING_AREA_SIZE(1024)
 static void _communicationInputMainloop(void) {
     thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell", NORMALPRIO+1, shellThread, (void *)&shell_cfg1);
     chThdWait(shelltp);
@@ -68,7 +68,11 @@ static THD_FUNCTION(communicationInput, arg) {
 }
 
 void communicationThreads_init(void) {
+    shellInit();
+    sdStart(&SD2, NULL);
 
+    thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell", NORMALPRIO + 1, shellThread, (void *)&shell_cfg1);
+    chThdWait(shelltp);               /* Waiting termination.             */
 
     //_initializeMailbox();
     //chThdCreateStatic(communicationOutputThread, sizeof(communicationOutputThread), NORMALPRIO, communicationOutput, NULL);
