@@ -2,6 +2,7 @@
 #include "wabering.h"
 #include "hal.h"
 #include "chprintf.h"
+#include "led_string.h"
 
 void led_setBrightness(uint16_t dutycycle) {
     chprintf((BaseSequentialStream*) &SD2, "Waber: %ld\n\r", dutycycle);
@@ -12,23 +13,23 @@ static THD_FUNCTION(waberThread1, arg) {
     (void)arg;
     chRegSetThreadName("waberthread1");
     systime_t time = chVTGetSystemTimeX();
-    uint16_t duty_cycle[6] = {0};
+    float brightness[6] = {0};
     uint32_t tick = 0;
     wabercfg_t cfg[6];
-    cfg[0].phase = 0.3;
+    cfg[0].phase = 0;
     cfg[0].depth = 1;
     cfg[0].frequency = 1;
-    cfg[0].brightness = 0.5;
-    cfg[0].smoothness = 2;
+    cfg[0].brightness = 1;
+    cfg[0].smoothness = 4;
 
     cfg[1].phase = 0;
-    cfg[1].depth = 0.5;
+    cfg[1].depth = 1;
     cfg[1].frequency = 0.2;
     cfg[1].brightness = 1;
     cfg[1].smoothness = 2;
 
-    cfg[2].phase = 0;
-    cfg[2].depth = 0.2;
+    cfg[2].phase = 2;
+    cfg[2].depth = 1;
     cfg[2].frequency = 0.2;
     cfg[2].brightness = 1;
     cfg[2].smoothness = 2;
@@ -55,29 +56,33 @@ static THD_FUNCTION(waberThread1, arg) {
     systime_t time_needed = 0;
     systime_t time_available = TIME_MS2I(WABER_TICK_MS);
     systime_t time_max = 0;
-    uint16_t duty_cycle_max[6] = {0};  // just to use the dc
+    float brightness_max[6] = {0};  // just to use the dc
     while (true) {
+        led_string_setBrightness(1, brightness[0]);
+        led_string_setBrightness(2, brightness[1]);
+        led_string_setBrightness(3, brightness[2]);
+        led_string_setBrightness(4, brightness[3]);
         time_start = chVTGetSystemTimeX();
         time += TIME_MS2I(WABER_TICK_MS);
-        //led_setBrightness(duty_cycle);
-        duty_cycle[0] = waber(tick, &cfg[0]);
-        duty_cycle[1] = waber(tick, &cfg[1]);
-        duty_cycle[2] = waber(tick, &cfg[2]);
-        duty_cycle[3] = waber(tick, &cfg[3]);
-        duty_cycle[4] = waber(tick, &cfg[4]);
-        duty_cycle[5] = waber(tick, &cfg[5]);
+        //led_setBrightness(brightness);
+        brightness[0] = waber(tick, &cfg[0]);
+        brightness[1] = waber(tick, &cfg[1]);
+        brightness[2] = waber(tick, &cfg[2]);
+        brightness[3] = waber(tick, &cfg[3]);
+        brightness[4] = waber(tick, &cfg[4]);
+        brightness[5] = waber(tick, &cfg[5]);
         tick++;
         time_needed = chVTGetSystemTimeX() - time_start;
         if (time_needed > time_max) {
             time_max = time_needed;
         }
         for (uint8_t c = 0; c < 6; c++) {
-            if (duty_cycle[c] > duty_cycle_max[c]) {
-                duty_cycle_max[c] = duty_cycle[c];
+            if (brightness[c] > brightness_max[c]) {
+                brightness_max[c] = brightness[c];
             }
         }
         if (tick % 50 == 0) {
-            chprintf((BaseSequentialStream*) &SD2, "Maximum Time needed: %d of %d: [%d, %d, %d, %d, %d, %d]\n\r", time_max, time_available, duty_cycle[0], duty_cycle[1], duty_cycle[2], duty_cycle[3], duty_cycle[4], duty_cycle[5]);
+            chprintf((BaseSequentialStream*) &SD2, "Maximum Time needed: %d of %d: [%f, %f, %f, %f, %f, %f]\n\r", time_max, time_available, brightness[0], brightness[1], brightness[2], brightness[3], brightness[4], brightness[5]);
         }
         chThdSleepUntil(time);
     }

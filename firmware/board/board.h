@@ -256,7 +256,7 @@
                                      PIN_MODE_ALTERNATE(TIM1_CH1_INDICATOR_LED_BLUE) |         \
                                      PIN_MODE_ALTERNATE(TIM1_CH2_INDICATOR_LED_GREEN) |         \
                                      PIN_MODE_ALTERNATE(TIM1_CH3_INDICATOR_LED_RED) |         \
-                                     PIN_MODE_INPUT(GPIOA_PIN11) |          \
+                                     PIN_MODE_ALTERNATE(GPIOA_PIN11) |          \
                                      PIN_MODE_INPUT(GPIOA_PIN12) |          \
                                      PIN_MODE_ALTERNATE(GPIOA_SWDIO) |      \
                                      PIN_MODE_ALTERNATE(GPIOA_SWCLK) |      \
@@ -336,7 +336,7 @@
 #define VAL_GPIOA_AFRH              (PIN_AFIO_AF(TIM1_CH1_INDICATOR_LED_BLUE, 2U) |        \
                                      PIN_AFIO_AF(TIM1_CH2_INDICATOR_LED_GREEN, 2U) |        \
                                      PIN_AFIO_AF(TIM1_CH3_INDICATOR_LED_RED, 2U) |        \
-                                     PIN_AFIO_AF(GPIOA_PIN11, 0U) |         \
+                                     PIN_AFIO_AF(GPIOA_PIN11, 2U) |         \
                                      PIN_AFIO_AF(GPIOA_PIN12, 0U) |         \
                                      PIN_AFIO_AF(GPIOA_SWDIO, 0U) |         \
                                      PIN_AFIO_AF(GPIOA_SWCLK, 0U) |         \

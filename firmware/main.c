@@ -19,6 +19,7 @@
 #include "chprintf.h"
 #include "serial_interface.h"
 #include "waber_thread.h"
+#include "led_string.h"
 
 /*
  * Green LED blinker thread, times are in milliseconds.
@@ -65,10 +66,24 @@ int main(void) {
      * Normal main() thread activity, in this demo it does nothing except
      * sleeping in a loop and check the button state.
      */
+    led_string_init();
     waberthread_init();
     communicationThreads_init();
+    uint16_t brightness = 0;
     while (true) {
-        chThdSleepMilliseconds(500);
+        chThdSleepMilliseconds(1);
+#ifdef LED_TEST
+        pwmEnableChannel(&PWMD1, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, brightness));
+        pwmEnableChannel(&PWMD1, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, brightness));
+        pwmEnableChannel(&PWMD1, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, brightness));
+        pwmEnableChannel(&PWMD1, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, brightness));
+        if (brightness > 10000) {
+            brightness = 0;
+        }
+        else {
+            brightness++;
+        }
+#endif
         //putIntoOutputMailbox("Hello World\n");
         //chprintf((BaseSequentialStream*) &SD2, "Bla\n\r");
     }

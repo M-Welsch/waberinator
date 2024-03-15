@@ -5,7 +5,7 @@
 
 # Compiler options here.
 ifeq ($(USE_OPT),)
-  USE_OPT = -O3 -ggdb -fomit-frame-pointer -falign-functions=16
+  USE_OPT = -O0 -ggdb -fomit-frame-pointer -falign-functions=16
 endif
 
 # C specific options here (added to USE_OPT).
@@ -124,6 +124,7 @@ CSRC = $(ALLCSRC) \
        serial_interface/serial_interface.c \
        wabering/wabering.c \
        wabering/waber_thread.c \
+       led_string/led_string.c \
        main.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
@@ -138,6 +139,7 @@ ASMXSRC = $(ALLXASMSRC)
 
 WABERINATOR_INCDIR = ./serial_interface \
 	./wabering \
+	./led_string \
 	./core_defines
 
 # Inclusion directories.

@@ -21,6 +21,6 @@ float _compressed_sine(float tick_f, float frequency, float phase, float smoothn
 float _waber(float tick_f, wabercfg_t* cfg);
 #endif
 
-uint16_t waber(uint32_t tick, wabercfg_t* cfg);
+float waber(uint32_t tick, wabercfg_t* cfg);
 
 #endif //FIRMWARE_WABERING_H
