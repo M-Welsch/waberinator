@@ -121,6 +121,7 @@ LDSCRIPT= $(STARTUPLD)/STM32F030x8.ld
 # C sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
 CSRC = $(ALLCSRC) \
+	   core_defines/wab_mutex.c \
        serial_interface/serial_interface.c \
        wabering/wabering.c \
        wabering/waber_thread.c \

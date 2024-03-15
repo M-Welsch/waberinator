@@ -3,6 +3,10 @@
 #include "hal.h"
 #include "chprintf.h"
 #include "led_string.h"
+#include "waber_thread.h"
+#include "wab_mutex.h"
+
+wabercfg_t cfg[6];
 
 void led_setBrightness(uint16_t dutycycle) {
     chprintf((BaseSequentialStream*) &SD2, "Waber: %ld\n\r", dutycycle);
@@ -15,7 +19,6 @@ static THD_FUNCTION(waberThread1, arg) {
     systime_t time = chVTGetSystemTimeX();
     float brightness[6] = {0};
     uint32_t tick = 0;
-    wabercfg_t cfg[6];
     cfg[0].phase = 0;
     cfg[0].depth = 1;
     cfg[0].frequency = 1;
@@ -65,12 +68,14 @@ static THD_FUNCTION(waberThread1, arg) {
         time_start = chVTGetSystemTimeX();
         time += TIME_MS2I(WABER_TICK_MS);
         //led_setBrightness(brightness);
+        chMtxLock(&led_cfg);
         brightness[0] = waber(tick, &cfg[0]);
         brightness[1] = waber(tick, &cfg[1]);
         brightness[2] = waber(tick, &cfg[2]);
         brightness[3] = waber(tick, &cfg[3]);
         brightness[4] = waber(tick, &cfg[4]);
         brightness[5] = waber(tick, &cfg[5]);
+        chMtxUnlock(&led_cfg);
         tick++;
         time_needed = chVTGetSystemTimeX() - time_start;
         if (time_needed > time_max) {
@@ -82,7 +87,7 @@ static THD_FUNCTION(waberThread1, arg) {
             }
         }
         if (tick % 50 == 0) {
-            chprintf((BaseSequentialStream*) &SD2, "Maximum Time needed: %d of %d: [%f, %f, %f, %f, %f, %f]\n\r", time_max, time_available, brightness[0], brightness[1], brightness[2], brightness[3], brightness[4], brightness[5]);
+            //chprintf((BaseSequentialStream*) &SD2, "Maximum Time needed: %d of %d: [%f, %f, %f, %f, %f, %f]\n\r", time_max, time_available, brightness[0], brightness[1], brightness[2], brightness[3], brightness[4], brightness[5]);
         }
         chThdSleepUntil(time);
     }
@@ -90,4 +95,63 @@ static THD_FUNCTION(waberThread1, arg) {
 
 void waberthread_init(void) {
     chThdCreateStatic(waberThread, sizeof(waberThread), HIGHPRIO, waberThread1, NULL);
+}
+
+int waberthread_set_cfg(uint8_t led_channel, wabercfg_parameter_e parameter, float value) {
+    chMtxLock(&led_cfg);
+    switch (parameter) {
+        case WABER_CFG_PHASE:
+            cfg[led_channel].phase = value;
+            break;
+        case WABER_CFG_DEPTH:
+            if ((value > 1.0f) || (value < 0.0f)) {
+                return -1;
+            }
+            cfg[led_channel].depth = value;
+            break;
+        case WABER_CFG_FREQUENCY:
+            cfg[led_channel].frequency = value;
+            break;
+        case WABER_CFG_BRIGHTNESS:
+            if ((value > 1.0f) || (value < 0.0f)) {
+                return -1;
+            }
+            cfg[led_channel].brightness = value;
+            break;
+        case WABER_CFG_SMOOTHNESS:
+            cfg[led_channel].smoothness = value;
+            break;
+        default:
+            return -1;
+    }
+    chMtxUnlock(&led_cfg);
+    return 0;
+}
+
+int waberthread_get_cfg(uint8_t led_channel, wabercfg_parameter_e parameter, float *value) {
+    if (value == NULL) {
+        return -1;
+    }
+    chMtxLock(&led_cfg);
+    switch (parameter) {
+        case WABER_CFG_PHASE:
+            *value = cfg[led_channel].phase;
+            break;
+        case WABER_CFG_DEPTH:
+            *value = cfg[led_channel].depth;
+            break;
+        case WABER_CFG_FREQUENCY:
+            *value = cfg[led_channel].frequency;
+            break;
+        case WABER_CFG_BRIGHTNESS:
+            *value = cfg[led_channel].brightness;
+            break;
+        case WABER_CFG_SMOOTHNESS:
+            *value = cfg[led_channel].smoothness;
+            break;
+        default:
+            return -1;
+    }
+    chMtxUnlock(&led_cfg);
+    return 0;
 }

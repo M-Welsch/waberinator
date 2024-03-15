@@ -71,8 +71,8 @@ int main(void) {
     communicationThreads_init();
     uint16_t brightness = 0;
     while (true) {
-        chThdSleepMilliseconds(1);
 #ifdef LED_TEST
+        chThdSleepMilliseconds(1);
         pwmEnableChannel(&PWMD1, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, brightness));
         pwmEnableChannel(&PWMD1, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, brightness));
         pwmEnableChannel(&PWMD1, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, brightness));
@@ -83,6 +83,8 @@ int main(void) {
         else {
             brightness++;
         }
+#else
+        chThdSleepMilliseconds(100);
 #endif
         //putIntoOutputMailbox("Hello World\n");
         //chprintf((BaseSequentialStream*) &SD2, "Bla\n\r");
