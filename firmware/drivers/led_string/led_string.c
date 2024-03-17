@@ -81,3 +81,55 @@ int led_string_setBrightness(uint8_t channel, float brightness) {
     }
     return 0;
 }
+
+int led_string_on(uint8_t channel) {
+    switch (channel) {
+        case 1:
+            palSetLine(LINE_LEDSTRING1_DRV_EN);
+            break;
+        case 2:
+            palSetLine(LINE_LEDSTRING2_DRV_EN);
+            break;
+        case 3:
+            palSetLine(LINE_LEDSTRING3_DRV_EN);
+            break;
+        case 4:
+            palSetLine(LINE_LEDSTRING4_DRV_EN);
+            break;
+        case 5:
+            palSetLine(LINE_LEDSTRING5_DRV_EN);
+            break;
+        case 6:
+            palSetLine(LINE_LEDSTRING6_DRV_EN);
+            break;
+        default:
+            return -1;
+    }
+    return 0;
+}
+
+int led_string_off(uint8_t channel) {
+    switch (channel) {
+        case 1:
+            palClearLine(LINE_LEDSTRING1_DRV_EN);
+            break;
+        case 2:
+            palClearLine(LINE_LEDSTRING2_DRV_EN);
+            break;
+        case 3:
+            palClearLine(LINE_LEDSTRING3_DRV_EN);
+            break;
+        case 4:
+            palClearLine(LINE_LEDSTRING4_DRV_EN);
+            break;
+        case 5:
+            palClearLine(LINE_LEDSTRING5_DRV_EN);
+            break;
+        case 6:
+            palClearLine(LINE_LEDSTRING6_DRV_EN);
+            break;
+        default:
+            return -1;
+    }
+    return 0;
+}

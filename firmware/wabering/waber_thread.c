@@ -8,17 +8,7 @@
 waber_led_cfg_t waber_led_cfg[6];
 static bool manual_mode = false;
 
-void led_setBrightness(uint16_t dutycycle) {
-    chprintf((BaseSequentialStream*) &SD2, "Waber: %ld\n\r", dutycycle);
-}
-
-static THD_WORKING_AREA(waberThread, 1024);
-static THD_FUNCTION(waberThread1, arg) {
-    (void)arg;
-    chRegSetThreadName("waberthread1");
-    systime_t time = chVTGetSystemTimeX();
-    float brightness[6] = {0};
-    uint32_t tick = 0;
+int _wabercfg_init(void) {
     waber_led_cfg[0].phase = 0;
     waber_led_cfg[0].depth = 1;
     waber_led_cfg[0].frequency = 1;
@@ -60,6 +50,18 @@ static THD_FUNCTION(waberThread1, arg) {
     waber_led_cfg[5].max_brightness = 0.5f;
     waber_led_cfg[5].momentary_brightness = 1;
     waber_led_cfg[5].smoothness = 2;
+    return 0;
+}
+
+static THD_WORKING_AREA(waberThread, 1024);
+static THD_FUNCTION(waberThread1, arg) {
+    (void)arg;
+    chRegSetThreadName("waberthread1");
+    systime_t time = chVTGetSystemTimeX();
+    float brightness[6] = {0};
+    uint32_t tick = 0;
+
+    _wabercfg_init();
 
     systime_t time_start = 0;
     systime_t time_needed = 0;
@@ -162,6 +164,15 @@ int waberthread_set_cfg(uint8_t led_channel, wabercfg_parameter_e parameter, flo
             break;
         case WABER_CFG_SMOOTHNESS:
             waber_led_cfg[led_channel].smoothness = value;
+            break;
+        case WABER_CFG_ACTIVE:
+            waber_led_cfg[led_channel].active = value > 0.5;
+            if (waber_led_cfg[led_channel].active) {
+                led_string_on(led_channel);
+            }
+            else {
+                led_string_off(led_channel);
+            }
             break;
         default:
             return -1;

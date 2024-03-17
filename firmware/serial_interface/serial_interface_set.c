@@ -32,6 +32,9 @@ int _light(BaseSequentialStream *chp, int argc, char *argv[]) {
     else if (isEqual(which_parameter_to_set, "smoothness")) {
         parameter = WABER_CFG_SMOOTHNESS;
     }
+    else if (isEqual(which_parameter_to_set, "active")) {
+        parameter = WABER_CFG_ACTIVE;
+    }
     else {
         chprintf(chp, "no such parameter as %s\n\r", which_parameter_to_set);
         return -1;
@@ -80,10 +83,15 @@ int _battery_monitor(BaseSequentialStream *chp, int argc, char *argv[]) {
 }
 
 int _smps(BaseSequentialStream *chp, int argc, char *argv[]) {
-    UNUSED_PARAM(argc);
-    UNUSED_PARAM(argv);
-    chprintf(chp, "not implemented\n\r");
-    return -1;
+    if (argc < 1) {
+        argument_missing(chp);
+        return -1;
+    }
+    const char *on_or_off = argv[0];
+    if (isEqual(on_or_off, "on")) {
+
+    }
+    return 0;
 }
 
 int _temperature(BaseSequentialStream *chp, int argc, char *argv[]) {

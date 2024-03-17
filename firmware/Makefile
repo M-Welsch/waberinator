@@ -123,11 +123,13 @@ LDSCRIPT= $(STARTUPLD)/STM32F030x8.ld
 CSRC = $(ALLCSRC) \
 	   core_defines/wab_mutex.c \
        serial_interface/common.c \
+       drivers/smps/smps.c \
+       drivers/led_string/led_string.c \
+       drivers/adc/adc.c \
        serial_interface/serial_interface_set.c \
        serial_interface/serial_interface.c \
        wabering/wabering.c \
        wabering/waber_thread.c \
-       led_string/led_string.c \
        main.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
@@ -141,8 +143,10 @@ ASMSRC = $(ALLASMSRC)
 ASMXSRC = $(ALLXASMSRC)
 
 WABERINATOR_INCDIR = ./serial_interface \
+	./drivers/smps \
+	./drivers/led_string \
+	./drivers/adc \
 	./wabering \
-	./led_string \
 	./core_defines
 
 # Inclusion directories.

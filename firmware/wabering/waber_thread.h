@@ -9,7 +9,8 @@ typedef enum {
     WABER_CFG_FREQUENCY,
     WABER_CFG_MAX_BRIGHTNESS,
     WABER_CFG_MOMENTARY_BRIGHTNESS,
-    WABER_CFG_SMOOTHNESS
+    WABER_CFG_SMOOTHNESS,
+    WABER_CFG_ACTIVE
 } wabercfg_parameter_e;
 
 void waberthread_init(void);

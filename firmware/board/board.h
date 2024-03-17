@@ -102,8 +102,8 @@
 #define LEDSTRING5_DRV_EN                  4U
 #define LEDSTRING6_DRV_EN                  5U
 #define GPIOC_PIN6                  6U
-#define GPIOC_ARD_D9                7U
-#define GPIOC_PIN8                  8U
+#define LM73606_EN                7U
+#define LM73606_PG                  8U
 #define GPIOC_PIN9                  9U
 #define GPIOC_PIN10                 10U
 #define GPIOC_PIN11                 11U
@@ -177,10 +177,15 @@
 #define LINE_ARD_D14                PAL_LINE(GPIOB, 9U)
 #define LINE_ARD_D6                 PAL_LINE(GPIOB, 10U)
 #define LINE_ARD_A5                 PAL_LINE(GPIOC, 0U)
-#define LINE_ADC1_IN11              PAL_LINE(GPIOC, 0U)
-#define LINE_ARD_A4                 PAL_LINE(GPIOC, 1U)
+#define LINE_LEDSTRING1_DRV_EN      PAL_LINE(GPIOC, LEDSTRING1_DRV_EN)
+#define LINE_LEDSTRING2_DRV_EN      PAL_LINE(GPIOC, LEDSTRING2_DRV_EN)
+#define LINE_LEDSTRING3_DRV_EN      PAL_LINE(GPIOC, LEDSTRING3_DRV_EN)
+#define LINE_LEDSTRING4_DRV_EN      PAL_LINE(GPIOC, LEDSTRING4_DRV_EN)
+#define LINE_LEDSTRING5_DRV_EN      PAL_LINE(GPIOC, LEDSTRING5_DRV_EN)
+#define LINE_LEDSTRING6_DRV_EN      PAL_LINE(GPIOC, LEDSTRING6_DRV_EN)
 #define LINE_ADC1_IN10              PAL_LINE(GPIOC, 1U)
-#define LINE_ARD_D9                 PAL_LINE(GPIOC, 7U)
+#define LINE_LM73606_EN             PAL_LINE(GPIOC, LM73606_EN)
+#define LINE_LM73606_PG             PAL_LINE(GPIOC, LM73606_PG)
 #define LINE_BUTTON                 PAL_LINE(GPIOC, 13U)
 #define LINE_OSC32_IN               PAL_LINE(GPIOC, 14U)
 #define LINE_OSC32_OUT              PAL_LINE(GPIOC, 15U)
@@ -486,8 +491,8 @@
                                      PIN_MODE_OUTPUT(LEDSTRING5_DRV_EN) |           \
                                      PIN_MODE_OUTPUT(LEDSTRING6_DRV_EN) |           \
                                      PIN_MODE_INPUT(GPIOC_PIN6) |           \
-                                     PIN_MODE_INPUT(GPIOC_ARD_D9) |         \
-                                     PIN_MODE_INPUT(GPIOC_PIN8) |           \
+                                     PIN_MODE_OUTPUT(LM73606_EN) |         \
+                                     PIN_MODE_INPUT(LM73606_PG) |           \
                                      PIN_MODE_INPUT(GPIOC_PIN9) |           \
                                      PIN_MODE_INPUT(GPIOC_PIN10) |          \
                                      PIN_MODE_INPUT(GPIOC_PIN11) |          \
@@ -502,8 +507,8 @@
                                      PIN_OTYPE_PUSHPULL(LEDSTRING5_DRV_EN) |       \
                                      PIN_OTYPE_PUSHPULL(LEDSTRING6_DRV_EN) |       \
                                      PIN_OTYPE_PUSHPULL(GPIOC_PIN6) |       \
-                                     PIN_OTYPE_PUSHPULL(GPIOC_ARD_D9) |     \
-                                     PIN_OTYPE_PUSHPULL(GPIOC_PIN8) |       \
+                                     PIN_OTYPE_PUSHPULL(LM73606_EN) |     \
+                                     PIN_OTYPE_PUSHPULL(LM73606_PG) |       \
                                      PIN_OTYPE_PUSHPULL(GPIOC_PIN9) |       \
                                      PIN_OTYPE_PUSHPULL(GPIOC_PIN10) |      \
                                      PIN_OTYPE_PUSHPULL(GPIOC_PIN11) |      \
@@ -518,8 +523,8 @@
                                      PIN_OSPEED_HIGH(LEDSTRING5_DRV_EN) |          \
                                      PIN_OSPEED_HIGH(LEDSTRING6_DRV_EN) |          \
                                      PIN_OSPEED_HIGH(GPIOC_PIN6) |          \
-                                     PIN_OSPEED_HIGH(GPIOC_ARD_D9) |        \
-                                     PIN_OSPEED_HIGH(GPIOC_PIN8) |          \
+                                     PIN_OSPEED_HIGH(LM73606_EN) |        \
+                                     PIN_OSPEED_HIGH(LM73606_PG) |          \
                                      PIN_OSPEED_HIGH(GPIOC_PIN9) |          \
                                      PIN_OSPEED_HIGH(GPIOC_PIN10) |         \
                                      PIN_OSPEED_HIGH(GPIOC_PIN11) |         \
@@ -534,8 +539,8 @@
                                      PIN_PUPDR_PULLUP(LEDSTRING5_DRV_EN) |         \
                                      PIN_PUPDR_PULLUP(LEDSTRING6_DRV_EN) |         \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN6) |         \
-                                     PIN_PUPDR_PULLUP(GPIOC_ARD_D9) |       \
-                                     PIN_PUPDR_PULLUP(GPIOC_PIN8) |         \
+                                     PIN_PUPDR_PULLUP(LM73606_EN) |       \
+                                     PIN_PUPDR_PULLUP(LM73606_PG) |         \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN9) |         \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN10) |        \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN11) |        \
@@ -550,8 +555,8 @@
                                      PIN_ODR_HIGH(LEDSTRING5_DRV_EN) |             \
                                      PIN_ODR_HIGH(LEDSTRING6_DRV_EN) |             \
                                      PIN_ODR_HIGH(GPIOC_PIN6) |             \
-                                     PIN_ODR_HIGH(GPIOC_ARD_D9) |           \
-                                     PIN_ODR_HIGH(GPIOC_PIN8) |             \
+                                     PIN_ODR_HIGH(LM73606_EN) |           \
+                                     PIN_ODR_HIGH(LM73606_PG) |             \
                                      PIN_ODR_HIGH(GPIOC_PIN9) |             \
                                      PIN_ODR_HIGH(GPIOC_PIN10) |            \
                                      PIN_ODR_HIGH(GPIOC_PIN11) |            \
@@ -566,8 +571,8 @@
                                      PIN_AFIO_AF(LEDSTRING5_DRV_EN, 0U) |          \
                                      PIN_AFIO_AF(LEDSTRING6_DRV_EN, 0U) |          \
                                      PIN_AFIO_AF(GPIOC_PIN6, 0U) |          \
-                                     PIN_AFIO_AF(GPIOC_ARD_D9, 0U))
-#define VAL_GPIOC_AFRH              (PIN_AFIO_AF(GPIOC_PIN8, 0U) |          \
+                                     PIN_AFIO_AF(LM73606_EN, 0U))
+#define VAL_GPIOC_AFRH              (PIN_AFIO_AF(LM73606_PG, 0U) |          \
                                      PIN_AFIO_AF(GPIOC_PIN9, 0U) |          \
                                      PIN_AFIO_AF(GPIOC_PIN10, 0U) |         \
                                      PIN_AFIO_AF(GPIOC_PIN11, 0U) |         \

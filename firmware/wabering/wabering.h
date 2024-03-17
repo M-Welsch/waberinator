@@ -2,6 +2,7 @@
 #define FIRMWARE_WABERING_H
 
 #include "stdint.h"
+#include "stdbool.h"
 
 #define WABER_TICK_MS 20
 #define WABER_TICKS_PER_S (1000/WABER_TICK_MS)
@@ -13,6 +14,7 @@ typedef struct {
     float max_brightness;
     float momentary_brightness;
     float smoothness;
+    bool active;
 } waber_led_cfg_t;
 
 #ifdef TEST
