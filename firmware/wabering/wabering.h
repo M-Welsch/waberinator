@@ -10,7 +10,8 @@ typedef struct {
     float phase;
     float depth;
     float frequency;
-    float brightness;
+    float max_brightness;
+    float momentary_brightness;
     float smoothness;
 } waber_led_cfg_t;
 

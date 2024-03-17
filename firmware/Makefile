@@ -122,6 +122,8 @@ LDSCRIPT= $(STARTUPLD)/STM32F030x8.ld
 # setting.
 CSRC = $(ALLCSRC) \
 	   core_defines/wab_mutex.c \
+       serial_interface/common.c \
+       serial_interface/serial_interface_set.c \
        serial_interface/serial_interface.c \
        wabering/wabering.c \
        wabering/waber_thread.c \

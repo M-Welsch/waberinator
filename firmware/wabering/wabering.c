@@ -21,7 +21,7 @@ float waber(uint32_t tick, waber_led_cfg_t* cfg) {
     float phase = cfg->phase;
     float depth = cfg->depth;
     float frequency = cfg->frequency;
-    float brightness = cfg->brightness;
+    float brightness = cfg->max_brightness;
     float smoothness = cfg->smoothness;
     float tick_f = (float) tick;
 
