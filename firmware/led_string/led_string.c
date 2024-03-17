@@ -9,7 +9,7 @@ static PWMConfig pwm1_cfg = {
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-                {PWM_OUTPUT_ACTIVE_HIGH, NULL}
+                {PWM_OUTPUT_DISABLED, NULL}
         },
         0,
         0,
@@ -58,23 +58,24 @@ int led_string_setBrightness(uint8_t channel, float brightness) {
     uint16_t dutycycle = (uint16_t) (brightness * (float) UINT16_MAX);
     switch (channel) {
         case 1:
-            pwmEnableChannel(&PWMD1, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, dutycycle));
             pwmEnableChannel(&PWMD3, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dutycycle));
-            pwmEnableChannel(&PWMD15, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD15, dutycycle));
             break;
         case 2:
-            pwmEnableChannel(&PWMD1, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, dutycycle));
             pwmEnableChannel(&PWMD3, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dutycycle));
-            pwmEnableChannel(&PWMD15, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD15, dutycycle));
             break;
         case 3:
-            pwmEnableChannel(&PWMD1, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, dutycycle));
             pwmEnableChannel(&PWMD3, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dutycycle));
             break;
         case 4:
-            pwmEnableChannel(&PWMD1, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, dutycycle));
             pwmEnableChannel(&PWMD3, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dutycycle));
             break;
+        case 5:
+            pwmEnableChannel(&PWMD15, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD15, dutycycle));
+            break;
+        case 6:
+            pwmEnableChannel(&PWMD15, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD15, dutycycle));
+            break;
+
         default:
             return -1;  // invalid channel
     }

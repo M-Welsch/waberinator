@@ -152,11 +152,6 @@ static THD_FUNCTION(communicationInput, arg) {
 void communicationThreads_init(void) {
     shellInit();
     sdStart(&SD2, NULL);
-
     thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell", NORMALPRIO + 1, shellThread, (void *)&shell_cfg1);
     //chThdWait(shelltp);               /* Waiting termination.             */
-
-    //_initializeMailbox();
-    //chThdCreateStatic(communicationOutputThread, sizeof(communicationOutputThread), NORMALPRIO, communicationOutput, NULL);
-    //chThdCreateStatic(communicationInputThread, sizeof(communicationInputThread), NORMALPRIO + 1, communicationInput, NULL);
 }

@@ -12,7 +12,7 @@ typedef struct {
     float frequency;
     float brightness;
     float smoothness;
-} wabercfg_t;
+} waber_led_cfg_t;
 
 #ifdef TEST
 float _compressor(float input, float smoothness);
@@ -21,6 +21,6 @@ float _compressed_sine(float tick_f, float frequency, float phase, float smoothn
 float _waber(float tick_f, wabercfg_t* cfg);
 #endif
 
-float waber(uint32_t tick, wabercfg_t* cfg);
+float waber(uint32_t tick, waber_led_cfg_t* cfg);
 
 #endif //FIRMWARE_WABERING_H
