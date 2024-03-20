@@ -10678,7 +10678,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 236.22) (xy 107.95 236.22)
+			(xy 95.25 236.22) (xy 119.38 236.22)
 		)
 		(stroke
 			(width 0)
@@ -11498,6 +11498,16 @@
 	)
 	(wire
 		(pts
+			(xy 127 236.22) (xy 137.16 236.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1b7ae1f-282e-42d9-8281-97bf76e570eb")
+	)
+	(wire
+		(pts
 			(xy 335.915 97.155) (xy 356.87 97.155)
 		)
 		(stroke
@@ -12108,6 +12118,17 @@
 		)
 		(uuid "138772b5-74cc-422e-ab14-183a6bb6b123")
 	)
+	(label "esp32_io0"
+		(at 127 236.22 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "13dcd7e6-2b62-4655-9fdd-b33d2491b7fa")
+	)
 	(label "tim1_ch2_indicator_led2"
 		(at 153.035 247.015 0)
 		(fields_autoplaced yes)
@@ -12393,17 +12414,6 @@
 			(justify left bottom)
 		)
 		(uuid "549ef713-5305-4644-84a5-035c8ab66206")
-	)
-	(label "spare_5"
-		(at 97.79 236.22 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "54d2fb9e-0a51-4ecc-9ea9-029880196a45")
 	)
 	(label "adc_depth"
 		(at 97.79 162.56 0)
@@ -18088,74 +18098,6 @@
 			(project "Waberinator_hw2"
 				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
 					(reference "RV1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 107.95 236.22 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6b188f33-0f53-4286-9142-2063b4ddae8b")
-		(property "Reference" "TP3"
-			(at 113.03 236.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 113.03 237.49 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
-			(at 107.95 241.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 107.95 241.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 107.95 236.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "84a7191f-be59-44d3-8df3-28cc21ad7d16")
-		)
-		(instances
-			(project "Waberinator_hw2"
-				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
-					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -24610,6 +24552,73 @@
 			(project "Waberinator_hw2"
 				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 123.19 236.22 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fbd34839-c867-45d9-b057-cac7f475c337")
+		(property "Reference" "R24"
+			(at 123.19 236.22 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 123.19 233.68 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 123.19 237.998 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 123.19 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 123.19 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e5e939e6-1498-47f7-b1e2-78042fd448c2")
+		)
+		(pin "1"
+			(uuid "ff4d6be4-cb99-4be0-9f4f-a0a4aef9f313")
+		)
+		(instances
+			(project "Waberinator_hw2"
+				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+					(reference "R24")
 					(unit 1)
 				)
 			)
