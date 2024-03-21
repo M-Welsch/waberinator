@@ -27,14 +27,19 @@ static const ShellCommand commands[] = {
         {NULL, NULL}
 };
 
-static ShellConfig shell_cfg1 = {
+static ShellConfig shell_cfg_debug = {
         (BaseSequentialStream *)&SD2,
+        commands
+};
+
+static ShellConfig shell_cfg_modem = {
+        (BaseSequentialStream *)&SD1,
         commands
 };
 
 #define SHELL_WA_SIZE   THD_WORKING_AREA_SIZE(1024)
 static void _communicationInputMainloop(void) {
-    thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell", NORMALPRIO+1, shellThread, (void *)&shell_cfg1);
+    thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell", NORMALPRIO+1, shellThread, (void *)&shell_cfg_debug);
     chThdWait(shelltp);
 }
 
@@ -50,6 +55,8 @@ static THD_FUNCTION(communicationInput, arg) {
 void communicationThreads_init(void) {
     shellInit();
     sdStart(&SD2, NULL);
-    thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell", NORMALPRIO + 1, shellThread, (void *)&shell_cfg1);
+    sdStart(&SD1, NULL);
+    thread_t *shelltp_debug = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell_debug", NORMALPRIO + 1, shellThread, (void *)&shell_cfg_debug);
+    thread_t *shelltp_modem = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell_modem", NORMALPRIO + 1, shellThread, (void *)&shell_cfg_modem);
     //chThdWait(shelltp);               /* Waiting termination.             */
 }
