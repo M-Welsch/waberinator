@@ -8491,6 +8491,12 @@
 		(uuid "29ce924d-8140-4a3c-830e-ff09fafdd42d")
 	)
 	(junction
+		(at 227.33 200.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2a19b720-4284-4343-a59b-12578f5d93cd")
+	)
+	(junction
 		(at 173.355 24.13)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8711,6 +8717,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "863798da-5f03-4820-b835-784ca6a56a8c")
+	)
+	(junction
+		(at 281.94 185.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "89452494-2144-4173-bda6-ffb4daa23c33")
 	)
 	(junction
 		(at 280.035 34.29)
@@ -9198,6 +9210,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 190.5) (xy 227.33 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19bd230f-62e9-4c7b-802a-699033a7d504")
+	)
+	(wire
+		(pts
 			(xy 80.01 154.94) (xy 82.55 154.94)
 		)
 		(stroke
@@ -9288,6 +9310,16 @@
 	)
 	(wire
 		(pts
+			(xy 233.68 200.66) (xy 227.33 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23fa367e-3166-4f8c-a461-463a7cbe83a6")
+	)
+	(wire
+		(pts
 			(xy 95.25 160.02) (xy 117.475 160.02)
 		)
 		(stroke
@@ -9315,6 +9347,16 @@
 			(type default)
 		)
 		(uuid "267e61c6-9d88-46b3-b69d-c31cdaf1ac0e")
+	)
+	(wire
+		(pts
+			(xy 281.94 167.64) (xy 281.94 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27a1855c-30e0-4cd5-9521-c484924f28b6")
 	)
 	(wire
 		(pts
@@ -9385,6 +9427,16 @@
 			(type default)
 		)
 		(uuid "2bfbd205-0428-4cb3-aeee-e55b0056c4bf")
+	)
+	(wire
+		(pts
+			(xy 227.33 200.66) (xy 227.33 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c131e2b-a397-4220-8d11-869e5b1ec077")
 	)
 	(wire
 		(pts
@@ -9765,6 +9817,16 @@
 			(type default)
 		)
 		(uuid "4d930261-d17d-41f0-b360-58033e1bb704")
+	)
+	(wire
+		(pts
+			(xy 281.94 185.42) (xy 294.64 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4de8048e-9ad3-44bb-b494-6125b29bf585")
 	)
 	(wire
 		(pts
@@ -10438,7 +10500,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 185.42) (xy 248.92 185.42)
+			(xy 233.68 185.42) (xy 248.92 185.42)
 		)
 		(stroke
 			(width 0)
@@ -10665,6 +10727,16 @@
 			(type default)
 		)
 		(uuid "98b189c0-c734-4042-be73-7d2510348423")
+	)
+	(wire
+		(pts
+			(xy 281.94 176.53) (xy 281.94 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9907bdc6-f6cb-44f0-a3d3-9f129028adc1")
 	)
 	(wire
 		(pts
@@ -10948,7 +11020,7 @@
 	)
 	(wire
 		(pts
-			(xy 279.4 185.42) (xy 294.64 185.42)
+			(xy 279.4 185.42) (xy 281.94 185.42)
 		)
 		(stroke
 			(width 0)
@@ -11468,6 +11540,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 200.66) (xy 227.33 201.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddfca623-5f1c-470f-b977-8b8c30ebfef1")
+	)
+	(wire
+		(pts
 			(xy 95.25 203.2) (xy 117.475 203.2)
 		)
 		(stroke
@@ -11858,6 +11940,16 @@
 	)
 	(wire
 		(pts
+			(xy 233.68 185.42) (xy 233.68 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fcf363b3-c9ca-4c0f-a98c-221139c2ab07")
+	)
+	(wire
+		(pts
 			(xy 95.25 177.8) (xy 117.475 177.8)
 		)
 		(stroke
@@ -12240,7 +12332,7 @@
 		(uuid "222fb421-f55d-425d-afb4-cfdcba71fee7")
 	)
 	(label "esp32_io0"
-		(at 280.67 185.42 0)
+		(at 284.48 185.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13550,6 +13642,71 @@
 		)
 	)
 	(symbol
+		(lib_id "g7_power_symbols:RET")
+		(at 227.33 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "029cc8c3-a294-4dc1-b270-0c1bdaa150b1")
+		(property "Reference" "#PWR072"
+			(at 227.33 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "RET"
+			(at 227.33 213.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 227.33 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 227.33 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 227.33 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a2287cef-1fce-444a-83ff-c10be1087cc1")
+		)
+		(instances
+			(project "Waberinator_hw2"
+				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+					(reference "#PWR072")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 354.33 171.45 90)
 		(unit 1)
@@ -13832,6 +13989,73 @@
 			(project "BaSe_PWR_V4_0"
 				(path "/e86c76e9-1b7b-4477-86ba-921b1581c6da"
 					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 281.94 172.72 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0c35a69d-7143-4df6-83d9-00bae9687d0c")
+		(property "Reference" "R25"
+			(at 281.94 172.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5k"
+			(at 279.4 172.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 283.718 172.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 281.94 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 281.94 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a5bc69e1-bc72-412b-9d9a-70a3989d7601")
+		)
+		(pin "1"
+			(uuid "88378580-e0bd-4624-bd93-80ce7a539a16")
+		)
+		(instances
+			(project "Waberinator_hw2"
+				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -14823,6 +15047,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 227.33 205.74 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2ce3e5d6-56dc-4484-b378-4af77c9e2c01")
+		(property "Reference" "C39"
+			(at 224.155 205.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1nF"
+			(at 224.155 207.645 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 226.3648 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 227.33 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 227.33 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f6945915-5e1a-4613-81e8-6f676caa0914")
+		)
+		(pin "2"
+			(uuid "692a83c9-83d0-4400-b6c4-9f249813a783")
+		)
+		(instances
+			(project "Waberinator_hw2"
+				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+					(reference "C39")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 302.26 215.9 90)
 		(mirror x)
@@ -15716,6 +16010,72 @@
 			(project "BaSe_PWR_V4_0"
 				(path "/e86c76e9-1b7b-4477-86ba-921b1581c6da"
 					(reference "C17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 281.94 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "42408012-9117-4692-89da-4432119736c3")
+		(property "Reference" "#PWR070"
+			(at 281.94 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 281.94 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 281.94 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 281.94 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 281.94 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4aac0fd4-26a0-4135-a0b3-d44df4b598d9")
+		)
+		(instances
+			(project "Waberinator_hw2"
+				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+					(reference "#PWR070")
 					(unit 1)
 				)
 			)
@@ -17949,6 +18309,72 @@
 			(project "Waberinator_hw2"
 				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
 					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 227.33 190.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6a3b1bca-2b12-4fd1-9bc2-90e8350cfcc0")
+		(property "Reference" "#PWR071"
+			(at 227.33 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 227.33 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 227.33 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 227.33 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 227.33 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3bff6a1d-64b3-477b-a7b4-282e962dc7c6")
+		)
+		(instances
+			(project "Waberinator_hw2"
+				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+					(reference "#PWR071")
 					(unit 1)
 				)
 			)
@@ -21158,6 +21584,73 @@
 			(project "Waberinator_hw2"
 				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
 					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 227.33 195.58 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a74ab03f-c801-4dff-8e36-7c6dea65881c")
+		(property "Reference" "R28"
+			(at 227.33 195.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5k"
+			(at 224.79 195.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 229.108 195.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 227.33 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 227.33 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "587d4ea0-df31-4183-b31c-2617090fedbf")
+		)
+		(pin "1"
+			(uuid "9ecb2562-9356-4318-888a-5021c32ca9c7")
+		)
+		(instances
+			(project "Waberinator_hw2"
+				(path "/2abe1fd5-5254-4661-ace0-8064915e9450"
+					(reference "R28")
 					(unit 1)
 				)
 			)

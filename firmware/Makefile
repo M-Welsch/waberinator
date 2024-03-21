@@ -126,6 +126,7 @@ CSRC = $(ALLCSRC) \
        drivers/smps/smps.c \
        drivers/led_string/led_string.c \
        drivers/adc/adc.c \
+       drivers/modem/modem.c \
        serial_interface/serial_interface_set.c \
        serial_interface/serial_interface.c \
        wabering/wabering.c \
@@ -146,6 +147,7 @@ WABERINATOR_INCDIR = ./serial_interface \
 	./drivers/smps \
 	./drivers/led_string \
 	./drivers/adc \
+	./drivers/modem \
 	./wabering \
 	./core_defines
 
