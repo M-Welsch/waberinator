@@ -38,19 +38,7 @@ static ShellConfig shell_cfg_modem = {
 };
 
 #define SHELL_WA_SIZE   THD_WORKING_AREA_SIZE(1024)
-static void _communicationInputMainloop(void) {
-    thread_t *shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell", NORMALPRIO+1, shellThread, (void *)&shell_cfg_debug);
-    chThdWait(shelltp);
-}
 
-static THD_WORKING_AREA(communicationInputThread, 128);
-static THD_FUNCTION(communicationInput, arg) {
-    UNUSED_PARAM(arg);
-    chRegSetThreadName("Serial Communication Input Thread");
-    while (true) {
-        _communicationInputMainloop();
-    }
-}
 
 void communicationThreads_init(void) {
     shellInit();
