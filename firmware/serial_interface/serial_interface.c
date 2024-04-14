@@ -24,6 +24,7 @@ void _probe(BaseSequentialStream *chp, int argc, char *argv[]) {
 static const ShellCommand commands[] = {
         {"probe", _probe},
         {"set",   set},
+        {"s", set},
         {NULL, NULL}
 };
 

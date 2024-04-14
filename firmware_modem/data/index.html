@@ -17,15 +17,60 @@
     </div>
   </div>
   <h1>Waberinator</h1>
-  <section class="browser">
-    <h2>Strang 1</h2>
-    <form>
-        <div class="controlelement">
-            <label for="s1_brightness" id="lab_s1_brightness">Helligkeit</label>
-            <input type="range" min="1" max="100" value="50" class="slider" id="s1_brightness">
-        </div>
-    </form>
-  </section>
+  <div class="content">
+    <div class="card">
+      <h2>Strang 1</h2>
+      <form>
+          <div class="controlelement">
+              <label for="s1_brightness" id="lab_s1_brightness">Helligkeit</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="s1_brightness">
+          </div>
+          <div class="controlelement">
+              <label for="s1_frequency" id="lab_s1_frequency">Frequenz</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="s1_frequency">
+          </div>
+          <div class="controlelement">
+              <label for="s1_phase" id="lab_s1_phase">Phase</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="s1_phase">
+          </div>
+          <div class="controlelement">
+              <label for="s1_depth" id="lab_s1_depth">Wabertiefe</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="s1_depth">
+          </div>
+          <div class="controlelement">
+              <label for="s1_smoothness" id="lab_s1_smoothness">Weichheit</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="s1_smoothness">
+          </div>
+      </form>
+    </div>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h2>Strang 2</h2>
+      <form>
+          <div class="controlelement">
+              <label for="s2_brightness" id="lab_s2_brightness">Helligkeit</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="s2_brightness">
+          </div>
+          <div class="controlelement">
+              <label for="s2_frequency" id="lab_s2_frequency">Frequenz</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="s2_frequency">
+          </div>
+          <div class="controlelement">
+              <label for="s2_phase" id="lab_s2_phase">Phase</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="s2_phase">
+          </div>
+          <div class="controlelement">
+              <label for="s2_depth" id="lab_s2_depth">Wabertiefe</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="s2_depth">
+          </div>
+          <div class="controlelement">
+              <label for="s2_smoothness" id="lab_s2_smoothness">Weichheit</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="s2_smoothness">
+          </div>
+      </form>
+    </div>
+  </div>
 <script>
   var gateway = `ws://${window.location.hostname}/ws`
   var websocket;
@@ -66,9 +111,12 @@
   }
 
   var slider_s1_brightness = document.getElementById("s1_brightness");
+  var slider_s2_brightness = document.getElementById("s2_brightness");
   slider_s1_brightness.oninput = function() {
-    var msg = 'set light max_brightness 1 ' + (slider_s1_brightness.value/100);
-    websocket.send(msg);
+    websocket.send('s l mb 1 ' + (slider_s1_brightness.value/100));  // command short for set light max_brightness 1 <value>
+  }
+  slider_s2_brightness.oninput = function() {
+    websocket.send('s l mb 2 ' + (slider_s2_brightness.value/100));
   }
 
 </script>

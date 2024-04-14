@@ -23,7 +23,7 @@ int _light(BaseSequentialStream *chp, int argc, char *argv[]) {
     else if (isEqual(which_parameter_to_set, "frequency")) {
         parameter = WABER_CFG_FREQUENCY;
     }
-    else if (isEqual(which_parameter_to_set, "max_brightness")) {
+    else if (isEqual(which_parameter_to_set, "max_brightness") || isEqual(which_parameter_to_set, "mb")) {
         parameter = WABER_CFG_MAX_BRIGHTNESS;
     }
     else if (isEqual(which_parameter_to_set, "brightness")) {
@@ -109,7 +109,7 @@ void set(BaseSequentialStream *chp, int argc, char *argv[]) {
     int retval = 0;
     const char *what_to_set = argv[0];
 
-    if (isEqual(what_to_set, "light")) {
+    if (isEqual(what_to_set, "light") || isEqual(what_to_set, "l")) {
         retval = _light(chp, argc-1, argv+1);
     }
     else if (isEqual(what_to_set, "mode")) {
