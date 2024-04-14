@@ -136,14 +136,15 @@ int waberthread_set_manual_mode(const bool set_manual_mode) {
 }
 
 int waberthread_set_cfg(uint8_t led_channel, wabercfg_parameter_e parameter, float value) {
-    chMtxLock(&led_cfg);
+    int retval = 0;
+    chMtxLock(&led_cfg);  // get stuck here when this is being called for the second time
     switch (parameter) {
         case WABER_CFG_PHASE:
             waber_led_cfg[led_channel].phase = value;
             break;
         case WABER_CFG_DEPTH:
             if ((value > 1.0f) || (value < 0.0f)) {
-                return -1;
+                retval = -1;
             }
             waber_led_cfg[led_channel].depth = value;
             break;
@@ -152,13 +153,13 @@ int waberthread_set_cfg(uint8_t led_channel, wabercfg_parameter_e parameter, flo
             break;
         case WABER_CFG_MAX_BRIGHTNESS:
             if ((value > 1.0f) || (value < 0.0f)) {
-                return -1;
+                retval = -1;
             }
             waber_led_cfg[led_channel].max_brightness = value;
             break;
         case WABER_CFG_MOMENTARY_BRIGHTNESS:
             if ((value > 1.0f) || (value < 0.0f)) {
-                return -1;
+                retval = -1;
             }
             waber_led_cfg[led_channel].momentary_brightness = value;
             break;
@@ -175,16 +176,17 @@ int waberthread_set_cfg(uint8_t led_channel, wabercfg_parameter_e parameter, flo
             }
             break;
         default:
-            return -1;
+            retval = -1;
     }
     chMtxUnlock(&led_cfg);
-    return 0;
+    return retval;
 }
 
 int waberthread_get_cfg(uint8_t led_channel, wabercfg_parameter_e parameter, float *value) {
     if (value == NULL) {
         return -1;
     }
+    int retval = 0;
     chMtxLock(&led_cfg);
     switch (parameter) {
         case WABER_CFG_PHASE:
@@ -203,10 +205,10 @@ int waberthread_get_cfg(uint8_t led_channel, wabercfg_parameter_e parameter, flo
             *value = waber_led_cfg[led_channel].smoothness;
             break;
         default:
-            return -1;
+            retval = -1;
     }
     chMtxUnlock(&led_cfg);
-    return 0;
+    return retval;
 }
 
 int waberthread_get_complete_cfg(uint8_t led_channel, waber_led_cfg_t *cfg) {
