@@ -17,7 +17,7 @@
     </div>
   </div>
 <script>
-  var gateway = `ws://${window.location.hostname}/ws`;
+  var gateway = `ws://${window.location.hostname}/ws`
   var websocket;
   window.addEventListener('load', onLoad);
   function initWebSocket() {
@@ -54,6 +54,15 @@
   function toggle(){
     websocket.send('toggle');
   }
+  const messageInput = document.getElementById("message");
+  const sendButton = document.getElementById("send");
+  sendButton.addEventListener("click", () => {
+      const message = messageInput.value;
+      websocket.send(message);
+      output.innerHTML += `<p>You say: ${message}</p>`;
+      messageInput.value = "";
+  });
+
 </script>
 </body>
 </html>

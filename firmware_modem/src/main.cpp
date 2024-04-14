@@ -10,6 +10,7 @@
 #include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
 #include "SPIFFS.h"
+#include <HardwareSerial.h>
 
 // Replace with your network credentials
 const char* ssid = "REPLACE_WITH_YOUR_SSID";
@@ -22,8 +23,17 @@ const int ledPin = 2;
 AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");
 
-const char index_html[] PROGMEM = R"rawliteral(
-)rawliteral";
+HardwareSerial SerialPort(2);
+
+int send_to_mcu(String msg) {
+  SerialPort.println(msg);
+  return 0;
+}
+
+int log_debug(String msg) {
+  Serial.println(msg);
+  return 0;
+}
 
 void notifyClients() {
   ws.textAll(String(ledState));
@@ -37,6 +47,7 @@ void handleWebSocketMessage(void *arg, uint8_t *data, size_t len) {
       ledState = !ledState;
       notifyClients();
     }
+    log_debug((char*) data);
   }
 }
 
@@ -76,14 +87,12 @@ String processor(const String& var){
   return String();
 }
 
+
 void setup(){
   // Serial port for debugging purposes
   Serial.begin(115200);
+  SerialPort.begin(38400, SERIAL_8N1, 18, 17);
 
-  pinMode(ledPin, OUTPUT);
-  digitalWrite(ledPin, LOW);
-  
-// Initialize SPIFFS
   if(!SPIFFS.begin(true)){
     Serial.println("An Error has occurred while mounting SPIFFS");
     return;
@@ -102,6 +111,11 @@ void setup(){
   // Route to load style.css file
   server.on("/style.css", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(SPIFFS, "/style.css", "text/css");
+  });
+  
+  // Route to load ws.js
+  server.on("/ws.js", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(SPIFFS, "/ws.js", "text/javascript");
   });
 
   // Route for root / web page
