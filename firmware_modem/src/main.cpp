@@ -12,9 +12,6 @@
 #include "SPIFFS.h"
 #include <HardwareSerial.h>
 
-// Replace with your network credentials
-const char* ssid = "REPLACE_WITH_YOUR_SSID";
-const char* password = "REPLACE_WITH_YOUR_PASSWORD";
 
 bool ledState = 0;
 const int ledPin = 2;
@@ -87,7 +84,7 @@ String processor(const String& var){
   return String();
 }
 
-
+#define WABERINATOR_STATION
 void setup(){
   // Serial port for debugging purposes
   Serial.begin(115200);
@@ -98,13 +95,28 @@ void setup(){
     return;
   }
   
+  #ifdef WABERINATOR_AP
   // Connect to Wi-Fi
   WiFi.mode(WIFI_AP);
   WiFi.softAP("waberinator", NULL);
 
   // Print ESP Local IP Address
   Serial.println(WiFi.softAPIP());
-  // 
+  #endif
+  #ifdef WABERINATOR_STATION
+  WiFi.mode(WIFI_STA);
+  // Replace with your network credentials
+  const char* ssid = "NETGEAR";
+  const char* password = "XL12ABZXYGKIDO";
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi..");
+  }
+
+  // Print ESP32 Local IP Address
+  Serial.println(WiFi.localIP());
+  #endif
 
   initWebSocket();
 
@@ -113,11 +125,6 @@ void setup(){
     request->send(SPIFFS, "/style.css", "text/css");
   });
   
-  // Route to load ws.js
-  server.on("/ws.js", HTTP_GET, [](AsyncWebServerRequest *request){
-    request->send(SPIFFS, "/ws.js", "text/javascript");
-  });
-
   // Route for root / web page
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(SPIFFS, "/index.html", String(), false, processor);

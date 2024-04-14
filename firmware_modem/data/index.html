@@ -16,6 +16,16 @@
       <p><button id="button" class="button">Toggle</button></p>
     </div>
   </div>
+  <h1>Waberinator</h1>
+  <section class="browser">
+    <h2>Strang 1</h2>
+    <form>
+        <div class="controlelement">
+            <label for="s1_brightness" id="lab_s1_brightness">Helligkeit</label>
+            <input type="range" min="1" max="100" value="50" class="slider" id="s1_brightness">
+        </div>
+    </form>
+  </section>
 <script>
   var gateway = `ws://${window.location.hostname}/ws`
   var websocket;
@@ -54,14 +64,12 @@
   function toggle(){
     websocket.send('toggle');
   }
-  const messageInput = document.getElementById("message");
-  const sendButton = document.getElementById("send");
-  sendButton.addEventListener("click", () => {
-      const message = messageInput.value;
-      websocket.send(message);
-      output.innerHTML += `<p>You say: ${message}</p>`;
-      messageInput.value = "";
-  });
+
+  var slider_s1_brightness = document.getElementById("s1_brightness");
+  slider_s1_brightness.oninput = function() {
+      let event = {string: 1, param: "brightness", value: slider_s1_brightness.value};
+      websocket.send(JSON.stringify(event));
+  }
 
 </script>
 </body>
