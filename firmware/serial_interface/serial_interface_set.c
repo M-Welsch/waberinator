@@ -14,25 +14,25 @@ int _light(BaseSequentialStream *chp, int argc, char *argv[]) {
     const char *value = argv[2];
 
     wabercfg_parameter_e parameter;
-    if (isEqual(which_parameter_to_set, "phase")) {
+    if (isEqual(which_parameter_to_set, "phase") || isEqual(which_parameter_to_set, "p")) {
         parameter = WABER_CFG_PHASE;
     }
-    else if (isEqual(which_parameter_to_set, "depth")) {
+    else if (isEqual(which_parameter_to_set, "depth") || isEqual(which_parameter_to_set, "d")) {
         parameter = WABER_CFG_DEPTH;
     }
-    else if (isEqual(which_parameter_to_set, "frequency")) {
+    else if (isEqual(which_parameter_to_set, "frequency") || isEqual(which_parameter_to_set, "f")) {
         parameter = WABER_CFG_FREQUENCY;
     }
     else if (isEqual(which_parameter_to_set, "max_brightness") || isEqual(which_parameter_to_set, "mb")) {
         parameter = WABER_CFG_MAX_BRIGHTNESS;
     }
-    else if (isEqual(which_parameter_to_set, "brightness")) {
+    else if (isEqual(which_parameter_to_set, "brightness") || isEqual(which_parameter_to_set, "b")) {
         parameter = WABER_CFG_MOMENTARY_BRIGHTNESS;
     }
-    else if (isEqual(which_parameter_to_set, "smoothness")) {
+    else if (isEqual(which_parameter_to_set, "smoothness") || isEqual(which_parameter_to_set, "s")) {
         parameter = WABER_CFG_SMOOTHNESS;
     }
-    else if (isEqual(which_parameter_to_set, "active")) {
+    else if (isEqual(which_parameter_to_set, "active") || isEqual(which_parameter_to_set, "a")) {
         parameter = WABER_CFG_ACTIVE;
     }
     else {
