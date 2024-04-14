@@ -10,8 +10,8 @@
 #include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
 #include "SPIFFS.h"
-#include <HardwareSerial.h>
 
+#include "mcu_communicator.h"
 
 bool ledState = 0;
 const int ledPin = 2;
@@ -19,13 +19,6 @@ const int ledPin = 2;
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");
-
-HardwareSerial SerialPort(2);
-
-int send_to_mcu(String msg) {
-  SerialPort.println(msg);
-  return 0;
-}
 
 int log_debug(String msg) {
   Serial.println(msg);
@@ -45,6 +38,7 @@ void handleWebSocketMessage(void *arg, uint8_t *data, size_t len) {
       notifyClients();
     }
     log_debug((char*) data);
+    mcu_send_setter((char*) data);
   }
 }
 
@@ -88,7 +82,7 @@ String processor(const String& var){
 void setup(){
   // Serial port for debugging purposes
   Serial.begin(115200);
-  SerialPort.begin(38400, SERIAL_8N1, 18, 17);
+  mcu_init();
 
   if(!SPIFFS.begin(true)){
     Serial.println("An Error has occurred while mounting SPIFFS");

@@ -67,8 +67,8 @@
 
   var slider_s1_brightness = document.getElementById("s1_brightness");
   slider_s1_brightness.oninput = function() {
-      let event = {string: 1, param: "brightness", value: slider_s1_brightness.value};
-      websocket.send(JSON.stringify(event));
+    var msg = 'set light max_brightness 1 ' + (slider_s1_brightness.value/100);
+    websocket.send(msg);
   }
 
 </script>
