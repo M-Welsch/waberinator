@@ -5,10 +5,11 @@
 #include "waber_thread.h"
 #include "wab_mutex.h"
 
-waber_led_cfg_t waber_led_cfg[6];
-static bool manual_mode = false;
+
+waberinator_config_t waber_config;
 
 int _wabercfg_init(void) {
+    waber_led_cfg_t waber_led_cfg[6];
     waber_led_cfg[0].phase = 0;
     waber_led_cfg[0].depth = 1;
     waber_led_cfg[0].frequency = 1;
@@ -50,6 +51,20 @@ int _wabercfg_init(void) {
     waber_led_cfg[5].max_brightness = 0.5f;
     waber_led_cfg[5].momentary_brightness = 1;
     waber_led_cfg[5].smoothness = 2;
+
+    waber_config.global_min_brightness = 0.0f;
+    waber_config.global_max_brightness = 1.0f;
+    waber_config.global_min_frequency = 0.0f;
+    waber_config.global_max_frequency = 1.0f;
+    waber_config.global_min_depth = 0.0f;
+    waber_config.global_max_depth = 1.0f;
+    waber_config.manual_mode = false;
+    waber_config.led_cfg[0] = waber_led_cfg[0];
+    waber_config.led_cfg[1] = waber_led_cfg[1];
+    waber_config.led_cfg[2] = waber_led_cfg[2];
+    waber_config.led_cfg[3] = waber_led_cfg[3];
+    waber_config.led_cfg[4] = waber_led_cfg[4];
+    waber_config.led_cfg[5] = waber_led_cfg[5];
     return 0;
 }
 
@@ -71,29 +86,29 @@ static THD_FUNCTION(waberThread1, arg) {
     bool read_manual_mode = false;
 
     while (true) {
-        chMtxLock(&manual_mode_cfg);
-        read_manual_mode = manual_mode;
-        chMtxUnlock(&manual_mode_cfg);
+        chMtxLock(&mtx_waber_cfg);
+        read_manual_mode = waber_config.manual_mode;
+        chMtxUnlock(&mtx_waber_cfg);
         if (!read_manual_mode) {
-            chMtxLock(&led_cfg);
+            chMtxLock(&mtx_waber_cfg);
             led_string_setBrightness(1, brightness[0]);
             led_string_setBrightness(2, brightness[1]);
             led_string_setBrightness(3, brightness[2]);
             led_string_setBrightness(4, brightness[3]);
             led_string_setBrightness(5, brightness[4]);
             led_string_setBrightness(6, brightness[5]);
-            chMtxUnlock(&led_cfg);
+            chMtxUnlock(&mtx_waber_cfg);
 
             time_start = chVTGetSystemTimeX();
             time += TIME_MS2I(WABER_TICK_MS);
-            chMtxLock(&led_cfg);
-            brightness[0] = waber(tick, &waber_led_cfg[0]);
-            brightness[1] = waber(tick, &waber_led_cfg[1]);
-            brightness[2] = waber(tick, &waber_led_cfg[2]);
-            brightness[3] = waber(tick, &waber_led_cfg[3]);
-            brightness[4] = waber(tick, &waber_led_cfg[4]);
-            brightness[5] = waber(tick, &waber_led_cfg[5]);
-            chMtxUnlock(&led_cfg);
+            chMtxLock(&mtx_waber_cfg);
+            brightness[0] = waber(tick, &waber_config.led_cfg[0]);
+            brightness[1] = waber(tick, &waber_config.led_cfg[1]);
+            brightness[2] = waber(tick, &waber_config.led_cfg[2]);
+            brightness[3] = waber(tick, &waber_config.led_cfg[3]);
+            brightness[4] = waber(tick, &waber_config.led_cfg[4]);
+            brightness[5] = waber(tick, &waber_config.led_cfg[5]);
+            chMtxUnlock(&mtx_waber_cfg);
             tick++;
             time_needed = chVTGetSystemTimeX() - time_start;
             if (time_needed > time_max) {
@@ -111,14 +126,14 @@ static THD_FUNCTION(waberThread1, arg) {
         }
         else {
             // manual mode
-            chMtxLock(&led_cfg);
-            led_string_setBrightness(1, waber_led_cfg[0].momentary_brightness);
-            led_string_setBrightness(2, waber_led_cfg[1].momentary_brightness);
-            led_string_setBrightness(3, waber_led_cfg[2].momentary_brightness);
-            led_string_setBrightness(4, waber_led_cfg[3].momentary_brightness);
-            led_string_setBrightness(5, waber_led_cfg[4].momentary_brightness);
-            led_string_setBrightness(6, waber_led_cfg[5].momentary_brightness);
-            chMtxUnlock(&led_cfg);
+            chMtxLock(&mtx_waber_cfg);
+            led_string_setBrightness(1, waber_config.led_cfg[0].momentary_brightness);
+            led_string_setBrightness(2, waber_config.led_cfg[1].momentary_brightness);
+            led_string_setBrightness(3, waber_config.led_cfg[2].momentary_brightness);
+            led_string_setBrightness(4, waber_config.led_cfg[3].momentary_brightness);
+            led_string_setBrightness(5, waber_config.led_cfg[4].momentary_brightness);
+            led_string_setBrightness(6, waber_config.led_cfg[5].momentary_brightness);
+            chMtxUnlock(&mtx_waber_cfg);
             chThdSleepMilliseconds(100);
         }
     }
@@ -129,46 +144,46 @@ void waberthread_init(void) {
 }
 
 int waberthread_set_manual_mode(const bool set_manual_mode) {
-    chMtxLock(&manual_mode_cfg);
-    manual_mode = set_manual_mode;
-    chMtxUnlock(&manual_mode_cfg);
+    chMtxLock(&mtx_waber_cfg);
+    waber_config.manual_mode = set_manual_mode;
+    chMtxUnlock(&mtx_waber_cfg);
     return 0;
 }
 
 int waberthread_set_cfg(uint8_t led_channel, wabercfg_parameter_e parameter, float value) {
     int retval = 0;
-    chMtxLock(&led_cfg);  // get stuck here when this is being called for the second time
+    chMtxLock(&mtx_waber_cfg);  // get stuck here when this is being called for the second time
     switch (parameter) {
         case WABER_CFG_PHASE:
-            waber_led_cfg[led_channel].phase = value;
+            waber_config.led_cfg[led_channel].phase = value;
             break;
         case WABER_CFG_DEPTH:
             if ((value > 1.0f) || (value < 0.0f)) {
                 retval = -1;
             }
-            waber_led_cfg[led_channel].depth = value;
+            waber_config.led_cfg[led_channel].depth = value;
             break;
         case WABER_CFG_FREQUENCY:
-            waber_led_cfg[led_channel].frequency = value;
+            waber_config.led_cfg[led_channel].frequency = value;
             break;
         case WABER_CFG_MAX_BRIGHTNESS:
             if ((value > 1.0f) || (value < 0.0f)) {
                 retval = -1;
             }
-            waber_led_cfg[led_channel].max_brightness = value;
+            waber_config.led_cfg[led_channel].max_brightness = value;
             break;
         case WABER_CFG_MOMENTARY_BRIGHTNESS:
             if ((value > 1.0f) || (value < 0.0f)) {
                 retval = -1;
             }
-            waber_led_cfg[led_channel].momentary_brightness = value;
+            waber_config.led_cfg[led_channel].momentary_brightness = value;
             break;
         case WABER_CFG_SMOOTHNESS:
-            waber_led_cfg[led_channel].smoothness = value;
+            waber_config.led_cfg[led_channel].smoothness = value;
             break;
         case WABER_CFG_ACTIVE:
-            waber_led_cfg[led_channel].active = value > 0.5;
-            if (waber_led_cfg[led_channel].active) {
+            waber_config.led_cfg[led_channel].active = value > 0.5;
+            if (waber_config.led_cfg[led_channel].active) {
                 led_string_on(led_channel);
             }
             else {
@@ -178,7 +193,7 @@ int waberthread_set_cfg(uint8_t led_channel, wabercfg_parameter_e parameter, flo
         default:
             retval = -1;
     }
-    chMtxUnlock(&led_cfg);
+    chMtxUnlock(&mtx_waber_cfg);
     return retval;
 }
 
@@ -187,37 +202,37 @@ int waberthread_get_cfg(uint8_t led_channel, wabercfg_parameter_e parameter, flo
         return -1;
     }
     int retval = 0;
-    chMtxLock(&led_cfg);
+    chMtxLock(&mtx_waber_cfg);
     switch (parameter) {
         case WABER_CFG_PHASE:
-            *value = waber_led_cfg[led_channel].phase;
+            *value = waber_config.led_cfg[led_channel].phase;
             break;
         case WABER_CFG_DEPTH:
-            *value = waber_led_cfg[led_channel].depth;
+            *value = waber_config.led_cfg[led_channel].depth;
             break;
         case WABER_CFG_FREQUENCY:
-            *value = waber_led_cfg[led_channel].frequency;
+            *value = waber_config.led_cfg[led_channel].frequency;
             break;
         case WABER_CFG_MAX_BRIGHTNESS:
-            *value = waber_led_cfg[led_channel].max_brightness;
+            *value = waber_config.led_cfg[led_channel].max_brightness;
             break;
         case WABER_CFG_SMOOTHNESS:
-            *value = waber_led_cfg[led_channel].smoothness;
+            *value = waber_config.led_cfg[led_channel].smoothness;
             break;
         default:
             retval = -1;
     }
-    chMtxUnlock(&led_cfg);
+    chMtxUnlock(&mtx_waber_cfg);
     return retval;
 }
 
 int waberthread_get_complete_cfg(uint8_t led_channel, waber_led_cfg_t *cfg) {
-    chMtxLock(&led_cfg);
-    cfg->phase = waber_led_cfg[led_channel].phase;
-    cfg->depth = waber_led_cfg[led_channel].depth;
-    cfg->frequency = waber_led_cfg[led_channel].frequency;
-    cfg->max_brightness = waber_led_cfg[led_channel].max_brightness;
-    cfg->smoothness = waber_led_cfg[led_channel].smoothness;
-    chMtxUnlock(&led_cfg);
+    chMtxLock(&mtx_waber_cfg);
+    cfg->phase = waber_config.led_cfg[led_channel].phase;
+    cfg->depth = waber_config.led_cfg[led_channel].depth;
+    cfg->frequency = waber_config.led_cfg[led_channel].frequency;
+    cfg->max_brightness = waber_config.led_cfg[led_channel].max_brightness;
+    cfg->smoothness = waber_config.led_cfg[led_channel].smoothness;
+    chMtxUnlock(&mtx_waber_cfg);
     return 0;
 }

@@ -122,7 +122,6 @@ LDSCRIPT= $(STARTUPLD)/STM32F030x8.ld
 # setting.
 CSRC = $(ALLCSRC) \
 	   core_defines/wab_mutex.c \
-	   waberinator_config/waberinator_config.c \
        serial_interface/common.c \
        drivers/smps/smps.c \
        drivers/led_string/led_string.c \
@@ -145,7 +144,6 @@ ASMSRC = $(ALLASMSRC)
 ASMXSRC = $(ALLXASMSRC)
 
 WABERINATOR_INCDIR = ./serial_interface \
-	./waberinator_config \
 	./drivers/smps \
 	./drivers/led_string \
 	./drivers/adc \
