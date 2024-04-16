@@ -14,14 +14,17 @@ float _compressed_sine(float tick_f, float frequency, float phase, float smoothn
 float _waber(float tick_f, wabercfg_t* cfg);
 #endif
 
+#define ABSOLUTE_MINIMUM_FREQUENCY 0.01f
+
+/** defines the parameters for a single LED string */
 typedef struct {
-    float phase;
-    float depth;
-    float frequency;
-    float max_brightness;
-    float momentary_brightness;
-    float smoothness;
-    bool active;
+    float phase;                  /**< phase in rad (where 2*pi is a full period) */
+    float depth;                  /**< modulation depth of the wabering. 0-1, where 0 is no modulation and 1 is modulation over the complete brightness*/
+    float frequency;              /**< frequency in Hz */
+    float max_brightness;         /**< maximum brightness from 0..1 */
+    float momentary_brightness;   /**< brightness if manual mode is set */
+    float smoothness;             /**< boah ... hard to explain. Look at the geogebra file */
+    bool active;                  /**< true if the LED does things, otherwise false */
 } waber_led_cfg_t;
 
 typedef struct {
@@ -35,6 +38,6 @@ typedef struct {
     waber_led_cfg_t led_cfg[6];
 } waberinator_config_t;
 
-float waber(uint32_t tick, waber_led_cfg_t* cfg);
+float waber(uint32_t tick, waber_led_cfg_t *cfg, float frequency_factor, float depth_factor);
 
 #endif //FIRMWARE_WABERING_H

@@ -8,8 +8,8 @@ float _compressor(float input, float smoothness) {
 }
 
 float _sine(float tick, float frequency, float phase) {
-    float in_sine = phase + 2 * M_PI * frequency * tick / WABER_TICKS_PER_S;
-    return 0.5 * sinf(in_sine) + 0.5;
+    float in_sine = phase + 2.0f * M_PI * frequency * tick / WABER_TICKS_PER_S;
+    return 0.5f * sinf(in_sine) + 0.5f;
 }
 
 float _compressed_sine(float tick_f, float frequency, float phase, float smoothness) {
@@ -17,10 +17,10 @@ float _compressed_sine(float tick_f, float frequency, float phase, float smoothn
     return _compressor(sine, smoothness);
 }
 
-float waber(uint32_t tick, waber_led_cfg_t* cfg) {
+float waber(uint32_t tick, waber_led_cfg_t *cfg, float frequency_factor, float depth_factor) {
     float phase = cfg->phase;
-    float depth = cfg->depth;
-    float frequency = cfg->frequency;
+    float depth = cfg->depth * depth_factor;
+    float frequency = cfg->frequency * frequency_factor;
     float brightness = cfg->max_brightness;
     float smoothness = cfg->smoothness;
     float tick_f = (float) tick;
