@@ -12838,6 +12838,16 @@
 		)
 		(uuid "3aba507b-ebfc-4e98-baab-7392d3f5b5b6")
 	)
+	(text "cts is not the same as rts"
+		(exclude_from_sim no)
+		(at 346.964 199.898 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "3b04ca47-bced-46a2-b958-48244d33d705")
+	)
 	(text "battery"
 		(exclude_from_sim no)
 		(at 430.53 170.18 0)
@@ -12848,6 +12858,16 @@
 			(justify left bottom)
 		)
 		(uuid "3feb2f7f-d9ab-4603-bcc3-5558e021c90b")
+	)
+	(text "Itotal = 15.5mA"
+		(exclude_from_sim no)
+		(at 213.614 247.396 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "917e2794-26a6-4997-a170-8dcacb9c3ca7")
 	)
 	(text "16V map to 3,2V"
 		(exclude_from_sim no)
@@ -12881,6 +12901,16 @@
 			(justify left bottom)
 		)
 		(uuid "c56cd61d-49b9-44ad-9f60-2b4317b83663")
+	)
+	(text "GPIO18 braucht vllt. 10k PU"
+		(exclude_from_sim no)
+		(at 228.092 152.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "fd39eee0-da5e-4e37-95dc-f8ee08e9284c")
 	)
 	(label "tim15_ch2_ledstring6"
 		(at 97.79 241.3 0)
@@ -14538,7 +14568,7 @@
 				)
 			)
 		)
-		(property "Value" "12k"
+		(property "Value" "10k"
 			(at 354.33 168.91 90)
 			(effects
 				(font
@@ -14816,7 +14846,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "0c35a69d-7143-4df6-83d9-00bae9687d0c")
 		(property "Reference" "R25"
 			(at 222.25 180.34 90)
@@ -15880,7 +15910,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1nF"
+		(property "Value" "1µF"
 			(at 210.185 192.405 0)
 			(effects
 				(font
@@ -19130,13 +19160,12 @@
 				)
 			)
 		)
-		(property "Value" "R"
-			(at 182.88 248.285 90)
+		(property "Value" "100"
+			(at 182.88 254.254 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
@@ -21263,8 +21292,8 @@
 				)
 			)
 		)
-		(property "Value" "R"
-			(at 182.88 239.395 90)
+		(property "Value" "120"
+			(at 182.88 244.094 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22272,13 +22301,12 @@
 				)
 			)
 		)
-		(property "Value" "R"
-			(at 182.88 243.205 90)
+		(property "Value" "120"
+			(at 182.88 249.174 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
@@ -22608,7 +22636,7 @@
 				)
 			)
 		)
-		(property "Value" "5k"
+		(property "Value" "10k"
 			(at 210.82 180.34 90)
 			(effects
 				(font
@@ -25791,7 +25819,7 @@
 				)
 			)
 		)
-		(property "Value" "12k"
+		(property "Value" "10k"
 			(at 354.33 182.88 90)
 			(effects
 				(font
