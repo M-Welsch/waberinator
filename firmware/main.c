@@ -71,16 +71,10 @@ int main(void) {
      */
     led_string_init();
     adc_init();
-    //communicationThreads_init();
-    //waberthread_init();
+    communicationThreads_init();
+    waberthread_init();
     modem_on();
     smps_setOn();
-    led_string_setBrightness(1, 0.5f);
-    led_string_setBrightness(2, 0.5f);
-    led_string_setBrightness(3, 0.5f);
-    led_string_setBrightness(4, 0.5f);
-    led_string_setBrightness(5, 0.5f);
-    led_string_setBrightness(6, 0.5f);
     while (true) {
         chThdSleepMilliseconds(100);
 
