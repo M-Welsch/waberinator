@@ -4,6 +4,7 @@
 #include "chprintf.h"
 #include "core_defines.h"
 #include "modem.h"
+#include "smps.h"
 
 int _light(BaseSequentialStream *chp, int argc, char *argv[]) {
     if (argc < 3) {
@@ -90,9 +91,11 @@ int _smps(BaseSequentialStream *chp, int argc, char *argv[]) {
     }
     const char *on_or_off = argv[0];
     if (isEqual(on_or_off, "on")) {
-
+        return smps_setOn();
     }
-    return 0;
+    else {
+        return smps_setOff();
+    }
 }
 
 int _modem(BaseSequentialStream *chp, int argc, char *argv[]) {
