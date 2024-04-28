@@ -3,9 +3,10 @@
 #include "modem.h"
 
 int modem_on(void) {
-    palSetLine(MODEM_IO0_RESET);
-    palSetLine(MODEM_EN);
-    if (palReadLine(MODEM_EN) && palReadLine(MODEM_IO0_RESET)) {
+    palSetLine(LINE_MODEM_EN);
+    palSetLine(LINE_MODEM_IO0_RESET);
+    chThdSleepMilliseconds(2);
+    if (palReadLine(LINE_MODEM_EN) && palReadLine(LINE_MODEM_IO0_RESET)) {
         return 0;
     }
     else {
@@ -14,9 +15,10 @@ int modem_on(void) {
 }
 
 int modem_off(void) {
-    palClearLine(MODEM_IO0_RESET);
-    palClearLine(MODEM_EN);
-    if (!palReadLine(MODEM_EN) && !palReadLine(MODEM_IO0_RESET)) {
+    palClearLine(LINE_MODEM_EN);
+    palClearLine(LINE_MODEM_IO0_RESET);
+    chThdSleepMilliseconds(2);
+    if (!palReadLine(LINE_MODEM_EN) && !palReadLine(LINE_MODEM_IO0_RESET)) {
         return 0;
     }
     else {

@@ -3,6 +3,7 @@
 #include "waber_thread.h"
 #include "chprintf.h"
 #include "core_defines.h"
+#include "modem.h"
 
 int _light(BaseSequentialStream *chp, int argc, char *argv[]) {
     if (argc < 3) {
@@ -94,6 +95,21 @@ int _smps(BaseSequentialStream *chp, int argc, char *argv[]) {
     return 0;
 }
 
+int _modem(BaseSequentialStream *chp, int argc, char *argv[]) {
+    if (argc < 1) {
+        argument_missing(chp);
+        return -1;
+    }
+    const char *on_or_off = argv[0];
+    if (isEqual(on_or_off, "on")) {
+        return modem_on();
+    }
+    else {
+        return modem_off();
+    }
+}
+
+
 int _temperature(BaseSequentialStream *chp, int argc, char *argv[]) {
     UNUSED_PARAM(argc);
     UNUSED_PARAM(argv);
@@ -126,6 +142,9 @@ void set(BaseSequentialStream *chp, int argc, char *argv[]) {
     }
     else if (isEqual(what_to_set, "temperature")) {
         retval = _temperature(chp, argc-1, argv+1);
+    }
+    else if (isEqual(what_to_set, "modem")) {
+        retval = _modem(chp, argc-1, argv+1);
     }
     else {
         retval = -1;

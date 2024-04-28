@@ -152,7 +152,7 @@
  *          .
  */
 #if !defined(CH_CFG_HARDENING_LEVEL)
-#define CH_CFG_HARDENING_LEVEL              1
+#define CH_CFG_HARDENING_LEVEL              2
 #endif
 
 /** @} */

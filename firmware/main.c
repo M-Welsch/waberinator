@@ -21,6 +21,7 @@
 #include "waber_thread.h"
 #include "led_string.h"
 #include "adc.h"
+#include "modem.h"
 
 /*
  * Green LED blinker thread, times are in milliseconds.
@@ -71,6 +72,7 @@ int main(void) {
     adc_init();
     communicationThreads_init();
     waberthread_init();
+    modem_on();
     while (true) {
         chThdSleepMilliseconds(100);
 

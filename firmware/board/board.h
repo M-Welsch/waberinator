@@ -420,7 +420,7 @@
                                      PIN_OSPEED_HIGH(TIM15_CH2_LEDSTRING6))
 #define VAL_GPIOB_PUPDR             (PIN_PUPDR_PULLUP(TIM3_CH3_LEDSTRING3) |       \
                                      PIN_PUPDR_PULLUP(TIM3_CH4_LEDSTRING4) |         \
-                                     PIN_PUPDR_PULLUP(MODEM_EN) |         \
+                                     PIN_PUPDR_FLOATING(MODEM_EN) |         \
                                      PIN_PUPDR_PULLUP(GPIOB_SWO) |          \
                                      PIN_PUPDR_PULLUP(GPIOB_ARD_D5) |       \
                                      PIN_PUPDR_PULLUP(GPIOB_ARD_D4) |       \
@@ -431,12 +431,12 @@
                                      PIN_PUPDR_PULLUP(BUTTON) |       \
                                      PIN_PUPDR_PULLUP(SPARE_3) |        \
                                      PIN_PUPDR_PULLUP(SPARE_4) |        \
-                                     PIN_PUPDR_PULLUP(MODEM_IO0_RESET) |        \
+                                     PIN_PUPDR_FLOATING(MODEM_IO0_RESET) |        \
                                      PIN_PUPDR_PULLUP(TIM15_CH1_LEDSTRING5) |        \
                                      PIN_PUPDR_PULLUP(TIM15_CH2_LEDSTRING6))
 #define VAL_GPIOB_ODR               (PIN_ODR_HIGH(TIM3_CH3_LEDSTRING3) |           \
                                      PIN_ODR_HIGH(TIM3_CH4_LEDSTRING4) |             \
-                                     PIN_ODR_LOW(MODEM_EN) |             \
+                                     PIN_ODR_HIGH(MODEM_EN) |             \
                                      PIN_ODR_HIGH(GPIOB_SWO) |              \
                                      PIN_ODR_HIGH(GPIOB_ARD_D5) |           \
                                      PIN_ODR_HIGH(GPIOB_ARD_D4) |           \
@@ -447,7 +447,7 @@
                                      PIN_ODR_HIGH(BUTTON) |           \
                                      PIN_ODR_HIGH(SPARE_3) |            \
                                      PIN_ODR_HIGH(SPARE_4) |            \
-                                     PIN_ODR_LOW(MODEM_IO0_RESET) |            \
+                                     PIN_ODR_HIGH(MODEM_IO0_RESET) |            \
                                      PIN_ODR_HIGH(TIM15_CH1_LEDSTRING5) |            \
                                      PIN_ODR_HIGH(TIM15_CH2_LEDSTRING6))
 #define VAL_GPIOB_AFRL              (PIN_AFIO_AF(TIM3_CH3_LEDSTRING3, 1U) |        \
