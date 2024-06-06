@@ -12,46 +12,46 @@ waberinator_config_t waber_config;
 int _wabercfg_init(void) {
     waber_led_cfg_t waber_led_cfg[6];
     waber_led_cfg[0].phase = 0;
-    waber_led_cfg[0].depth = 1;
-    waber_led_cfg[0].frequency = 1;
-    waber_led_cfg[0].max_brightness = 1;
+    waber_led_cfg[0].depth = 1.0f;
+    waber_led_cfg[0].frequency = 1.0f;
+    waber_led_cfg[0].max_brightness = 0.02f;
     waber_led_cfg[0].momentary_brightness = 0.5f;
     waber_led_cfg[0].smoothness = 4;
 
-    waber_led_cfg[1].phase = 0;
-    waber_led_cfg[1].depth = 1;
-    waber_led_cfg[1].frequency = 0.2f;
-    waber_led_cfg[1].max_brightness = 1;
+    waber_led_cfg[1].phase = 1.04f;
+    waber_led_cfg[1].depth = 1.0f;
+    waber_led_cfg[1].frequency = 1.0f;
+    waber_led_cfg[1].max_brightness = 0.02f;
     waber_led_cfg[1].momentary_brightness = 0.6f;
-    waber_led_cfg[1].smoothness = 2;
+    waber_led_cfg[1].smoothness = 4;
 
-    waber_led_cfg[2].phase = 2;
-    waber_led_cfg[2].depth = 1;
-    waber_led_cfg[2].frequency = 0.2f;
-    waber_led_cfg[2].max_brightness = 1;
+    waber_led_cfg[2].phase = 2.94f;
+    waber_led_cfg[2].depth = 1.0f;
+    waber_led_cfg[2].frequency = 1.0f;
+    waber_led_cfg[2].max_brightness = 0.02f;
     waber_led_cfg[2].momentary_brightness = 0.7f;
-    waber_led_cfg[2].smoothness = 2;
+    waber_led_cfg[2].smoothness = 4;
 
-    waber_led_cfg[3].phase = 0;
-    waber_led_cfg[3].depth = 0.1f;
-    waber_led_cfg[3].frequency = 0.2f;
-    waber_led_cfg[3].max_brightness = 1;
+    waber_led_cfg[3].phase = 3.1415f;
+    waber_led_cfg[3].depth = 1.0f;
+    waber_led_cfg[3].frequency = 1.0f;
+    waber_led_cfg[3].max_brightness = 0.02f;
     waber_led_cfg[3].momentary_brightness = 0.8f;
-    waber_led_cfg[3].smoothness = 2;
+    waber_led_cfg[3].smoothness = 4;
 
-    waber_led_cfg[4].phase = 0;
-    waber_led_cfg[4].depth = 1;
-    waber_led_cfg[4].frequency = 1;
-    waber_led_cfg[4].max_brightness = 1;
+    waber_led_cfg[4].phase = 4.1888f;
+    waber_led_cfg[4].depth = 1.0f;
+    waber_led_cfg[4].frequency = 1.0f;
+    waber_led_cfg[4].max_brightness = 0.02f;
     waber_led_cfg[4].momentary_brightness = 0.9f;
-    waber_led_cfg[4].smoothness = 2;
+    waber_led_cfg[4].smoothness = 4;
 
-    waber_led_cfg[5].phase = 0;
-    waber_led_cfg[5].depth = 1;
-    waber_led_cfg[5].frequency = 0.5f;
-    waber_led_cfg[5].max_brightness = 0.5f;
+    waber_led_cfg[5].phase = 5.2398f;
+    waber_led_cfg[5].depth = 1.0f;
+    waber_led_cfg[5].frequency = 1.0f;
+    waber_led_cfg[5].max_brightness = 0.02f;
     waber_led_cfg[5].momentary_brightness = 1;
-    waber_led_cfg[5].smoothness = 2;
+    waber_led_cfg[5].smoothness = 4;
 
     waber_config.global_min_brightness = 0.0f;
     waber_config.global_max_brightness = 1.0f;
@@ -115,6 +115,14 @@ static THD_FUNCTION(waberThread1, arg) {
     float frequency_factor = 1.0f;
     float depth_factor = 1.0f;
     adc_readings_t adc_readings;
+#ifdef ADC_TEST
+    while (true) {
+        adc_readPoti(&adc_readings);
+        chprintf((BaseSequentialStream*) &SD2, "ADC vals: %f, %f, %f, %f\n", adc_readings.brightness, adc_readings.depth, adc_readings.frequency, adc_readings.vbat);
+        chThdSleepMilliseconds(200);
+    }
+#endif
+
     while (true) {
 
         chMtxLock(&mtx_waber_cfg);
@@ -138,7 +146,7 @@ static THD_FUNCTION(waberThread1, arg) {
             chMtxLock(&mtx_waber_cfg);
 
             brightness_factor = _map_full_adc_range_to_defined_range(adc_readings.brightness, waber_config.global_min_brightness, waber_config.global_max_brightness);
-            frequency_factor = _map_full_adc_range_to_defined_range(adc_readings.frequency, waber_config.global_min_frequency, waber_config.global_max_frequency);
+            frequency_factor = 1.0f;  //_map_full_adc_range_to_defined_range(adc_readings.frequency, waber_config.global_min_frequency, waber_config.global_max_frequency);
             depth_factor = _map_full_adc_range_to_defined_range(adc_readings.depth, waber_config.global_min_depth, waber_config.global_max_depth);
 
             brightness[0] = waber(tick, &waber_config.led_cfg[0], frequency_factor, depth_factor) * brightness_factor;
@@ -158,9 +166,11 @@ static THD_FUNCTION(waberThread1, arg) {
                     brightness_max[c] = brightness[c];
                 }
             }
+#ifdef MEASURE_TICKS  // might break the flow!
             if (tick % 50 == 0) {
-                //chprintf((BaseSequentialStream*) &SD2, "Maximum Time needed: %d of %d: [%f, %f, %f, %f, %f, %f]\n\r", time_max, time_available, brightness[0], brightness[1], brightness[2], brightness[3], brightness[4], brightness[5]);
+                chprintf((BaseSequentialStream*) &SD2, "Maximum Time needed: %d of %d: [%f, %f, %f, %f, %f, %f]\n\r", time_max, time_available, brightness[0], brightness[1], brightness[2], brightness[3], brightness[4], brightness[5]);
             }
+#endif
             chThdSleepUntil(time);
         }
         else {

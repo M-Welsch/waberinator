@@ -41,13 +41,14 @@ int adc_readPoti(adc_readings_t *readings) {
     uint16_t depth = 0;
     uint16_t vbat = 0;
     for (uint8_t c = 0; c < ADC_GRP1_BUF_DEPTH; c++) {
-        brightness += adc_sample_buffer[c * ADC_GRP1_NUM_CHANNELS + ADC_CHANNEL_BRIGHTNESS];
+        /* reversing direction */
+        brightness += ADC_FULLSCALE - adc_sample_buffer[c * ADC_GRP1_NUM_CHANNELS + ADC_CHANNEL_BRIGHTNESS];
     }
     for (uint8_t c = 0; c < ADC_GRP1_BUF_DEPTH; c++) {
         frequency += adc_sample_buffer[c * ADC_GRP1_NUM_CHANNELS + ADC_CHANNEL_FREQUENCY];
     }
     for (uint8_t c = 0; c < ADC_GRP1_BUF_DEPTH; c++) {
-        depth += adc_sample_buffer[c * ADC_GRP1_NUM_CHANNELS + ADC_CHANNEL_DEPTH];
+        depth += ADC_FULLSCALE -  adc_sample_buffer[c * ADC_GRP1_NUM_CHANNELS + ADC_CHANNEL_DEPTH];
     }
     for (uint8_t c = 0; c < ADC_GRP1_BUF_DEPTH; c++) {
         vbat += adc_sample_buffer[c * ADC_GRP1_NUM_CHANNELS + ADC_CHANNEL_BATTERY];
