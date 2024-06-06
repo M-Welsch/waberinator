@@ -13,42 +13,42 @@ int _wabercfg_init(void) {
     waber_led_cfg_t waber_led_cfg[6];
     waber_led_cfg[0].phase = 0;
     waber_led_cfg[0].depth = 1.0f;
-    waber_led_cfg[0].frequency = 1.0f;
+    waber_led_cfg[0].frequency = 0.3f;
     waber_led_cfg[0].max_brightness = 0.02f;
     waber_led_cfg[0].momentary_brightness = 0.5f;
     waber_led_cfg[0].smoothness = 4;
 
     waber_led_cfg[1].phase = 1.04f;
     waber_led_cfg[1].depth = 1.0f;
-    waber_led_cfg[1].frequency = 1.0f;
+    waber_led_cfg[1].frequency = 0.3f;
     waber_led_cfg[1].max_brightness = 0.02f;
     waber_led_cfg[1].momentary_brightness = 0.6f;
     waber_led_cfg[1].smoothness = 4;
 
     waber_led_cfg[2].phase = 2.94f;
     waber_led_cfg[2].depth = 1.0f;
-    waber_led_cfg[2].frequency = 1.0f;
+    waber_led_cfg[2].frequency = 0.3f;
     waber_led_cfg[2].max_brightness = 0.02f;
     waber_led_cfg[2].momentary_brightness = 0.7f;
     waber_led_cfg[2].smoothness = 4;
 
     waber_led_cfg[3].phase = 3.1415f;
     waber_led_cfg[3].depth = 1.0f;
-    waber_led_cfg[3].frequency = 1.0f;
+    waber_led_cfg[3].frequency = 0.3f;
     waber_led_cfg[3].max_brightness = 0.02f;
     waber_led_cfg[3].momentary_brightness = 0.8f;
     waber_led_cfg[3].smoothness = 4;
 
     waber_led_cfg[4].phase = 4.1888f;
     waber_led_cfg[4].depth = 1.0f;
-    waber_led_cfg[4].frequency = 1.0f;
+    waber_led_cfg[4].frequency = 0.3f;
     waber_led_cfg[4].max_brightness = 0.02f;
     waber_led_cfg[4].momentary_brightness = 0.9f;
     waber_led_cfg[4].smoothness = 4;
 
     waber_led_cfg[5].phase = 5.2398f;
     waber_led_cfg[5].depth = 1.0f;
-    waber_led_cfg[5].frequency = 1.0f;
+    waber_led_cfg[5].frequency = 0.3f;
     waber_led_cfg[5].max_brightness = 0.02f;
     waber_led_cfg[5].momentary_brightness = 1;
     waber_led_cfg[5].smoothness = 4;
@@ -108,7 +108,6 @@ static THD_FUNCTION(waberThread1, arg) {
     systime_t time_needed = 0;
     systime_t time_available = TIME_MS2I(WABER_TICK_MS);
     systime_t time_max = 0;
-    float brightness_max[6] = {0};  // just to use the dc
     bool read_manual_mode = false;
 
     float brightness_factor = 1.0f;
@@ -141,7 +140,9 @@ static THD_FUNCTION(waberThread1, arg) {
             time_start = chVTGetSystemTimeX();
             time += TIME_MS2I(WABER_TICK_MS);
 
+            chMtxLock(&mtx_adc);
             adc_readPoti(&adc_readings);
+            chMtxUnlock(&mtx_adc);
 
             chMtxLock(&mtx_waber_cfg);
 
@@ -160,11 +161,6 @@ static THD_FUNCTION(waberThread1, arg) {
             time_needed = chVTGetSystemTimeX() - time_start;
             if (time_needed > time_max) {
                 time_max = time_needed;
-            }
-            for (uint8_t c = 0; c < 6; c++) {
-                if (brightness[c] > brightness_max[c]) {
-                    brightness_max[c] = brightness[c];
-                }
             }
 #ifdef MEASURE_TICKS  // might break the flow!
             if (tick % 50 == 0) {

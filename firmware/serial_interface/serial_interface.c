@@ -11,7 +11,8 @@
 #include "core_defines.h"
 #include "serial_interface/common.h"
 #include "serial_interface_set.h"
-
+#include "adc.h"
+#include "wab_mutex.h"
 
 
 void _probe(BaseSequentialStream *chp, int argc, char *argv[]) {
@@ -21,10 +22,31 @@ void _probe(BaseSequentialStream *chp, int argc, char *argv[]) {
     chprintf(chp, "Echo\n");
 }
 
+void get(BaseSequentialStream *chp, int argc, char *argv[]) {
+    if (argc < 1) {
+        argument_missing(chp);
+        return;
+    }
+    int retval = 0;
+    const char *what_to_get = argv[0];
+    if (isEqual(what_to_get, "adc")) {
+        adc_readings_t readings;
+        chMtxLock(&mtx_adc);
+        adc_readPoti(&readings);
+        chMtxUnlock(&mtx_adc);
+        chprintf(chp, "br=%f, f=%f, d=%f, vbat=%f\n", readings.brightness, readings.frequency, readings.depth, readings.vbat);
+    }
+    else {
+        retval = -1;
+        chprintf(chp, "no such getter as %s\n\r", what_to_get);
+    }
+}
+
 static const ShellCommand commands[] = {
         {"probe", _probe},
         {"set",   set},
         {"s", set},
+        {"get",   get},
         {NULL, NULL}
 };
 

@@ -5,5 +5,6 @@
 
 extern mutex_t mtx_waber_cfg;
 extern mutex_t manual_mode_cfg;
+extern mutex_t mtx_adc;
 
 #endif //FIRMWARE_MUTEX_H

@@ -6,3 +6,4 @@
 
 MUTEX_DECL(mtx_waber_cfg);
 MUTEX_DECL(manual_mode_cfg);
+MUTEX_DECL(mtx_adc);
