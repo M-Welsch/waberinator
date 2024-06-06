@@ -17,8 +17,8 @@ static PWMConfig pwm1_cfg = {
 };
 
 static PWMConfig pwm3_cfg = {
-        100000,                                    /* 10kHz PWM clock frequency.   */
-        1000,                                    /* Initial PWM period 1S.       */
+        2000000,                                    /* 10kHz PWM clock frequency.   */
+        10000,                                    /* Initial PWM period 1S.       */
         NULL,
         {
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
@@ -32,8 +32,8 @@ static PWMConfig pwm3_cfg = {
 };
 
 static PWMConfig pwm15_cfg = {
-        100000,                                    /* 10kHz PWM clock frequency.   */
-        1000,                                    /* Initial PWM period 1S.       */
+        2000000,                                    /* 10kHz PWM clock frequency.   */
+        10000,                                    /* Initial PWM period 1S.       */
         NULL,
         {
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},

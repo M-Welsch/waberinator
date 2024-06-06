@@ -47,6 +47,7 @@ static const ShellCommand commands[] = {
         {"set",   set},
         {"s", set},
         {"get",   get},
+        {"g", get},
         {NULL, NULL}
 };
 
