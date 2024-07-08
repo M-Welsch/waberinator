@@ -23,6 +23,7 @@
 #include "adc.h"
 #include "modem.h"
 #include "smps.h"
+#include "battery_monitor.h"
 
 /*
  * Green LED blinker thread, times are in milliseconds.
@@ -75,6 +76,7 @@ int main(void) {
     waberthread_init();
     modem_on();
     smps_setOn();
+    battery_monitor_init();
     while (true) {
         chThdSleepMilliseconds(100);
 
