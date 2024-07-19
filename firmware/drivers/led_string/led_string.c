@@ -1,24 +1,10 @@
 #include "led_string.h"
 #include "hal.h"
 
-static PWMConfig pwm1_cfg = {
-        100000,                                    /* 10kHz PWM clock frequency.   */
-        1000,                                    /* Initial PWM period 1S.       */
-        NULL,
-        {
-                {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-                {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-                {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-                {PWM_OUTPUT_DISABLED, NULL}
-        },
-        0,
-        0,
-        0
-};
 
 static PWMConfig pwm3_cfg = {
-        2000000,                                    /* 10kHz PWM clock frequency.   */
-        10000,                                    /* Initial PWM period 1S.       */
+        6000000,                                    /* 10kHz PWM clock frequency.   */
+        65535,                                    /* Initial PWM period 1S.       */
         NULL,
         {
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
@@ -32,8 +18,8 @@ static PWMConfig pwm3_cfg = {
 };
 
 static PWMConfig pwm15_cfg = {
-        2000000,                                    /* 10kHz PWM clock frequency.   */
-        10000,                                    /* Initial PWM period 1S.       */
+        6000000,                                    /* 10kHz PWM clock frequency.   */
+        65535,                                    /* Initial PWM period 1S.       */
         NULL,
         {
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
@@ -46,7 +32,6 @@ static PWMConfig pwm15_cfg = {
 
 
 void led_string_init(void) {
-    pwmStart(&PWMD1, &pwm1_cfg);
     pwmStart(&PWMD3, &pwm3_cfg);
     pwmStart(&PWMD15, &pwm15_cfg);
 }
@@ -55,7 +40,7 @@ int led_string_setBrightness(uint8_t channel, float brightness) {
     if (brightness > 1.0f || brightness < 0.0f) {
         return -1;
     }
-    uint16_t dutycycle = (uint16_t) (brightness * (float) UINT16_MAX);
+    uint16_t dutycycle = (uint16_t) (brightness * (float) 10000U);
     switch (channel) {
         case 1:
             pwmEnableChannel(&PWMD3, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dutycycle));

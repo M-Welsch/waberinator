@@ -14,42 +14,42 @@ int _wabercfg_init(void) {
     waber_led_cfg[0].phase = 0;
     waber_led_cfg[0].depth = 1.0f;
     waber_led_cfg[0].frequency = 0.3f;
-    waber_led_cfg[0].max_brightness = 0.02f;
+    waber_led_cfg[0].max_brightness = 1.0f;
     waber_led_cfg[0].momentary_brightness = 0.5f;
     waber_led_cfg[0].smoothness = 4;
 
     waber_led_cfg[1].phase = 1.04f;
     waber_led_cfg[1].depth = 1.0f;
     waber_led_cfg[1].frequency = 0.3f;
-    waber_led_cfg[1].max_brightness = 0.02f;
+    waber_led_cfg[1].max_brightness = 1.0f;
     waber_led_cfg[1].momentary_brightness = 0.6f;
     waber_led_cfg[1].smoothness = 4;
 
     waber_led_cfg[2].phase = 2.94f;
     waber_led_cfg[2].depth = 1.0f;
     waber_led_cfg[2].frequency = 0.3f;
-    waber_led_cfg[2].max_brightness = 0.02f;
+    waber_led_cfg[2].max_brightness = 1.0f;
     waber_led_cfg[2].momentary_brightness = 0.7f;
     waber_led_cfg[2].smoothness = 4;
 
     waber_led_cfg[3].phase = 3.1415f;
     waber_led_cfg[3].depth = 1.0f;
     waber_led_cfg[3].frequency = 0.3f;
-    waber_led_cfg[3].max_brightness = 0.02f;
+    waber_led_cfg[3].max_brightness = 1.0f;
     waber_led_cfg[3].momentary_brightness = 0.8f;
     waber_led_cfg[3].smoothness = 4;
 
     waber_led_cfg[4].phase = 4.1888f;
     waber_led_cfg[4].depth = 1.0f;
     waber_led_cfg[4].frequency = 0.3f;
-    waber_led_cfg[4].max_brightness = 0.02f;
+    waber_led_cfg[4].max_brightness = 1.0f;
     waber_led_cfg[4].momentary_brightness = 0.9f;
     waber_led_cfg[4].smoothness = 4;
 
     waber_led_cfg[5].phase = 5.2398f;
     waber_led_cfg[5].depth = 1.0f;
     waber_led_cfg[5].frequency = 0.3f;
-    waber_led_cfg[5].max_brightness = 0.02f;
+    waber_led_cfg[5].max_brightness = 1.0f;
     waber_led_cfg[5].momentary_brightness = 1;
     waber_led_cfg[5].smoothness = 4;
 

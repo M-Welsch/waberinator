@@ -5,7 +5,7 @@
 
 # Compiler options here.
 ifeq ($(USE_OPT),)
-  USE_OPT = -O3 -ggdb -fomit-frame-pointer -falign-functions=16
+  USE_OPT = -Og -ggdb -fomit-frame-pointer -falign-functions=16
 endif
 
 # C specific options here (added to USE_OPT).
@@ -125,6 +125,8 @@ CSRC = $(ALLCSRC) \
        serial_interface/common.c \
        drivers/smps/smps.c \
        drivers/led_string/led_string.c \
+       drivers/led_status/led_status.c \
+       drivers/button/button.c \
        drivers/adc/adc.c \
        battery_monitor/battery_monitor.c \
        drivers/modem/modem.c \
@@ -147,6 +149,8 @@ ASMXSRC = $(ALLXASMSRC)
 WABERINATOR_INCDIR = ./serial_interface \
 	./drivers/smps \
 	./drivers/led_string \
+	./drivers/led_status \
+	./drivers/button \
 	./drivers/adc \
 	./battery_monitor \
 	./drivers/modem \
