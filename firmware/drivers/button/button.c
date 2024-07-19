@@ -13,5 +13,8 @@ static void pb_cb(void *arg) {
 void button_init(void) {
     palEnableLineEvent(LINE_BUTTON, PAL_EVENT_MODE_FALLING_EDGE);
     palSetLineCallback(LINE_BUTTON, pb_cb, NULL);
+}
 
+bool button_pressed(void) {
+    return ~palReadLine(LINE_BUTTON);
 }

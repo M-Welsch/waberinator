@@ -25,6 +25,7 @@
 #include "smps.h"
 #include "battery_monitor.h"
 #include "led_status.h"
+#include "button.h"
 
 /*
  * Green LED blinker thread, times are in milliseconds.
@@ -85,32 +86,13 @@ int main(void) {
      * Normal main() thread activity, in this demo it does nothing except
      * sleeping in a loop and check the button state.
      */
-//    pwmStart(&PWMD3, &pwm3_cfg);
-//    uint16_t dc = 0;
-//    led_string_off(5);
-//    led_string_off(6);
-//    while (true) {
-//        pwmEnableChannel(&PWMD3, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dc));
-//        pwmEnableChannel(&PWMD3, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dc));
-//        pwmEnableChannel(&PWMD3, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dc));
-//        pwmEnableChannel(&PWMD3, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dc));
-//        if (dc > 10000) {
-//            dc = 0;
-//        }
-//        else {
-//            dc++;
-//        }
-//        chThdSleepMilliseconds(1);
-//    }
-//
-//}
-//int main2(void) {
     led_string_init();
     adc_init();
     communicationThreads_init();
     waberthread_init();
     modem_on();
     smps_setOn();
+    button_init();
     battery_monitor_init();
     led_status_init();
     while (true) {
