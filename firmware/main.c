@@ -24,6 +24,7 @@
 #include "modem.h"
 #include "smps.h"
 #include "battery_monitor.h"
+#include "led_status.h"
 
 /*
  * Green LED blinker thread, times are in milliseconds.
@@ -41,35 +42,69 @@ static THD_FUNCTION(Thread1, arg) {
   }
 }
 
+static PWMConfig pwm3_cfg = {
+    6000000,
+    65535,
+    NULL,
+    {
+            {PWM_OUTPUT_ACTIVE_HIGH, NULL},
+            {PWM_OUTPUT_ACTIVE_HIGH, NULL},
+            {PWM_OUTPUT_ACTIVE_HIGH, NULL},
+            {PWM_OUTPUT_ACTIVE_HIGH, NULL}
+    },
+    0,
+    0,
+    0
+};
 
 /*
  * Application entry point.
  */
 int main(void) {
 
-  /*
-   * System initializations.
-   * - HAL initialization, this also initializes the configured device drivers
-   *   and performs the board-specific initializations.
-   * - Kernel initialization, the main() function becomes a thread and the
-   *   RTOS is active.
-   */
-  halInit();
-  chSysInit();
+    /*
+     * System initializations.
+     * - HAL initialization, this also initializes the configured device drivers
+     *   and performs the board-specific initializations.
+     * - Kernel initialization, the main() function becomes a thread and the
+     *   RTOS is active.
+     */
+    halInit();
+    chSysInit();
 
-  /*
-   * Activates the serial driver 2 using the driver default configuration.
-   */
+    /*
+     * Activates the serial driver 2 using the driver default configuration.
+     */
 
-  /*
-   * Creates the blinker thread.
-   */
-  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
+    /*
+     * Creates the blinker thread.
+     */
+    chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
 
     /*
      * Normal main() thread activity, in this demo it does nothing except
      * sleeping in a loop and check the button state.
      */
+//    pwmStart(&PWMD3, &pwm3_cfg);
+//    uint16_t dc = 0;
+//    led_string_off(5);
+//    led_string_off(6);
+//    while (true) {
+//        pwmEnableChannel(&PWMD3, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dc));
+//        pwmEnableChannel(&PWMD3, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dc));
+//        pwmEnableChannel(&PWMD3, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dc));
+//        pwmEnableChannel(&PWMD3, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dc));
+//        if (dc > 10000) {
+//            dc = 0;
+//        }
+//        else {
+//            dc++;
+//        }
+//        chThdSleepMilliseconds(1);
+//    }
+//
+//}
+//int main2(void) {
     led_string_init();
     adc_init();
     communicationThreads_init();
@@ -77,8 +112,9 @@ int main(void) {
     modem_on();
     smps_setOn();
     battery_monitor_init();
+    led_status_init();
     while (true) {
-        chThdSleepMilliseconds(100);
+        chThdSleepMilliseconds(500);
 
     }
 }

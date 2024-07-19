@@ -1,5 +1,7 @@
 #include "hal.h"
 
+#include "led_status.h"
+
 
 static PWMConfig pwm1_cfg = {
         6000000,                                    /* 10kHz PWM clock frequency.   */
@@ -36,22 +38,21 @@ int led_status_color_numeric(uint16_t red, uint16_t green, uint16_t blue) {
     return 0;
 }
 
-typedef enum {
-    STATUS_LED_COLOR_RED,
-    STATUS_LED_COLOR_GREEN,
-    STATUS_LED_COLOR_BLUE,
-} status_led_color_t;
-
-int led_status_color(const status_led_color_t color) {
+/**
+ * @param color pick one
+ * @param brightness_percent values = [0 .. 10000] like in the pwm drivers
+ * @return
+ */
+int led_status_color(const status_led_color_t color, uint16_t brightness_percent) {
     switch (color) {
         case STATUS_LED_COLOR_RED:
-            led_status_color_numeric(10000, 0, 0);
+            led_status_color_numeric(brightness_percent, 0, 0);
             break;
         case STATUS_LED_COLOR_GREEN:
-            led_status_color_numeric(0, 10000, 0);
+            led_status_color_numeric(0, brightness_percent, 0);
             break;
         case STATUS_LED_COLOR_BLUE:
-            led_status_color_numeric(0, 0, 10000);
+            led_status_color_numeric(0, 0, brightness_percent);
             break;
         default:
             return -1;
