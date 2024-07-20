@@ -4,11 +4,11 @@
 #include <stdio.h>
 
 int main(void) {
-    wabercfg_t cfg;
+    waber_led_cfg_t cfg;
     cfg.phase = 0;
     cfg.depth = 0.7;
     cfg.frequency = 1;
-    cfg.brightness = 1;
+    cfg.max_brightness = 1;
     cfg.smoothness = 2;
 
     printf("Testing Compressorfunc:\n");
@@ -31,13 +31,13 @@ int main(void) {
     printf("Testing Waberfunc Float:\n");
     for (uint32_t c = 0; c < 100; c++) {
         float tick_f = (float) c;
-        printf("%ld, %f\n", c, _waber(tick_f, &cfg));
+        printf("%ld, %f\n", c, waber(tick_f, &cfg, 1.0f, 1.0f));
     }
 
     printf("Testing Waberfunc Int:\n");
     for (uint32_t c = 0; c < 100; c++) {
         float tick_f = (float) c;
-        printf("%ld, %d\n", c, waber(tick_f, &cfg));
+        printf("%ld, %d\n", c, waber(tick_f, &cfg, 1.0f, 1.0f));
     }
 }
 

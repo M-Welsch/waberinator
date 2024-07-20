@@ -60,6 +60,7 @@ int _wabercfg_init(void) {
     waber_config.global_min_depth = 0.0f;
     waber_config.global_max_depth = 1.0f;
     waber_config.manual_mode = false;
+    waber_config.synchronous = false;
     waber_config.led_cfg[0] = waber_led_cfg[0];
     waber_config.led_cfg[1] = waber_led_cfg[1];
     waber_config.led_cfg[2] = waber_led_cfg[2];
@@ -146,8 +147,12 @@ static THD_FUNCTION(waberThread1, arg) {
 
             chMtxLock(&mtx_waber_cfg);
 
+            if (adc_readings.depth > 0.5) {
+                // tbd.
+            }
+
             brightness_factor = _map_full_adc_range_to_defined_range(adc_readings.brightness, waber_config.global_min_brightness, waber_config.global_max_brightness);
-            frequency_factor = 1.0f;  //_map_full_adc_range_to_defined_range(adc_readings.frequency, waber_config.global_min_frequency, waber_config.global_max_frequency);
+            frequency_factor = _map_full_adc_range_to_defined_range(adc_readings.frequency, waber_config.global_min_frequency, waber_config.global_max_frequency);
             depth_factor = _map_full_adc_range_to_defined_range(adc_readings.depth, waber_config.global_min_depth, waber_config.global_max_depth);
 
             brightness[0] = waber(tick, &waber_config.led_cfg[0], frequency_factor, depth_factor) * brightness_factor;

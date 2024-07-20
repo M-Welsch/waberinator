@@ -18,15 +18,23 @@ float _compressed_sine(float tick_f, float frequency, float phase, float smoothn
 }
 
 float waber(uint32_t tick, waber_led_cfg_t *cfg, float frequency_factor, float depth_factor) {
-    float phase = cfg->phase;
+    float tick_f = (float) tick;
+    float current_frequency = cfg->frequency*frequency_factor;
+    static float last_frequency = 0.01f;
+    static float phi_adjustment = 0.0f;
+    if (fabsf(last_frequency - current_frequency) > THRESHOLD_FREQUENCY_CHANGE) {
+        phi_adjustment = 2 * M_PI * tick_f/WABER_TICKS_PER_S * (last_frequency - current_frequency);
+        if (phi_adjustment > 2 * M_PI) {
+            phi_adjustment -= 2 * M_PI;
+        }
+    }
+    last_frequency = current_frequency;
+    float phase = cfg->phase + phi_adjustment;
     float depth = cfg->depth * depth_factor;
-    float frequency = cfg->frequency * frequency_factor;
     float brightness = cfg->max_brightness;
     float smoothness = cfg->smoothness;
-    float tick_f = (float) tick;
 
-
-    float compressed_sine = _compressed_sine(tick_f, frequency, phase, smoothness);
+    float compressed_sine = _compressed_sine(tick_f, current_frequency, phase, smoothness);
     float waber = brightness * (1 + depth * (compressed_sine - 1));
     return waber;
 }

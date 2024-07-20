@@ -6,6 +6,7 @@
 #include "smps.h"
 #include "led_status.h"
 #include "button.h"
+#include "wab_mutex.h"
 
 #define BATT_EMPTY_VOLTAGE 11.2f
 #define BATT_FULL_VOLTAGE 13.8f
@@ -62,7 +63,9 @@ static THD_FUNCTION(BatteryMonitorThread, arg) {
         eventmask_t evt = chEvtWaitAllTimeout(ALL_EVENTS, TIME_MS2I(100));
         UNUSED_PARAM(evt);  // later ... maybe
 
+        chMtxLock(&mtx_adc);
         adc_readPoti(&adc_readings);
+        chMtxUnlock(&mtx_adc);
         float vbat = digits2vbat(adc_readings.vbat);
         uvlo(vbat);
         if (button_pressed()) {
