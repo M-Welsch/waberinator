@@ -145,22 +145,36 @@ static THD_FUNCTION(waberThread1, arg) {
             adc_readPoti(&adc_readings);
             chMtxUnlock(&mtx_adc);
 
-            chMtxLock(&mtx_waber_cfg);
-
-            if (adc_readings.depth > 0.5) {
-                // tbd.
+            float depth = adc_readings.depth ;
+            if (adc_readings.depth > 0.5) {  // waber synchronuously if depth knob is greater than 0.5
+                waber_config.synchronous = true;
+                depth -= 0.5f;
             }
+            else {
+                waber_config.synchronous = false;
+            }
+            depth *= 2;
 
+            chMtxLock(&mtx_waber_cfg);
             brightness_factor = _map_full_adc_range_to_defined_range(adc_readings.brightness, waber_config.global_min_brightness, waber_config.global_max_brightness);
             frequency_factor = _map_full_adc_range_to_defined_range(adc_readings.frequency, waber_config.global_min_frequency, waber_config.global_max_frequency);
-            depth_factor = _map_full_adc_range_to_defined_range(adc_readings.depth, waber_config.global_min_depth, waber_config.global_max_depth);
+            depth_factor = _map_full_adc_range_to_defined_range(depth, waber_config.global_min_depth, waber_config.global_max_depth);
 
             brightness[0] = waber(tick, &waber_config.led_cfg[0], frequency_factor, depth_factor) * brightness_factor;
-            brightness[1] = waber(tick, &waber_config.led_cfg[1], frequency_factor, depth_factor) * brightness_factor;
-            brightness[2] = waber(tick, &waber_config.led_cfg[2], frequency_factor, depth_factor) * brightness_factor;
-            brightness[3] = waber(tick, &waber_config.led_cfg[3], frequency_factor, depth_factor) * brightness_factor;
-            brightness[4] = waber(tick, &waber_config.led_cfg[4], frequency_factor, depth_factor) * brightness_factor;
-            brightness[5] = waber(tick, &waber_config.led_cfg[5], frequency_factor, depth_factor) * brightness_factor;
+            if (waber_config.synchronous) {
+                brightness[1] = brightness[0];
+                brightness[2] = brightness[0];
+                brightness[3] = brightness[0];
+                brightness[4] = brightness[0];
+                brightness[5] = brightness[0];
+            }
+            else {
+                brightness[1] = waber(tick, &waber_config.led_cfg[1], frequency_factor, depth_factor) * brightness_factor;
+                brightness[2] = waber(tick, &waber_config.led_cfg[2], frequency_factor, depth_factor) * brightness_factor;
+                brightness[3] = waber(tick, &waber_config.led_cfg[3], frequency_factor, depth_factor) * brightness_factor;
+                brightness[4] = waber(tick, &waber_config.led_cfg[4], frequency_factor, depth_factor) * brightness_factor;
+                brightness[5] = waber(tick, &waber_config.led_cfg[5], frequency_factor, depth_factor) * brightness_factor;
+            }
             chMtxUnlock(&mtx_waber_cfg);
             tick++;
             time_needed = chVTGetSystemTimeX() - time_start;

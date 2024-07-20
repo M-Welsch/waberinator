@@ -41,7 +41,7 @@ int uvlo(float vbat) {
         if (undervoltage_counter == 5) {
             smps_setOff();
             while (true) {
-                led_status_color(STATUS_LED_COLOR_RED, 5000);
+                led_status_color(STATUS_LED_COLOR_RED, 500);
                 chThdSleepMilliseconds(1000);
                 led_status_color_numeric(0,0,0);
                 chThdSleepMilliseconds(1000);
