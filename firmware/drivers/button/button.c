@@ -16,5 +16,5 @@ void button_init(void) {
 }
 
 bool button_pressed(void) {
-    return ~palReadLine(LINE_BUTTON);
+    return !palReadLine(LINE_BUTTON);
 }

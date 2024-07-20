@@ -9,7 +9,7 @@ static PWMConfig pwm1_cfg = {
         NULL,
         {
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-                {PWM_OUTPUT_ACTIVE_HIGH, NULL},
+                {PWM_OUTPUT_ACTIVE_LOW, NULL},
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
                 {PWM_OUTPUT_DISABLED, NULL}
         },
@@ -33,7 +33,7 @@ int led_status_color_numeric(uint16_t red, uint16_t green, uint16_t blue) {
         blue = 10000;
     }
     pwmEnableChannel(&PWMD1, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, blue));
-    pwmEnableChannel(&PWMD1, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, green));
+    pwmEnableChannel(&PWMD1, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, 10000U-green));
     pwmEnableChannel(&PWMD1, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, red));
     return 0;
 }

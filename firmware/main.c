@@ -97,6 +97,5 @@ int main(void) {
     led_status_init();
     while (true) {
         chThdSleepMilliseconds(500);
-
     }
 }

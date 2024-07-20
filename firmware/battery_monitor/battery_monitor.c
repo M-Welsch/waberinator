@@ -35,10 +35,16 @@ int flash_status_led_according_to_battery_voltage(float vbat) {
 
 int uvlo(float vbat) {
     static uint8_t undervoltage_counter = 0;
-    if (vbat < 11.2) { // 0.64f) { // shuts off at around 11V
+    if (vbat < 11.2) {
         undervoltage_counter++;
         if (undervoltage_counter == 5) {
             smps_setOff();
+            while (true) {
+                led_status_color(STATUS_LED_COLOR_RED, 5000);
+                chThdSleepMilliseconds(1000);
+                led_status_color_numeric(0,0,0);
+                chThdSleepMilliseconds(1000);
+            }
         }
     }
     else {

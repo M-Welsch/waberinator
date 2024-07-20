@@ -3,14 +3,14 @@
 
 
 static PWMConfig pwm3_cfg = {
-        6000000,                                    /* 10kHz PWM clock frequency.   */
+        24000000,                                    /* 10kHz PWM clock frequency.   */
         65535,                                    /* Initial PWM period 1S.       */
         NULL,
         {
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
+                {PWM_OUTPUT_ACTIVE_LOW, NULL},
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-                {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-                {PWM_OUTPUT_ACTIVE_HIGH, NULL}
+                {PWM_OUTPUT_ACTIVE_LOW, NULL}
         },
         0,
         0,
@@ -18,12 +18,12 @@ static PWMConfig pwm3_cfg = {
 };
 
 static PWMConfig pwm15_cfg = {
-        6000000,                                    /* 10kHz PWM clock frequency.   */
+        24000000,                                    /* 10kHz PWM clock frequency.   */
         65535,                                    /* Initial PWM period 1S.       */
         NULL,
         {
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-                {PWM_OUTPUT_ACTIVE_HIGH, NULL},
+                {PWM_OUTPUT_ACTIVE_LOW, NULL},
         },
         0,
         0,
@@ -46,19 +46,19 @@ int led_string_setBrightness(uint8_t channel, float brightness) {
             pwmEnableChannel(&PWMD3, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dutycycle));
             break;
         case 2:
-            pwmEnableChannel(&PWMD3, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dutycycle));
+            pwmEnableChannel(&PWMD3, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, 10000U-dutycycle));
             break;
         case 3:
             pwmEnableChannel(&PWMD3, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dutycycle));
             break;
         case 4:
-            pwmEnableChannel(&PWMD3, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, dutycycle));
+            pwmEnableChannel(&PWMD3, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD3, 10000U-dutycycle));
             break;
         case 5:
             pwmEnableChannel(&PWMD15, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD15, dutycycle));
             break;
         case 6:
-            pwmEnableChannel(&PWMD15, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD15, dutycycle));
+            pwmEnableChannel(&PWMD15, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD15, 10000U-dutycycle));
             break;
 
         default:
