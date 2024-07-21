@@ -5,7 +5,7 @@
 
 # Compiler options here.
 ifeq ($(USE_OPT),)
-  USE_OPT = -O2 -ggdb -fomit-frame-pointer -falign-functions=16
+  USE_OPT = -Og -ggdb -fomit-frame-pointer -falign-functions=16
 endif
 
 # C specific options here (added to USE_OPT).
@@ -131,6 +131,7 @@ CSRC = $(ALLCSRC) \
        battery_monitor/battery_monitor.c \
        drivers/modem/modem.c \
        serial_interface/serial_interface_set.c \
+       serial_interface/serial_interface_get.c \
        serial_interface/serial_interface.c \
        wabering/wabering.c \
        wabering/waber_thread.c \

@@ -8,11 +8,8 @@
 #include "button.h"
 #include "wab_mutex.h"
 
-#define BATT_EMPTY_VOLTAGE 11.2f
-#define BATT_FULL_VOLTAGE 13.8f
-
-#define DIGITS_TO_VBAT_M 17.203003216272847f
-#define DIGITS_TO_VBAT_T 0.022488161687991972
+#define DIGITS_TO_VBAT_M 17.494366022355468f
+#define DIGITS_TO_VBAT_T -0.2808784254411832f
 
 float digits2vbat(float adc_reading) {
     return DIGITS_TO_VBAT_M * adc_reading + DIGITS_TO_VBAT_T;

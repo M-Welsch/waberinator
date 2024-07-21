@@ -2,6 +2,9 @@
 #include "serial_interface/common.h"
 #include "core_defines.h"
 #include "chprintf.h"
+#include "adc.h"
+#include "wab_mutex.h"
+#include "battery_monitor.h"
 
 int _get_light(BaseSequentialStream *chp, int argc, char *argv[]) {
     UNUSED_PARAM(argc);
@@ -52,6 +55,25 @@ int _get_modem(BaseSequentialStream *chp, int argc, char *argv[]) {
     return -1;
 }
 
+int _analog(BaseSequentialStream *chp, int argc, char *argv[]) {
+    if (argc < 1) {
+        argument_missing(chp);
+        return -1;
+    }
+    adc_readings_t readings;
+    chMtxLock(&mtx_adc);
+    adc_readPoti(&readings);
+    chMtxUnlock(&mtx_adc);
+    if (isEqual(argv[0], "raw")) {
+        chprintf(chp, "br=%f, f=%f, d=%f, vbat=%f\n", readings.brightness, readings.frequency, readings.depth,
+                 readings.vbat);
+    }
+    else if (isEqual(argv[0], "vbat")) {
+        chprintf(chp, "%f\n", digits2vbat(readings.vbat));
+    }
+    return 0;
+}
+
 void get(BaseSequentialStream *chp, int argc, char *argv[]) {
     if (argc < 1) {
         argument_missing(chp);
@@ -72,6 +94,9 @@ void get(BaseSequentialStream *chp, int argc, char *argv[]) {
     else if (isEqual(what_to_set, "battery_monitor")) {
         retval = _get_battery_monitor(chp, argc-1, argv+1);
     }
+    else if (isEqual(what_to_set, "analog")) {
+        retval = _analog(chp, argc-1, argv+1);
+    }
     else if (isEqual(what_to_set, "smps")) {
         retval = _get_smps(chp, argc-1, argv+1);
     }
@@ -83,7 +108,7 @@ void get(BaseSequentialStream *chp, int argc, char *argv[]) {
     }
     else {
         retval = -1;
-        chprintf(chp, "no such setter as %s\n\r", what_to_set);
+        chprintf(chp, "no such getter as %s\n\r", what_to_set);
     }
 
     chprintf(chp, "setting %s ", what_to_set);
