@@ -12827,6 +12827,16 @@
 		)
 		(uuid "2cc5d32b-706c-4fe3-a319-3ee086747bec")
 	)
+	(text "eventuell durch 744325330 (3,3µH) oder 7443320470 (4,7µH) ersetzen"
+		(exclude_from_sim no)
+		(at 295.656 23.622 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "36680fb8-8ca1-4d8d-bb7d-96f47698fb91")
+	)
 	(text "Waberinator"
 		(exclude_from_sim no)
 		(at 448.31 157.48 0)
@@ -14175,7 +14185,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "118-3310C-025-103L-ND"
+		(property "Digikey" "  3310C-001-103L-ND"
 			(at 186.69 182.88 90)
 			(effects
 				(font
@@ -14255,7 +14265,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "118-3310C-025-103L-ND"
+		(property "Digikey" "  3310C-001-103L-ND"
 			(at 194.31 204.47 90)
 			(effects
 				(font
@@ -17427,7 +17437,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "117k"
+		(property "Value" "95k3"
 			(at 199.39 55.88 0)
 			(effects
 				(font
@@ -19533,7 +19543,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "118-3310C-025-103L-ND"
+		(property "Digikey" "  3310C-001-103L-ND"
 			(at 179.705 161.29 90)
 			(effects
 				(font
@@ -25457,7 +25467,7 @@
 				)
 			)
 		)
-		(property "Value" "SRU1048-4R7Y"
+		(property "Value" "744325330"
 			(at 266.7 30.48 90)
 			(effects
 				(font
@@ -25492,7 +25502,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" " SRU1048-4R7YCT-ND"
+		(property "Digikey" ""
 			(at 266.7 34.29 0)
 			(effects
 				(font
